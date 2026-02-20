@@ -174,7 +174,10 @@ def parse_snana_file(filepath):
                 meta['NVAR'] = int(line.split(':')[1].strip())
             elif line.startswith('VARLIST:'):
                 meta['VARLIST'] = line.split(':')[1].strip().split()
-                in_phot = False
+            elif line.startswith('OBS:'):
+                in_phot = True
+                parts = line.split()[1:]  # skip 'OBS:'
+                phot_rows.append(parts)
             elif ':' in line and not in_phot:
                 key, _, val = line.partition(':')
                 key = key.strip()
@@ -187,10 +190,6 @@ def parse_snana_file(filepath):
                         meta[key] = int(val)
                 except ValueError:
                     meta[key] = val
-            elif line.startswith('OBS:'):
-                in_phot = True
-                parts = line.split()[1:]  # skip 'OBS:'
-                phot_rows.append(parts)
             elif line.startswith('END:'):
                 break
 
