@@ -137,20 +137,20 @@ def load_catalog():
 
 
 def extract_line_properties(data):
-    """Extract emission line EWs and FWHMs into a clean DataFrame."""
+    """Extract emission line EWs and FWHMs into a clean DataFrame.
     
-    cols = [c.name if hasattr(c, 'name') else c for c in data.columns] if hasattr(data, 'columns') else list(data.dtype.names)
+    Wu & Shen 2022 stores line properties as 6D arrays per line:
+    [peak_wave, centroid_wave, EW, logL, FWHM, velocity_shift]
+    Index: 0=peak, 1=centroid, 2=EW, 3=logL, 4=FWHM, 5=shift
+    
+    Use broad component (_BR) where available (more reliable for quasars).
+    """
+    
+    cols = list(data.dtype.names) if hasattr(data, 'dtype') else [c.name for c in data.columns]
     
     print(f"\n  Available columns ({len(cols)} total)")
     
-    # Find emission line columns
-    line_cols = [c for c in cols if any(line in c.upper() for line in 
-                 ['HALPHA', 'HBETA', 'MGII', 'CIV', 'CIII', 'LYA', 'MG_II', 'C_IV', 'C_III'])]
-    print(f"  Emission line columns found: {len(line_cols)}")
-    if line_cols:
-        print(f"  Sample: {line_cols[:20]}")
-    
-    # Build DataFrame with what we can find
+    # Build DataFrame
     df = pd.DataFrame()
     
     # Redshift
@@ -161,55 +161,62 @@ def extract_line_properties(data):
             break
     
     # S/N
-    for sn_col in ['SN_MEDIAN_ALL', 'SN_MEDIAN', 'SNMEDIAN']:
+    for sn_col in ['SN_MEDIAN_ALL', 'SN_MEDIAN']:
         if sn_col in cols:
             df['sn'] = np.array(data[sn_col])
             break
     
-    # Luminosity (for Baldwin Effect control)
-    for l_col in ['LOGL5100', 'LOGL3000', 'LOGL1350', 'LOGL_BOL', 'LOGLBOL']:
+    # Luminosity columns (scalar)
+    for l_col in ['LOGL5100', 'LOGL3000', 'LOGL1350', 'LOGLBOL']:
         if l_col in cols:
             df[l_col.lower()] = np.array(data[l_col])
     
-    # Emission line properties — try multiple naming conventions
+    # Emission line 6D arrays
+    # Prefer _BR (broad component) for EW/FWHM, fall back to total
     line_map = {
-        'HALPHA': ['HALPHA', 'HA', 'H_ALPHA'],
-        'HBETA': ['HBETA', 'HB', 'H_BETA'],
-        'MGII': ['MGII', 'MG_II', 'MG2'],
-        'CIV': ['CIV', 'C_IV', 'C4'],
-        'CIII': ['CIII', 'C_III', 'C3', 'CIII]', 'CIII_COMPLEX'],
-        'LYA': ['LYA', 'LYMAN_ALPHA', 'LY_ALPHA'],
+        'HALPHA': ['HALPHA_BR', 'HALPHA'],
+        'HBETA': ['HBETA_BR', 'HBETA'],
+        'MGII': ['MGII_BR', 'MGII'],
+        'CIV': ['CIV', 'CIV'],  # CIV often just CIV (no _BR)
+        'CIII': ['CIII_BR', 'CIII_ALL'],
+        'LYA': ['LYA', 'LYA'],
     }
     
-    properties = ['EW', 'FWHM', 'PEAK', 'AREA', 'LOGL']
+    # 6D indices: 0=peak, 1=centroid, 2=EW, 3=logL, 4=FWHM, 5=shift
+    prop_indices = {'EW': 2, 'LOGL': 3, 'FWHM': 4, 'SHIFT': 5}
     
     for line_name, variants in line_map.items():
-        for prop in properties:
-            found = False
-            for variant in variants:
-                # Try patterns like: HALPHA_EW, EW_HALPHA, HALPHA_BR_EW
-                patterns = [
-                    f"{variant}_{prop}",
-                    f"{prop}_{variant}",
-                    f"{variant}_BR_{prop}",  # broad component
-                    f"{prop}_{variant}_BR",
-                ]
-                for pat in patterns:
-                    matching = [c for c in cols if c.upper() == pat.upper()]
-                    if matching:
-                        col_key = f"{line_name}_{prop}"
-                        df[col_key] = np.array(data[matching[0]])
-                        found = True
-                        break
-                if found:
+        for variant in variants:
+            if variant in cols:
+                arr = np.array(data[variant])
+                if arr.ndim == 2 and arr.shape[1] >= 5:
+                    for prop_name, idx in prop_indices.items():
+                        col_key = f"{line_name}_{prop_name}"
+                        df[col_key] = arr[:, idx]
+                    print(f"  {line_name}: extracted from {variant} ({arr.shape})")
                     break
+                else:
+                    print(f"  {line_name}: {variant} has unexpected shape {arr.shape}")
+    
+    # Also extract errors (same 6D format)
+    for line_name, variants in line_map.items():
+        for variant in variants:
+            err_col = f"{variant}_ERR"
+            if err_col in cols:
+                arr = np.array(data[err_col])
+                if arr.ndim == 2 and arr.shape[1] >= 5:
+                    for prop_name, idx in prop_indices.items():
+                        col_key = f"{line_name}_{prop_name}_ERR"
+                        df[col_key] = arr[:, idx]
+                break
     
     # Report what we found
-    line_props_found = [c for c in df.columns if any(line in c for line in line_map.keys())]
+    line_props_found = [c for c in df.columns if any(line in c for line in line_map.keys()) 
+                        and 'ERR' not in c]
     print(f"\n  Extracted {len(line_props_found)} line property columns:")
     for c in sorted(line_props_found):
-        valid = df[c].notna() & (df[c] != 0) & (df[c] != -1)
-        print(f"    {c}: {valid.sum()} valid values")
+        valid = df[c].notna() & (df[c] != 0) & (df[c] > -999)
+        print(f"    {c}: {valid.sum():,} valid values")
     
     return df
 
@@ -618,8 +625,11 @@ def main():
     print(f"  Redshift range: {df['z'].min():.2f} — {df['z'].max():.2f}")
     
     # Quality cuts
+    df = df[df['z'] > 0.05]  # remove bad redshifts (-999 etc)
+    print(f"  After z > 0.05 cut: {len(df)}")
     if 'sn' in df.columns:
-        df = df[df['sn'] > 2]
+        good_sn = df['sn'].notna() & (df['sn'] > 2)
+        df = df[good_sn]
         print(f"  After S/N > 2 cut: {len(df)}")
     
     all_results = {}
