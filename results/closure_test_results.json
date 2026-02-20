@@ -1,0 +1,40 @@
+{
+  "test4_highz_coupling": {
+    "z_0.00_0.15": {
+      "pearson_r": -0.1737,
+      "pearson_p": 1e-06,
+      "spearman_rho": -0.2307,
+      "N": 826
+    },
+    "z_0.15_0.30": {
+      "pearson_r": -0.329,
+      "pearson_p": 0.0,
+      "spearman_rho": -0.3313,
+      "N": 381
+    },
+    "z_0.30_0.50": {
+      "pearson_r": -0.2536,
+      "pearson_p": 1.5e-05,
+      "spearman_rho": -0.2777,
+      "N": 284
+    },
+    "z_0.50_0.70": {
+      "pearson_r": -0.4649,
+      "pearson_p": 0.0,
+      "spearman_rho": -0.474,
+      "N": 135
+    },
+    "z_0.70_1.00": {
+      "pearson_r": -0.7082,
+      "pearson_p": 0.0,
+      "spearman_rho": -0.6809,
+      "N": 50
+    },
+    "z_1.00_2.50": {
+      "pearson_r": -0.6599,
+      "pearson_p": 0.000332,
+      "spearman_rho": -0.6431,
+      "N": 25
+    }
+  }
+}
