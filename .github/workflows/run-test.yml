@@ -33,6 +33,9 @@ jobs:
       - name: Run Closure Theory tests (Round 4)
         run: python closure_test_round4.py
       
+      - name: Run SALT-Independent tests (BayeSN suite)
+        run: python closure_test_bayesn.py
+      
       - name: Upload results
         uses: actions/upload-artifact@v4
         with:
@@ -42,6 +45,7 @@ jobs:
             results_round2/
             results_round3/
             results_round4/
+            results_bayesn/
       
       - name: Commit results back to repo
         run: |
