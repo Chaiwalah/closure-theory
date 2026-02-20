@@ -367,34 +367,38 @@ def fit_bayesn_sample(selected_sne):
                 print(f"    Only {len(filt_map)} recognized filters ({survey_name}, bands={unique_filts[:5]}), skipping")
                 continue
 
-            # Try fitting with fit_from_file first (handles SNANA format natively)
+            print(f"    Survey={survey_name}, filters={filt_map}")
+
+            # Use model.fit() directly — fit_from_file has BAND/FLT column issues
             try:
-                samples, sn_props = model.fit_from_file(
-                    str(lc_path),
-                    filt_map=filt_map
+                mjd = phot['MJD'].values.astype(float)
+                flux = phot['FLUXCAL'].values.astype(float) if 'FLUXCAL' in phot.columns else phot['FLUX'].values.astype(float)
+                flux_err = phot['FLUXCALERR'].values.astype(float) if 'FLUXCALERR' in phot.columns else phot['FLUXERR'].values.astype(float)
+                filters = phot[filt_col].values.astype(str)
+
+                # Get MW E(B-V) and peak MJD
+                ebv_mw = lc_data.get('MWEBV', summary_row.get('MWEBV', 0.02))
+                if isinstance(ebv_mw, str):
+                    ebv_mw = float(ebv_mw.split()[0])
+                peak_mjd = lc_data.get('SEARCH_PEAKMJD', lc_data.get('PEAKMJD', None))
+                if peak_mjd is None:
+                    peak_mjd = summary_row.get('PKMJD', float(np.median(mjd)))
+                if isinstance(peak_mjd, str):
+                    peak_mjd = float(peak_mjd.split()[0])
+
+                # Get helio redshift from LC if available
+                z_fit = lc_data.get('REDSHIFT_HELIO', z)
+                if isinstance(z_fit, str):
+                    z_fit = float(z_fit.split()[0])
+
+                samples, sn_props = model.fit(
+                    mjd, flux, flux_err, filters, z_fit,
+                    peak_mjd=peak_mjd, ebv_mw=ebv_mw,
+                    filt_map=filt_map, mag=False
                 )
-            except Exception as e1:
-                # Fallback: extract arrays and use model.fit()
-                print(f"    fit_from_file failed ({e1}), trying manual fit...")
-                try:
-                    mjd = phot['MJD'].values.astype(float)
-                    flux = phot['FLUXCAL'].values.astype(float) if 'FLUXCAL' in phot.columns else phot['FLUX'].values.astype(float)
-                    flux_err = phot['FLUXCALERR'].values.astype(float) if 'FLUXCALERR' in phot.columns else phot['FLUXERR'].values.astype(float)
-                    filters = phot[filt_col].values
-
-                    # Get MW E(B-V)
-                    ebv_mw = lc_data.get('MWEBV', summary_row.get('MWEBV', 0.02))
-                    peak_mjd = lc_data.get('SEARCH_PEAKMJD', lc_data.get('PEAKMJD',
-                                summary_row.get('PKMJD', np.median(mjd))))
-
-                    samples, sn_props = model.fit(
-                        mjd, flux, flux_err, filters, z,
-                        peak_mjd=peak_mjd, ebv_mw=ebv_mw,
-                        filt_map=filt_map, mag=False
-                    )
-                except Exception as e2:
-                    print(f"    Manual fit also failed: {e2}")
-                    continue
+            except Exception as e:
+                print(f"    Fit failed: {e}")
+                continue
 
             # Extract BayeSN parameters
             # samples contains: mu (distance modulus), theta (intrinsic), AV (dust), tmax, epsilon
