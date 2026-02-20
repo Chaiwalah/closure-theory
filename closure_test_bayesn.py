@@ -347,8 +347,8 @@ def fit_bayesn_sample(selected_sne):
                         filt_map[f] = f'Bessell_{f}'
                     elif f in ('g', 'r', 'i'):
                         filt_map[f] = f'{f}_PS1'  # approximate
-            elif survey_name == 'HST':
-                # HST uses specific filter codes; skip for now (complex)
+            elif survey_name in ('HST', 'PS1_HST_COMBINED', 'CANDELS', 'GOODS', 'CLASH'):
+                # HST uses WFC3/ACS filters (F125W, F160W etc.) — skip for now
                 pass
             else:
                 # KAIT, CfA, etc. use single-letter SNANA codes
@@ -371,10 +371,7 @@ def fit_bayesn_sample(selected_sne):
             try:
                 samples, sn_props = model.fit_from_file(
                     str(lc_path),
-                    filt_map=filt_map,
-                    num_warmup=200,
-                    num_samples=200,
-                    num_chains=1
+                    filt_map=filt_map
                 )
             except Exception as e1:
                 # Fallback: extract arrays and use model.fit()
@@ -393,8 +390,7 @@ def fit_bayesn_sample(selected_sne):
                     samples, sn_props = model.fit(
                         mjd, flux, flux_err, filters, z,
                         peak_mjd=peak_mjd, ebv_mw=ebv_mw,
-                        filt_map=filt_map, mag=False,
-                        num_warmup=200, num_samples=200, num_chains=1
+                        filt_map=filt_map, mag=False
                     )
                 except Exception as e2:
                     print(f"    Manual fit also failed: {e2}")
