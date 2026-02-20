@@ -210,6 +210,11 @@ def extract_line_properties(data):
                         df[col_key] = arr[:, idx]
                 break
     
+    # Fix big-endian FITS data for pandas
+    for col in df.columns:
+        if df[col].dtype.byteorder == '>':
+            df[col] = df[col].values.byteswap().newbyteorder()
+    
     # Report what we found
     line_props_found = [c for c in df.columns if any(line in c for line in line_map.keys()) 
                         and 'ERR' not in c]
