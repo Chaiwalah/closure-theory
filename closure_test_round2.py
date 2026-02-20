@@ -73,6 +73,28 @@ def load_data():
         df['mu_resid'] = df['MU_SH0ES'] - df['MUMODEL']
     elif 'biasCor_mu' in df.columns and 'mumodel' in df.columns:
         df['mu_resid'] = df['biasCor_mu'] - df['mumodel']
+    elif 'MU_SH0ES' in df.columns and 'zHD' in df.columns:
+        # Compute ΛCDM model distance and subtract
+        from scipy.integrate import quad
+        H0, Om = 73.04, 0.334  # Pantheon+ best-fit values
+        def dL(z):
+            if z <= 0: return 1e-10
+            dc, _ = quad(lambda zp: 1.0/np.sqrt(Om*(1+zp)**3 + (1-Om)), 0, z)
+            return (1+z) * dc * (299792.458 / H0)
+        mu_model = np.array([5*np.log10(dL(z))+25 for z in df['zHD']])
+        df['mu_resid'] = df['MU_SH0ES'] - mu_model
+    elif 'm_b_corr' in df.columns and 'zHD' in df.columns:
+        # Use bias-corrected apparent magnitude
+        from scipy.integrate import quad
+        H0, Om = 73.04, 0.334
+        def dL(z):
+            if z <= 0: return 1e-10
+            dc, _ = quad(lambda zp: 1.0/np.sqrt(Om*(1+zp)**3 + (1-Om)), 0, z)
+            return (1+z) * dc * (299792.458 / H0)
+        mu_model = np.array([5*np.log10(dL(z))+25 for z in df['zHD']])
+        # m_b_corr = mu + M, so mu = m_b_corr - M; M cancels in residual vs median
+        df['mu_resid'] = df['m_b_corr'] - mu_model
+        df['mu_resid'] = df['mu_resid'] - df['mu_resid'].median()  # zero-center
     
     # Compute color residual (deviation from z-bin median)
     z_edges = [0, 0.1, 0.2, 0.3, 0.5, 0.7, 1.0, 2.5]
