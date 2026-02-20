@@ -1,0 +1,51 @@
+[
+  {
+    "test": "L1: \u03ba vs \u03bc_resid",
+    "N": 690,
+    "rho": -0.0741,
+    "p": 0.051578,
+    "rho_partial_z": -0.0692,
+    "p_partial_z": 0.069332,
+    "prediction": "Weak or null (lensing magnification ~0.01 mag)"
+  },
+  {
+    "test": "L2: \u03ba vs c_resid",
+    "N": 690,
+    "rho": -0.0071,
+    "p": 0.853066,
+    "rho_partial_z": -0.007,
+    "p_partial_z": 0.854081,
+    "prediction": "NULL (color anomaly not caused by intervening matter)"
+  },
+  {
+    "rho_low_z": -0.017,
+    "p_low_z": 0.662474,
+    "N_low_z": 665,
+    "rho_high_z": 0.1504,
+    "p_high_z": 0.472965,
+    "N_high_z": 25,
+    "rho_mu_low_z": -0.0585,
+    "p_mu_low_z": 0.131939,
+    "rho_mu_high_z": -0.1169,
+    "p_mu_high_z": 0.577727,
+    "test": "L3: \u03ba coupling z-split at z*=0.82",
+    "prediction": "No z-dependent \u03ba-coupling (lensing is smooth function of z)"
+  },
+  {
+    "test": "L4: Closure signal survives \u03ba control (z\u22650.82)",
+    "N": 25,
+    "rho_before": -0.4431,
+    "p_before": 0.026538,
+    "rho_after_kappa_ctrl": -0.4954,
+    "p_after_kappa_ctrl": 0.011802,
+    "survival_pct": 111.8,
+    "prediction": "Signal SURVIVES (closure \u2260 lensing)"
+  },
+  {
+    "test": "L5: \u03ba vs x1 (null check)",
+    "N": 690,
+    "rho": -0.0349,
+    "p": 0.360559,
+    "prediction": "NULL (stretch immune to both lensing and closure)"
+  }
+]
