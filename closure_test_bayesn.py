@@ -211,26 +211,55 @@ def parse_snana_file(filepath):
 # STEP 3: Select strategic subsample
 # ============================================================
 
+def build_lc_index(lc_files):
+    """Build an index mapping SNID -> filepath by reading headers."""
+    index = {}
+    for f in lc_files:
+        try:
+            with open(f, 'r') as fh:
+                for line in fh:
+                    if line.startswith('SNID:'):
+                        snid = line.split(':')[1].strip().upper()
+                        index[snid] = f
+                        break
+        except:
+            pass
+    # Also index by filename stem
+    for f in lc_files:
+        stem = Path(f).stem.upper()
+        if stem not in index:
+            index[stem] = f
+    return index
+
+
 def select_subsample(summary_df, lc_files, n_per_bin=15):
     """Select a stratified subsample across redshift bins.
     We want good coverage of the closure transition zone (z~0.5-1.0)."""
 
     z_bins = [0.01, 0.1, 0.2, 0.3, 0.5, 0.7, 0.9, 1.2, 2.5]
-    lc_names = {Path(f).stem.upper(): f for f in lc_files}
+
+    print("  Building LC index from file headers...")
+    lc_index = build_lc_index(lc_files)
+    print(f"  Indexed {len(lc_index)} light curves")
 
     selected = []
     for i in range(len(z_bins)-1):
         mask = (summary_df['zHD'] >= z_bins[i]) & (summary_df['zHD'] < z_bins[i+1])
         bin_df = summary_df[mask].copy()
 
-        # Match with available light curves
+        # Match with available light curves using multiple ID strategies
         matched = []
         for _, row in bin_df.iterrows():
-            snid = str(row.get('CID', row.get('SNID', ''))).strip().upper()
-            # Try various naming conventions
-            for name_try in [snid, f"SN{snid}", snid.replace(' ', '')]:
-                if name_try in lc_names:
-                    matched.append((row, lc_names[name_try]))
+            cid = str(row.get('CID', '')).strip().upper()
+            snid = str(row.get('SNID', '')).strip().upper() if 'SNID' in row.index else ''
+            # Try CID, SNID, stripped leading zeros, with/without SN prefix
+            tries = [cid, snid, cid.lstrip('0'), snid.lstrip('0'),
+                     f"SN{cid}", f"SN{snid}",
+                     # DES format: des_real_XXXXXXXX
+                     f"DES_REAL_{cid.zfill(8)}"]
+            for name_try in tries:
+                if name_try and name_try in lc_index:
+                    matched.append((row, lc_index[name_try]))
                     break
 
         if len(matched) > n_per_bin:
@@ -274,11 +303,11 @@ def fit_bayesn_sample(selected_sne):
 
             phot = lc_data['photometry']
 
-            # BayeSN filter mapping — depends on survey
-            # Common Pantheon+ filters: g, r, i, z (PS1), g, r, i, z (DES), B, V, R, I (CfA)
-            survey = summary_row.get('IDSURVEY', 0)
+            # BayeSN filter mapping — survey-dependent
+            survey_name = lc_data.get('SURVEY', '').strip().upper()
+            survey_id = summary_row.get('IDSURVEY', 0)
 
-            # Try to detect filters from the data
+            # Detect filter column
             if 'FLT' in phot.columns:
                 filt_col = 'FLT'
             elif 'BAND' in phot.columns:
@@ -287,27 +316,56 @@ def fit_bayesn_sample(selected_sne):
                 print(f"    No filter column found, skipping")
                 continue
 
-            unique_filts = phot[filt_col].unique()
+            unique_filts = [str(f).strip() for f in phot[filt_col].unique()]
+            filters_header = lc_data.get('FILTERS', '')
 
-            # Build filter map based on what's available
-            # BayeSN built-in filters include PS1, DES, CfA, SDSS, etc.
+            # Survey-specific filter maps
+            # Pantheon+ uses SNANA single-letter codes defined by FILTERS: header
+            # BayeSN built-in: g/r/i/z_PS1, g/r/i/z_DES, Bessell_B/V/R/I, etc.
             filt_map = {}
-            for f in unique_filts:
-                f_str = str(f).strip()
-                # PS1 filters
-                if f_str in ('g', 'r', 'i', 'z'):
-                    filt_map[f_str] = f'{f_str}_PS1'
-                elif f_str.startswith('g-') or f_str.startswith('r-') or f_str.startswith('i-') or f_str.startswith('z-'):
-                    filt_map[f_str] = f'{f_str[0]}_PS1'
-                # DES filters
-                elif f_str in ('g_DES', 'r_DES', 'i_DES', 'z_DES'):
-                    filt_map[f_str] = f_str
-                # Standard Bessell
-                elif f_str in ('B', 'V', 'R', 'I'):
-                    filt_map[f_str] = f'Bessell_{f_str}'
+
+            if survey_name in ('DES', 'DES-SN'):
+                # DES uses griz directly
+                for f in unique_filts:
+                    if f in ('g', 'r', 'i', 'z'):
+                        filt_map[f] = f'{f}_DES'
+            elif survey_name in ('PS1', 'PS1MD', 'PS1_LOW_Z', 'FOUNDATION'):
+                for f in unique_filts:
+                    if f in ('g', 'r', 'i', 'z'):
+                        filt_map[f] = f'{f}_PS1'
+            elif survey_name in ('SDSS', 'SDSS-II'):
+                for f in unique_filts:
+                    if f in ('g', 'r', 'i', 'z'):
+                        filt_map[f] = f'{f}_SDSS'
+            elif survey_name == 'SNLS':
+                for f in unique_filts:
+                    if f in ('g', 'r', 'i', 'z'):
+                        filt_map[f] = f'{f}_MegaCam'
+            elif survey_name in ('CSP', 'CSP1', 'CSP3'):
+                # CSP uses B, V, g, r, i in Swope filters
+                for f in unique_filts:
+                    if f in ('B', 'V'):
+                        filt_map[f] = f'Bessell_{f}'
+                    elif f in ('g', 'r', 'i'):
+                        filt_map[f] = f'{f}_PS1'  # approximate
+            elif survey_name == 'HST':
+                # HST uses specific filter codes; skip for now (complex)
+                pass
+            else:
+                # KAIT, CfA, etc. use single-letter SNANA codes
+                # FILTERS: ABCDEFGHIJKLMNOP — these are survey-specific
+                # Map common ones: try Bessell as fallback
+                # Check if filters_header can give us band info
+                # For KAIT/CfA with ABCD codes, we can't reliably map
+                # Try: if filters look like standard bands
+                for f in unique_filts:
+                    if f in ('B', 'V', 'R', 'I', 'U'):
+                        filt_map[f] = f'Bessell_{f}'
+                    elif f in ('g', 'r', 'i', 'z'):
+                        filt_map[f] = f'{f}_PS1'
 
             if len(filt_map) < 2:
-                print(f"    Only {len(filt_map)} recognized filters, skipping")
+                print(f"    Only {len(filt_map)} recognized filters ({survey_name}, bands={unique_filts[:5]}), skipping")
                 continue
 
             # Try fitting with fit_from_file first (handles SNANA format natively)
