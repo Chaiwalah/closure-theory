@@ -83,25 +83,54 @@ def download_planck_ymap():
     ymap_file = DATA_DIR / "ymap.fits"
     
     if not ymap_file.exists():
-        # Planck MILCA y-map (2015 release, full resolution)
-        url = "https://irsa.ipac.caltech.edu/data/Planck/release_2/all-sky-maps/maps/COM_CompMap_YSZ_R2.00/milca_ymaps.fits"
-        # Alternative: smaller HEALPix downgraded version
-        alt_url = "https://pla.esac.esa.int/pla/aio/product-action?COSMOLOGY.FILE_ID=COM_CompMap-YSZ_R2.00.fits"
+        # The y-map is inside a tarball. Download and extract.
+        tgz_file = DATA_DIR / "ymap.tgz"
         
-        print("[*] Downloading Planck y-map (~100MB)...")
-        print("    Trying IRSA mirror first...")
-        result = subprocess.run(["curl", "-fSL", "-o", str(ymap_file), url], 
-                              capture_output=True)
-        if result.returncode != 0:
-            print("    IRSA failed, trying ESA PLA...")
-            result = subprocess.run(["curl", "-fSL", "-o", str(ymap_file), alt_url],
-                                  capture_output=True)
-            if result.returncode != 0:
-                print("[!] Could not download y-map automatically.")
-                print("    Please download manually from:")
-                print("    https://pla.esac.esa.int/#maps -> Compton y-map (MILCA)")
-                print(f"    Save as: {ymap_file}")
-                return None
+        urls = [
+            "https://irsa.ipac.caltech.edu/data/Planck/release_3/all-sky-maps/maps/component-maps/foregrounds/COM_CompMap_Compton-SZMap_R2.02.tgz",
+            "https://irsa.ipac.caltech.edu/data/Planck/release_2/all-sky-maps/maps/COM_CompMap_YSZ_R2.00/milca_ymaps.fits",
+            "https://pla.esac.esa.int/pla/aio/product-action?COSMOLOGY.FILE_ID=COM_CompMap_Compton-SZMap_R2.02.fits",
+        ]
+        
+        print("[*] Downloading Planck y-map...")
+        downloaded = False
+        for i, url in enumerate(urls):
+            print(f"    Trying URL {i+1}/{len(urls)}...")
+            target = tgz_file if url.endswith('.tgz') else ymap_file
+            result = subprocess.run(
+                ["curl", "-fSL", "--max-time", "300", "-o", str(target), url],
+                capture_output=True
+            )
+            if result.returncode == 0 and target.exists() and target.stat().st_size > 1_000_000:
+                downloaded = True
+                # If tarball, extract milca_ymaps.fits
+                if url.endswith('.tgz'):
+                    print("    Extracting milca_ymaps.fits from tarball...")
+                    subprocess.run(
+                        ["tar", "xzf", str(tgz_file), "-C", str(DATA_DIR), "--wildcards", "*/milca_ymaps.fits", "--strip-components=1"],
+                        capture_output=True
+                    )
+                    # Also try flat extraction
+                    subprocess.run(
+                        ["tar", "xzf", str(tgz_file), "-C", str(DATA_DIR), "milca_ymaps.fits"],
+                        capture_output=True
+                    )
+                    # Find the extracted file
+                    for candidate in DATA_DIR.rglob("milca_ymaps.fits"):
+                        candidate.rename(ymap_file)
+                        break
+                    tgz_file.unlink(missing_ok=True)
+                break
+            else:
+                if target.exists():
+                    target.unlink()
+        
+        if not downloaded or not ymap_file.exists():
+            print("[!] Could not download y-map automatically.")
+            print("    Please download manually from:")
+            print("    https://pla.esac.esa.int -> Compton y-map (MILCA)")
+            print(f"    Save as: {ymap_file}")
+            return None
     
     return ymap_file
 
