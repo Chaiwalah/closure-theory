@@ -21,14 +21,19 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
       
-      - name: Run Closure Theory tests
+      - name: Run Closure Theory tests (Round 1)
         run: python closure_test.py
+      
+      - name: Run Closure Theory tests (Round 2)
+        run: python closure_test_round2.py
       
       - name: Upload results
         uses: actions/upload-artifact@v4
         with:
           name: closure-results
-          path: results/
+          path: |
+            results/
+            results_round2/
       
       - name: Commit results back to repo
         run: |
