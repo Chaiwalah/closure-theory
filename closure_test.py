@@ -55,15 +55,22 @@ def ensure_dir(p):
 
 def download_pantheon():
     """Download Pantheon+SH0ES data release."""
-    url = "https://raw.githubusercontent.com/PantheonPlusSH0ES/DataRelease/main/Pantheon%2BSH0ES_STAT%2BSYS.dat"
-    lcparams_url = "https://raw.githubusercontent.com/PantheonPlusSH0ES/DataRelease/main/Pantheon%2BSH0ES.dat"
+    lcparams_urls = [
+        "https://raw.githubusercontent.com/PantheonPlusSH0ES/DataRelease/main/Pantheon+_Data/4_DISTANCES_AND_COVAR/Pantheon+SH0ES.dat",
+        "https://raw.githubusercontent.com/PantheonPlusSH0ES/DataRelease/main/Pantheon%2BSH0ES.dat",
+    ]
     
     ensure_dir(DATA_DIR)
     
     dat_file = DATA_DIR / "Pantheon+SH0ES.dat"
     if not dat_file.exists():
         print("[*] Downloading Pantheon+SH0ES light curve parameters...")
-        subprocess.run(["curl", "-fSL", "-o", str(dat_file), lcparams_url], check=True)
+        for i, lcparams_url in enumerate(lcparams_urls):
+            result = subprocess.run(["curl", "-fSL", "-o", str(dat_file), lcparams_url], capture_output=True)
+            if result.returncode == 0:
+                break
+            if i == len(lcparams_urls) - 1:
+                result.check_returncode()
     
     return dat_file
 
