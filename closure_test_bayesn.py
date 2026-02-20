@@ -417,7 +417,7 @@ def fit_bayesn_sample(selected_sne):
                 'c_salt': summary_row.get('c', np.nan),
                 'x1_salt': summary_row.get('x1', np.nan),
                 'mu_salt': summary_row.get('MU_SH0ES', np.nan),
-                'IDSURVEY': survey,
+                'IDSURVEY': survey_name,
                 'n_obs': len(phot),
                 'n_filters': len(filt_map),
             })
