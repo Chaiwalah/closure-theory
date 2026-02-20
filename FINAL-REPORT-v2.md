@@ -163,6 +163,8 @@ All tests: deterministic Python, seed=42, run via GitHub Actions CI on private r
 
 **Remaining live wire**: SALT2/SALT3 model adequacy. Signal concentrates in bad fits. Needs BayeSN (non-SALT) replication to definitively kill.
 
+**BayeSN pathway identified**: Grayling et al. (2024, arXiv:2401.08755) published GPU-accelerated BayeSN — a hierarchical probabilistic SED model that fits dust (R_V) and intrinsic SN properties simultaneously, completely bypassing SALT2/SALT3 color parameterization. Their 475 SNe (z<0.4) found NO R_V evolution with redshift (η_R = −0.38 ± 0.70), consistent with closure (effect is not dust-mediated). Code: `github.com/bayesn/bayesn`. Running BayeSN on Pantheon+ light curves through the closure regime (z>0.82) would be the definitive kill shot on SALT model mis-specification.
+
 ---
 
 ## 6. What the Data Says (Plain Language)
@@ -186,10 +188,11 @@ All tests: deterministic Python, seed=42, run via GitHub Actions CI on private r
 8. **The model comparison favors closure.** AIC strongly endorses a step/sigmoid model (ΔAIC=-10.6). BIC is neutral (ΔBIC=0.1). Not yet "strong evidence" by BIC standards.
 
 ### What's needed:
-9. **Non-SALT standardization** (BayeSN) would kill the last conventional explanation.
-10. **CHIME Catalog 2** would test the FRB-μ_resid lead on independent data.
-11. **SDSS quasar line ratios** (750k objects) would test closure on a completely different observable.
-12. **Euclid/Rubin** high-z SNe would provide the statistical power DES-5YR lacks.
+9. **Non-SALT standardization** (BayeSN) would kill the last conventional explanation. Grayling et al. 2024 (arXiv:2401.08755) published a GPU-accelerated BayeSN implementation that fits SED-level dust and intrinsic properties — completely independent of SALT2/SALT3 color. Their z<0.4 sample found no R_V evolution with redshift, consistent with closure. Running this on Pantheon+ through z>0.82 is the priority.
+10. **Planck CMB lensing convergence** — cross-correlate lensing κ maps with SN sightlines to test whether integrated matter along the line of sight explains the signal. Data downloaded (PR3).
+11. **CHIME Catalog 2** would test the FRB-μ_resid lead on independent data.
+12. **SDSS quasar line ratios** (750k objects) would test closure on a completely different observable.
+13. **Euclid/Rubin** high-z SNe would provide the statistical power DES-5YR lacks.
 
 ---
 
