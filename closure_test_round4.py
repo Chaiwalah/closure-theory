@@ -51,47 +51,153 @@ def ensure_dir(p):
 # ============================================================
 
 def download_des5yr():
-    """Download DES-SN5YR Hubble Diagram + MetaData."""
+    """Download DES-SN5YR Hubble Diagram + MetaData.
+    
+    DES-SN5YR uses two files:
+    - DES-Dovekie_HD.csv: distances (zHD, MU, MUMODEL, MURES, etc.)
+    - DES-Dovekie_Metadata.csv: SN properties (x1, c, mB, HOST_LOGMASS, etc.)
+    These are merged on CID.
+    """
     ensure_dir(DATA_DIR)
-    des_file = DATA_DIR / "DES-SN5YR_HD+MetaData.csv"
-    if not des_file.exists():
-        url = "https://raw.githubusercontent.com/des-science/DES-SN5YR/main/4_DISTANCES_COVMAT/DES-SN5YR_HD+MetaData.csv"
-        print(f"[*] Downloading DES-SN5YR data...")
-        result = subprocess.run(["curl", "-fSL", "-o", str(des_file), url], capture_output=True)
-        if result.returncode != 0:
-            print(f"[!] Download failed: {result.stderr.decode()}")
-            return None
-    return des_file
+    merged_file = DATA_DIR / "DES-SN5YR_merged.csv"
+    
+    if not merged_file.exists():
+        hd_file = DATA_DIR / "DES-Dovekie_HD.csv"
+        meta_file = DATA_DIR / "DES-Dovekie_Metadata.csv"
+        
+        # Download HD file
+        if not hd_file.exists():
+            url_hd = "https://raw.githubusercontent.com/des-science/DES-SN5YR/main/4_DISTANCES_COVMAT/DES-Dovekie_HD.csv"
+            print(f"[*] Downloading DES-SN5YR HD file...")
+            result = subprocess.run(["curl", "-fSL", "-o", str(hd_file), url_hd], capture_output=True)
+            if result.returncode != 0:
+                print(f"[!] HD download failed: {result.stderr.decode()}")
+                return None
+        
+        # Download Metadata file
+        if not meta_file.exists():
+            url_meta = "https://raw.githubusercontent.com/des-science/DES-SN5YR/main/4_DISTANCES_COVMAT/DES-Dovekie_Metadata.csv"
+            print(f"[*] Downloading DES-SN5YR Metadata file...")
+            result = subprocess.run(["curl", "-fSL", "-o", str(meta_file), url_meta], capture_output=True)
+            if result.returncode != 0:
+                print(f"[!] Metadata download failed: {result.stderr.decode()}")
+                return None
+        
+        # Parse and merge
+        try:
+            # HD file has comment lines starting with #
+            df_hd = pd.read_csv(hd_file, comment='#', sep=r'\s+')
+            print(f"    HD file: {len(df_hd)} rows, columns: {list(df_hd.columns)[:10]}...")
+            
+            # Metadata file has VARNAMES header
+            df_meta = pd.read_csv(meta_file, comment='#', sep=r'\s+')
+            # Drop the VARNAMES row if present
+            if 'VARNAMES:' in str(df_meta.iloc[0].values):
+                # The first column might be 'VARNAMES:' or similar
+                cols = df_meta.columns.tolist()
+                if cols[0] == 'VARNAMES:':
+                    cols = cols[1:]  # shift
+                df_meta.columns = cols + ['_extra'] * (len(df_meta.columns) - len(cols))
+            
+            # Try to find CID column for merge
+            cid_col_hd = None
+            for c in ['CID', 'cid', 'SNID', 'SN']:
+                if c in df_hd.columns:
+                    cid_col_hd = c
+                    break
+            
+            cid_col_meta = None
+            for c in ['CID', 'cid', 'SNID', 'SN']:
+                if c in df_meta.columns:
+                    cid_col_meta = c
+                    break
+            
+            if cid_col_hd and cid_col_meta:
+                df = pd.merge(df_hd, df_meta, left_on=cid_col_hd, right_on=cid_col_meta, 
+                             how='inner', suffixes=('', '_meta'))
+            else:
+                # If same length, just concat
+                if len(df_hd) == len(df_meta):
+                    df = pd.concat([df_hd.reset_index(drop=True), df_meta.reset_index(drop=True)], axis=1)
+                else:
+                    df = df_meta  # Metadata has everything
+            
+            df.to_csv(merged_file, index=False)
+            print(f"    Merged: {len(df)} rows")
+        except Exception as e:
+            print(f"[!] Merge failed: {e}")
+            # Fall back to just metadata which has most columns
+            if meta_file.exists():
+                merged_file = meta_file
+            else:
+                return None
+    
+    return merged_file
 
 def load_des5yr():
-    """Load DES-5YR data and compute derived quantities."""
+    """Load DES-5YR data and compute derived quantities.
+    
+    DES-SN5YR Metadata file uses SNANA format with 'VARNAMES:' header
+    and 'SN:' data rows. Columns include: CID, IDSURVEY, zHD, x1, c, mB,
+    MU, MUMODEL, MURES, FITCHI2, NDOF, HOST_LOGMASS, etc.
+    """
     des_file = download_des5yr()
     if not des_file or not des_file.exists():
         return None
 
-    df = pd.read_csv(des_file)
+    # Try standard CSV first
+    try:
+        df = pd.read_csv(des_file)
+        if len(df) > 10 and 'zHD' in df.columns:
+            pass  # Good, standard CSV worked
+        else:
+            raise ValueError("Standard CSV parse didn't work")
+    except:
+        # SNANA format: parse VARNAMES header, then SN: rows
+        try:
+            with open(des_file) as f:
+                lines = f.readlines()
+            
+            # Find VARNAMES line
+            varnames = None
+            data_lines = []
+            for line in lines:
+                line = line.strip()
+                if line.startswith('VARNAMES:'):
+                    varnames = line.replace('VARNAMES:', '').split()
+                elif line.startswith('SN:'):
+                    data_lines.append(line.replace('SN:', '').split())
+            
+            if varnames and data_lines:
+                df = pd.DataFrame(data_lines, columns=varnames)
+                # Convert numeric columns
+                for col in df.columns:
+                    try:
+                        df[col] = pd.to_numeric(df[col])
+                    except:
+                        pass
+            else:
+                # Last resort: space-separated with comment lines
+                df = pd.read_csv(des_file, comment='#', sep=r'\s+')
+        except Exception as e:
+            print(f"[!] Failed to parse DES data: {e}")
+            return None
+
     print(f"[*] DES-5YR: Loaded {len(df)} SNe")
-    print(f"    Columns: {sorted(df.columns.tolist())}")
+    print(f"    Columns: {sorted(df.columns.tolist())[:20]}...")
+    
+    if 'zHD' not in df.columns:
+        print(f"[!] No zHD column found")
+        return None
+    
     print(f"    z range: {df['zHD'].min():.3f} - {df['zHD'].max():.3f}")
 
-    # Compute distance residual: MU - MU_COSMO (or equivalent)
-    if 'MU' in df.columns:
-        if 'MU_COSMO' in df.columns:
-            df['mu_resid'] = df['MU'] - df['MU_COSMO']
-        elif 'MUMODEL' in df.columns:
-            df['mu_resid'] = df['MU'] - df['MUMODEL']
-        else:
-            # Compute ΛCDM model
-            from scipy.integrate import quad
-            H0, Om = 67.36, 0.315  # DES best-fit values
-            def dL(z):
-                if z <= 0: return 1e-10
-                dc, _ = quad(lambda zp: 1.0/np.sqrt(Om*(1+zp)**3 + (1-Om)), 0, z)
-                return (1+z) * dc * (299792.458 / H0)
-            mu_model = np.array([5*np.log10(dL(z))+25 for z in df['zHD']])
-            df['mu_resid'] = df['MU'] - mu_model
-    elif 'mu' in df.columns:
-        # Try lowercase
+    # Distance residual
+    if 'MURES' in df.columns:
+        df['mu_resid'] = df['MURES']
+    elif 'MU' in df.columns and 'MUMODEL' in df.columns:
+        df['mu_resid'] = df['MU'] - df['MUMODEL']
+    elif 'MU' in df.columns:
         from scipy.integrate import quad
         H0, Om = 67.36, 0.315
         def dL(z):
@@ -99,19 +205,10 @@ def load_des5yr():
             dc, _ = quad(lambda zp: 1.0/np.sqrt(Om*(1+zp)**3 + (1-Om)), 0, z)
             return (1+z) * dc * (299792.458 / H0)
         mu_model = np.array([5*np.log10(dL(z))+25 for z in df['zHD']])
-        df['mu_resid'] = df['mu'] - mu_model
+        df['mu_resid'] = df['MU'] - mu_model
 
-    # SALT3 parameters (DES uses SALT3, not SALT2)
-    # Column names may vary — check common patterns
-    for c_col in ['c', 'x3', 'SALT3_c', 'SALT2_c']:
-        if c_col in df.columns:
-            df['c'] = df[c_col]
-            break
-
-    for x1_col in ['x1', 'SALT3_x1', 'SALT2_x1']:
-        if x1_col in df.columns:
-            df['x1'] = df[x1_col]
-            break
+    # SALT3 color and stretch (DES-SN5YR uses standard SALT column names)
+    # c and x1 should already be present
 
     # Color residual
     if 'c' in df.columns:
@@ -123,24 +220,10 @@ def load_des5yr():
                 df.loc[mask, 'c_resid'] = df.loc[mask, 'c'] - df.loc[mask, 'c'].median()
 
     # Fit quality
-    for chi_col in ['FITCHI2', 'chi2', 'SNRMAX', 'FITPROB']:
-        if chi_col in df.columns:
-            if chi_col == 'FITPROB':
-                df['chi2_dof'] = -np.log10(df[chi_col].clip(1e-10, 1))
-            elif chi_col == 'SNRMAX':
-                df['chi2_dof'] = df[chi_col]  # Use as quality proxy
-            else:
-                if 'NDOF' in df.columns:
-                    df['chi2_dof'] = df[chi_col] / df['NDOF'].replace(0, np.nan)
-                else:
-                    df['chi2_dof'] = df[chi_col]
-            break
-
-    # Survey source
-    if 'IDSURVEY' in df.columns:
-        df['is_des'] = True  # All DES
-    if 'FIELD' in df.columns:
-        df['field'] = df['FIELD']
+    if 'FITCHI2' in df.columns and 'NDOF' in df.columns:
+        df['chi2_dof'] = df['FITCHI2'] / df['NDOF'].replace(0, np.nan)
+    elif 'FITPROB' in df.columns:
+        df['chi2_dof'] = -np.log10(df['FITPROB'].clip(1e-10, 1))
 
     n_valid = {col: df[col].notna().sum() for col in ['mu_resid', 'c', 'x1', 'chi2_dof'] if col in df.columns}
     print(f"    Valid counts: {n_valid}")
@@ -710,12 +793,18 @@ def main():
     all_results['R1_des_replication'] = test_R1_des_replication(df_des)
 
     # FRB1: Load Pantheon+ (for SN positions) and CHIME FRB
-    # Re-download Pantheon+ for positions
-    from closure_test_round3 import load_data as load_pantheon
-    df_pantheon = load_pantheon()
-
-    df_frb = load_chime_frb()
-    all_results['FRB1_dm_crossmatch'] = test_FRB1_dm_crossmatch(df_pantheon, df_frb)
+    # CHIME FRB catalog requires browser-based download (SPA site)
+    # Skip in CI if data not pre-staged
+    frb_file = DATA_DIR / "chimefrb_catalog1.csv"
+    if frb_file.exists():
+        from closure_test_round3 import load_data as load_pantheon
+        df_pantheon = load_pantheon()
+        df_frb = load_chime_frb()
+        all_results['FRB1_dm_crossmatch'] = test_FRB1_dm_crossmatch(df_pantheon, df_frb)
+    else:
+        print("\n[!] CHIME FRB data not available (requires manual download from chime-frb.ca)")
+        print("    Skipping FRB1 test. Pre-stage data/chimefrb_catalog1.csv to enable.")
+        all_results['FRB1_dm_crossmatch'] = {'status': 'skipped', 'reason': 'FRB data not pre-staged'}
 
     # Save
     results_file = OUTPUT_DIR / 'round4_results.json'
