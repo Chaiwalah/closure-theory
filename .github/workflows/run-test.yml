@@ -27,6 +27,9 @@ jobs:
       - name: Run Closure Theory tests (Round 2)
         run: python closure_test_round2.py
       
+      - name: Run Closure Theory tests (Round 3)
+        run: python closure_test_round3.py
+      
       - name: Upload results
         uses: actions/upload-artifact@v4
         with:
@@ -34,6 +37,7 @@ jobs:
           path: |
             results/
             results_round2/
+            results_round3/
       
       - name: Commit results back to repo
         run: |
