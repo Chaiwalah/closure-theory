@@ -251,13 +251,13 @@ def select_subsample(summary_df, lc_files, n_per_bin=15):
         matched = []
         for _, row in bin_df.iterrows():
             cid = str(row.get('CID', '')).strip().upper()
-            snid = str(row.get('SNID', '')).strip().upper() if 'SNID' in row.index else ''
-            # Try CID, SNID, stripped leading zeros, with/without SN prefix
-            tries = [cid, snid, cid.lstrip('0'), snid.lstrip('0'),
-                     f"SN{cid}", f"SN{snid}",
-                     # DES format: des_real_XXXXXXXX
-                     f"DES_REAL_{cid.zfill(8)}"]
-            for name_try in tries:
+            # Direct match is most reliable (works for DES, CfA, KAIT, etc.)
+            if cid in lc_index:
+                matched.append((row, lc_index[cid]))
+                continue
+            # Try without leading zeros, with SN prefix, DES format
+            for name_try in [cid.lstrip('0'), f"SN{cid}",
+                             f"DES_REAL_{cid.zfill(8)}"]:
                 if name_try and name_try in lc_index:
                     matched.append((row, lc_index[name_try]))
                     break
