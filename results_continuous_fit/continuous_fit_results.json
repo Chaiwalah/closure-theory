@@ -1,0 +1,270 @@
+{
+  "test": "Continuous overdensity model \u03c1(z,\u03b4)",
+  "model": "\u03c1 = \u03c1\u2080(z) + A(z)\u00b7log(\u03b4)",
+  "cells": [
+    {
+      "z_mid": 1.4,
+      "log_density": -5.829,
+      "quintile": 1,
+      "spearman": 0.7503,
+      "n": 4375
+    },
+    {
+      "z_mid": 1.4,
+      "log_density": -5.593,
+      "quintile": 2,
+      "spearman": 0.7262,
+      "n": 4374
+    },
+    {
+      "z_mid": 1.4,
+      "log_density": -5.452,
+      "quintile": 3,
+      "spearman": 0.7234,
+      "n": 4374
+    },
+    {
+      "z_mid": 1.4,
+      "log_density": -5.324,
+      "quintile": 4,
+      "spearman": 0.7354,
+      "n": 4374
+    },
+    {
+      "z_mid": 1.4,
+      "log_density": -5.135,
+      "quintile": 5,
+      "spearman": 0.7408,
+      "n": 4375
+    },
+    {
+      "z_mid": 1.6,
+      "log_density": -5.702,
+      "quintile": 1,
+      "spearman": 0.7005,
+      "n": 6163
+    },
+    {
+      "z_mid": 1.6,
+      "log_density": -5.501,
+      "quintile": 2,
+      "spearman": 0.705,
+      "n": 6163
+    },
+    {
+      "z_mid": 1.6,
+      "log_density": -5.374,
+      "quintile": 3,
+      "spearman": 0.6928,
+      "n": 6163
+    },
+    {
+      "z_mid": 1.6,
+      "log_density": -5.256,
+      "quintile": 4,
+      "spearman": 0.7165,
+      "n": 6163
+    },
+    {
+      "z_mid": 1.6,
+      "log_density": -5.071,
+      "quintile": 5,
+      "spearman": 0.7241,
+      "n": 6163
+    },
+    {
+      "z_mid": 1.7999999999999998,
+      "log_density": -5.718,
+      "quintile": 1,
+      "spearman": 0.6808,
+      "n": 6050
+    },
+    {
+      "z_mid": 1.7999999999999998,
+      "log_density": -5.517,
+      "quintile": 2,
+      "spearman": 0.6662,
+      "n": 6049
+    },
+    {
+      "z_mid": 1.7999999999999998,
+      "log_density": -5.395,
+      "quintile": 3,
+      "spearman": 0.6772,
+      "n": 6050
+    },
+    {
+      "z_mid": 1.7999999999999998,
+      "log_density": -5.275,
+      "quintile": 4,
+      "spearman": 0.6883,
+      "n": 6049
+    },
+    {
+      "z_mid": 1.7999999999999998,
+      "log_density": -5.098,
+      "quintile": 5,
+      "spearman": 0.6805,
+      "n": 6050
+    },
+    {
+      "z_mid": 2.0,
+      "log_density": -5.77,
+      "quintile": 1,
+      "spearman": 0.6891,
+      "n": 5593
+    },
+    {
+      "z_mid": 2.0,
+      "log_density": -5.567,
+      "quintile": 2,
+      "spearman": 0.6816,
+      "n": 5592
+    },
+    {
+      "z_mid": 2.0,
+      "log_density": -5.439,
+      "quintile": 3,
+      "spearman": 0.6719,
+      "n": 5593
+    },
+    {
+      "z_mid": 2.0,
+      "log_density": -5.317,
+      "quintile": 4,
+      "spearman": 0.682,
+      "n": 5592
+    },
+    {
+      "z_mid": 2.0,
+      "log_density": -5.134,
+      "quintile": 5,
+      "spearman": 0.6911,
+      "n": 5593
+    },
+    {
+      "z_mid": 2.2,
+      "log_density": -5.875,
+      "quintile": 1,
+      "spearman": 0.6545,
+      "n": 4703
+    },
+    {
+      "z_mid": 2.2,
+      "log_density": -5.651,
+      "quintile": 2,
+      "spearman": 0.6682,
+      "n": 4702
+    },
+    {
+      "z_mid": 2.2,
+      "log_density": -5.515,
+      "quintile": 3,
+      "spearman": 0.6646,
+      "n": 4702
+    },
+    {
+      "z_mid": 2.2,
+      "log_density": -5.385,
+      "quintile": 4,
+      "spearman": 0.6774,
+      "n": 4702
+    },
+    {
+      "z_mid": 2.2,
+      "log_density": -5.197,
+      "quintile": 5,
+      "spearman": 0.6851,
+      "n": 4703
+    },
+    {
+      "z_mid": 2.45,
+      "log_density": -6.148,
+      "quintile": 1,
+      "spearman": 0.5528,
+      "n": 3118
+    },
+    {
+      "z_mid": 2.45,
+      "log_density": -5.887,
+      "quintile": 2,
+      "spearman": 0.5712,
+      "n": 3118
+    },
+    {
+      "z_mid": 2.45,
+      "log_density": -5.721,
+      "quintile": 3,
+      "spearman": 0.5738,
+      "n": 3118
+    },
+    {
+      "z_mid": 2.45,
+      "log_density": -5.571,
+      "quintile": 4,
+      "spearman": 0.611,
+      "n": 3118
+    },
+    {
+      "z_mid": 2.45,
+      "log_density": -5.367,
+      "quintile": 5,
+      "spearman": 0.6025,
+      "n": 3118
+    }
+  ],
+  "fits": [
+    {
+      "z_mid": 1.4,
+      "A_z": -0.00944,
+      "rho_0": 0.6836,
+      "trend_r": -0.1,
+      "trend_p": 0.8729,
+      "n_cells": 5
+    },
+    {
+      "z_mid": 1.6,
+      "A_z": 0.03802,
+      "rho_0": 0.9124,
+      "trend_r": 0.7,
+      "trend_p": 0.1881,
+      "n_cells": 5
+    },
+    {
+      "z_mid": 1.7999999999999998,
+      "A_z": 0.01142,
+      "rho_0": 0.7403,
+      "trend_r": 0.2,
+      "trend_p": 0.7471,
+      "n_cells": 5
+    },
+    {
+      "z_mid": 2.0,
+      "A_z": 0.0022,
+      "rho_0": 0.6951,
+      "trend_r": 0.3,
+      "trend_p": 0.6238,
+      "n_cells": 5
+    },
+    {
+      "z_mid": 2.2,
+      "A_z": 0.04361,
+      "rho_0": 0.9109,
+      "trend_r": 0.9,
+      "trend_p": 0.0374,
+      "n_cells": 5
+    },
+    {
+      "z_mid": 2.45,
+      "A_z": 0.0727,
+      "rho_0": 0.9995,
+      "trend_r": 0.9,
+      "trend_p": 0.0374,
+      "n_cells": 5
+    }
+  ],
+  "A_z_trend": {
+    "r": 0.771,
+    "p": 0.0724
+  }
+}
