@@ -1,0 +1,73 @@
+{
+  "test": "Sightline: Void-Crossing vs Filament-Crossing",
+  "method": "Foreground galaxy count within 0.25 deg cone as structure proxy",
+  "background": "DESI agnqso z=1.5-2.5 with CIV+MgII",
+  "foreground": "DESI zpix galaxies z=0.1-1.0",
+  "results": [
+    {
+      "z_range": "1.5-1.7",
+      "n_total": 23967,
+      "n_matched": 11133,
+      "raw_filament": 0.7139,
+      "raw_void": 0.7037,
+      "raw_delta": 0.0102,
+      "matched_filament": 0.7186,
+      "matched_void": 0.7031,
+      "matched_delta": 0.0155,
+      "median_fg_filament": 13,
+      "median_fg_void": 4
+    },
+    {
+      "z_range": "1.7-1.9",
+      "n_total": 23648,
+      "n_matched": 10758,
+      "raw_filament": 0.6787,
+      "raw_void": 0.6729,
+      "raw_delta": 0.0058,
+      "matched_filament": 0.6853,
+      "matched_void": 0.6801,
+      "matched_delta": 0.0052,
+      "median_fg_filament": 13,
+      "median_fg_void": 4
+    },
+    {
+      "z_range": "1.9-2.1",
+      "n_total": 21880,
+      "n_matched": 9831,
+      "raw_filament": 0.6855,
+      "raw_void": 0.6756,
+      "raw_delta": 0.0098,
+      "matched_filament": 0.6861,
+      "matched_void": 0.6806,
+      "matched_delta": 0.0055,
+      "median_fg_filament": 13,
+      "median_fg_void": 4
+    },
+    {
+      "z_range": "2.1-2.3",
+      "n_total": 18285,
+      "n_matched": 6264,
+      "raw_filament": 0.6835,
+      "raw_void": 0.6588,
+      "raw_delta": 0.0247,
+      "matched_filament": 0.6836,
+      "matched_void": 0.6698,
+      "matched_delta": 0.0138,
+      "median_fg_filament": 12,
+      "median_fg_void": 4
+    },
+    {
+      "z_range": "2.3-2.5",
+      "n_total": 12220,
+      "n_matched": 4047,
+      "raw_filament": 0.5954,
+      "raw_void": 0.5704,
+      "raw_delta": 0.025,
+      "matched_filament": 0.6137,
+      "matched_void": 0.6097,
+      "matched_delta": 0.0041,
+      "median_fg_filament": 14,
+      "median_fg_void": 5
+    }
+  ]
+}
