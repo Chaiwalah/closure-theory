@@ -1,0 +1,423 @@
+{
+  "test": "Hardened Void V2 \u2014 Gradient + Wind + Kinematic",
+  "gradient": [
+    {
+      "z_range": "1.3-1.5",
+      "n_total": 29258,
+      "quintiles": [
+        {
+          "quintile": 1,
+          "label": "Q1(sparsest)",
+          "n": 5852,
+          "spearman": 0.7455,
+          "ci_lo": 0.7316,
+          "ci_hi": 0.7592
+        },
+        {
+          "quintile": 2,
+          "label": "Q2",
+          "n": 5851,
+          "spearman": 0.739,
+          "ci_lo": 0.725,
+          "ci_hi": 0.7528
+        },
+        {
+          "quintile": 3,
+          "label": "Q3",
+          "n": 5852,
+          "spearman": 0.7314,
+          "ci_lo": 0.718,
+          "ci_hi": 0.7456
+        },
+        {
+          "quintile": 4,
+          "label": "Q4",
+          "n": 5851,
+          "spearman": 0.7295,
+          "ci_lo": 0.7154,
+          "ci_hi": 0.7419
+        },
+        {
+          "quintile": 5,
+          "label": "Q5(densest)",
+          "n": 5852,
+          "spearman": 0.7439,
+          "ci_lo": 0.7296,
+          "ci_hi": 0.7568
+        }
+      ],
+      "gradient_r": -0.4,
+      "gradient_p": 0.5046
+    },
+    {
+      "z_range": "1.5-1.7",
+      "n_total": 41090,
+      "quintiles": [
+        {
+          "quintile": 1,
+          "label": "Q1(sparsest)",
+          "n": 8218,
+          "spearman": 0.6982,
+          "ci_lo": 0.6847,
+          "ci_hi": 0.7111
+        },
+        {
+          "quintile": 2,
+          "label": "Q2",
+          "n": 8218,
+          "spearman": 0.6993,
+          "ci_lo": 0.6866,
+          "ci_hi": 0.7124
+        },
+        {
+          "quintile": 3,
+          "label": "Q3",
+          "n": 8218,
+          "spearman": 0.6928,
+          "ci_lo": 0.6782,
+          "ci_hi": 0.7052
+        },
+        {
+          "quintile": 4,
+          "label": "Q4",
+          "n": 8218,
+          "spearman": 0.7142,
+          "ci_lo": 0.7012,
+          "ci_hi": 0.7263
+        },
+        {
+          "quintile": 5,
+          "label": "Q5(densest)",
+          "n": 8218,
+          "spearman": 0.7317,
+          "ci_lo": 0.7206,
+          "ci_hi": 0.7421
+        }
+      ],
+      "gradient_r": 0.7,
+      "gradient_p": 0.1881
+    },
+    {
+      "z_range": "1.7-1.9",
+      "n_total": 40235,
+      "quintiles": [
+        {
+          "quintile": 1,
+          "label": "Q1(sparsest)",
+          "n": 8047,
+          "spearman": 0.6769,
+          "ci_lo": 0.6634,
+          "ci_hi": 0.6897
+        },
+        {
+          "quintile": 2,
+          "label": "Q2",
+          "n": 8047,
+          "spearman": 0.6734,
+          "ci_lo": 0.6591,
+          "ci_hi": 0.6872
+        },
+        {
+          "quintile": 3,
+          "label": "Q3",
+          "n": 8047,
+          "spearman": 0.6691,
+          "ci_lo": 0.6555,
+          "ci_hi": 0.6832
+        },
+        {
+          "quintile": 4,
+          "label": "Q4",
+          "n": 8047,
+          "spearman": 0.6907,
+          "ci_lo": 0.6765,
+          "ci_hi": 0.704
+        },
+        {
+          "quintile": 5,
+          "label": "Q5(densest)",
+          "n": 8047,
+          "spearman": 0.6915,
+          "ci_lo": 0.6774,
+          "ci_hi": 0.7046
+        }
+      ],
+      "gradient_r": 0.6,
+      "gradient_p": 0.2848
+    },
+    {
+      "z_range": "1.9-2.1",
+      "n_total": 37244,
+      "quintiles": [
+        {
+          "quintile": 1,
+          "label": "Q1(sparsest)",
+          "n": 7449,
+          "spearman": 0.6934,
+          "ci_lo": 0.68,
+          "ci_hi": 0.7053
+        },
+        {
+          "quintile": 2,
+          "label": "Q2",
+          "n": 7449,
+          "spearman": 0.6801,
+          "ci_lo": 0.6647,
+          "ci_hi": 0.6938
+        },
+        {
+          "quintile": 3,
+          "label": "Q3",
+          "n": 7448,
+          "spearman": 0.6798,
+          "ci_lo": 0.6664,
+          "ci_hi": 0.6916
+        },
+        {
+          "quintile": 4,
+          "label": "Q4",
+          "n": 7449,
+          "spearman": 0.6728,
+          "ci_lo": 0.6582,
+          "ci_hi": 0.6875
+        },
+        {
+          "quintile": 5,
+          "label": "Q5(densest)",
+          "n": 7449,
+          "spearman": 0.6929,
+          "ci_lo": 0.6768,
+          "ci_hi": 0.7069
+        }
+      ],
+      "gradient_r": -0.4,
+      "gradient_p": 0.5046
+    },
+    {
+      "z_range": "2.1-2.3",
+      "n_total": 31452,
+      "quintiles": [
+        {
+          "quintile": 1,
+          "label": "Q1(sparsest)",
+          "n": 6291,
+          "spearman": 0.6518,
+          "ci_lo": 0.6357,
+          "ci_hi": 0.6673
+        },
+        {
+          "quintile": 2,
+          "label": "Q2",
+          "n": 6290,
+          "spearman": 0.6669,
+          "ci_lo": 0.6514,
+          "ci_hi": 0.6817
+        },
+        {
+          "quintile": 3,
+          "label": "Q3",
+          "n": 6290,
+          "spearman": 0.6725,
+          "ci_lo": 0.6565,
+          "ci_hi": 0.6902
+        },
+        {
+          "quintile": 4,
+          "label": "Q4",
+          "n": 6290,
+          "spearman": 0.6792,
+          "ci_lo": 0.6625,
+          "ci_hi": 0.6927
+        },
+        {
+          "quintile": 5,
+          "label": "Q5(densest)",
+          "n": 6291,
+          "spearman": 0.6918,
+          "ci_lo": 0.6774,
+          "ci_hi": 0.7059
+        }
+      ],
+      "gradient_r": 1.0,
+      "gradient_p": 0.0
+    },
+    {
+      "z_range": "2.3-2.6",
+      "n_total": 20721,
+      "quintiles": [
+        {
+          "quintile": 1,
+          "label": "Q1(sparsest)",
+          "n": 4144,
+          "spearman": 0.5426,
+          "ci_lo": 0.5209,
+          "ci_hi": 0.5649
+        },
+        {
+          "quintile": 2,
+          "label": "Q2",
+          "n": 4144,
+          "spearman": 0.5637,
+          "ci_lo": 0.542,
+          "ci_hi": 0.5855
+        },
+        {
+          "quintile": 3,
+          "label": "Q3",
+          "n": 4144,
+          "spearman": 0.6105,
+          "ci_lo": 0.5909,
+          "ci_hi": 0.6286
+        },
+        {
+          "quintile": 4,
+          "label": "Q4",
+          "n": 4144,
+          "spearman": 0.5906,
+          "ci_lo": 0.5681,
+          "ci_hi": 0.6117
+        },
+        {
+          "quintile": 5,
+          "label": "Q5(densest)",
+          "n": 4145,
+          "spearman": 0.6107,
+          "ci_lo": 0.5896,
+          "ci_hi": 0.6328
+        }
+      ],
+      "gradient_r": 0.9,
+      "gradient_p": 0.0374
+    }
+  ],
+  "wind_control": [
+    {
+      "z_range": "1.3-1.5",
+      "n_matched": 12929,
+      "dense_spearman": 0.7559,
+      "sparse_spearman": 0.7528,
+      "delta": 0.0031,
+      "ci_lo": -0.0243,
+      "ci_hi": 0.0291,
+      "matching": "SNR + Lum + CIV_sigma (5x5x5 grid)"
+    },
+    {
+      "z_range": "1.5-1.7",
+      "n_matched": 19361,
+      "dense_spearman": 0.7232,
+      "sparse_spearman": 0.7037,
+      "delta": 0.0195,
+      "ci_lo": -0.0059,
+      "ci_hi": 0.0497,
+      "matching": "SNR + Lum + CIV_sigma (5x5x5 grid)"
+    },
+    {
+      "z_range": "1.7-1.9",
+      "n_matched": 18601,
+      "dense_spearman": 0.6908,
+      "sparse_spearman": 0.6838,
+      "delta": 0.007,
+      "ci_lo": -0.0154,
+      "ci_hi": 0.0477,
+      "matching": "SNR + Lum + CIV_sigma (5x5x5 grid)"
+    },
+    {
+      "z_range": "1.9-2.1",
+      "n_matched": 17235,
+      "dense_spearman": 0.6916,
+      "sparse_spearman": 0.692,
+      "delta": -0.0004,
+      "ci_lo": -0.0132,
+      "ci_hi": 0.0554,
+      "matching": "SNR + Lum + CIV_sigma (5x5x5 grid)"
+    },
+    {
+      "z_range": "2.1-2.3",
+      "n_matched": 11775,
+      "dense_spearman": 0.7043,
+      "sparse_spearman": 0.6964,
+      "delta": 0.0079,
+      "ci_lo": -0.0139,
+      "ci_hi": 0.0461,
+      "matching": "SNR + Lum + CIV_sigma (5x5x5 grid)"
+    },
+    {
+      "z_range": "2.3-2.6",
+      "n_matched": 7804,
+      "dense_spearman": 0.6267,
+      "sparse_spearman": 0.6119,
+      "delta": 0.0148,
+      "ci_lo": -0.0285,
+      "ci_hi": 0.0403,
+      "matching": "SNR + Lum + CIV_sigma (5x5x5 grid)"
+    }
+  ],
+  "kinematic_independence": [
+    {
+      "z_range": "1.3-1.5",
+      "n": 29258,
+      "spectral_dense": 0.7344,
+      "spectral_sparse": 0.7418,
+      "spectral_delta": -0.0074,
+      "kinematic_dense": 0.5083,
+      "kinematic_sparse": 0.5174,
+      "kinematic_delta": -0.0091,
+      "channel_divergence": 0.0017
+    },
+    {
+      "z_range": "1.5-1.7",
+      "n": 41090,
+      "spectral_dense": 0.7163,
+      "spectral_sparse": 0.6984,
+      "spectral_delta": 0.0179,
+      "kinematic_dense": 0.495,
+      "kinematic_sparse": 0.477,
+      "kinematic_delta": 0.018,
+      "channel_divergence": -0.0001
+    },
+    {
+      "z_range": "1.7-1.9",
+      "n": 40235,
+      "spectral_dense": 0.6867,
+      "spectral_sparse": 0.6742,
+      "spectral_delta": 0.0126,
+      "kinematic_dense": 0.4801,
+      "kinematic_sparse": 0.4683,
+      "kinematic_delta": 0.0118,
+      "channel_divergence": 0.0008
+    },
+    {
+      "z_range": "1.9-2.1",
+      "n": 37244,
+      "spectral_dense": 0.6829,
+      "spectral_sparse": 0.6849,
+      "spectral_delta": -0.002,
+      "kinematic_dense": 0.4982,
+      "kinematic_sparse": 0.4886,
+      "kinematic_delta": 0.0096,
+      "channel_divergence": -0.0116
+    },
+    {
+      "z_range": "2.1-2.3",
+      "n": 31452,
+      "spectral_dense": 0.6839,
+      "spectral_sparse": 0.6618,
+      "spectral_delta": 0.0221,
+      "kinematic_dense": 0.5492,
+      "kinematic_sparse": 0.5222,
+      "kinematic_delta": 0.0269,
+      "channel_divergence": -0.0048
+    },
+    {
+      "z_range": "2.3-2.6",
+      "n": 20721,
+      "spectral_dense": 0.6048,
+      "spectral_sparse": 0.5642,
+      "spectral_delta": 0.0406,
+      "kinematic_dense": 0.524,
+      "kinematic_sparse": 0.4927,
+      "kinematic_delta": 0.0313,
+      "channel_divergence": 0.0092
+    }
+  ]
+}
