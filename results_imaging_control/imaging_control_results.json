@@ -1,0 +1,55 @@
+{
+  "test": "Imaging Depth / E(B-V) Control",
+  "density_correlations": {
+    "density_vs_abs_b": {
+      "r": 0.0874,
+      "p": 2.65e-252
+    },
+    "density_vs_snr": {
+      "r": -0.007,
+      "p": 0.00657
+    },
+    "density_vs_ra": {
+      "r": -0.0103,
+      "p": 6.73e-05
+    }
+  },
+  "matched_results": [
+    {
+      "z_range": "1.3-1.6",
+      "n_matched": 15291,
+      "dense_rho": 0.7514,
+      "sparse_rho": 0.7307,
+      "delta": 0.0207,
+      "b_gap": 0.14,
+      "snr_gap": 0.01
+    },
+    {
+      "z_range": "1.6-1.9",
+      "n_matched": 19883,
+      "dense_rho": 0.6857,
+      "sparse_rho": 0.6748,
+      "delta": 0.0109,
+      "b_gap": 0.02,
+      "snr_gap": 0.01
+    },
+    {
+      "z_range": "1.9-2.2",
+      "n_matched": 17190,
+      "dense_rho": 0.6914,
+      "sparse_rho": 0.6834,
+      "delta": 0.0081,
+      "b_gap": 0.03,
+      "snr_gap": 0.12
+    },
+    {
+      "z_range": "2.2-2.6",
+      "n_matched": 10052,
+      "dense_rho": 0.6506,
+      "sparse_rho": 0.6215,
+      "delta": 0.0292,
+      "b_gap": 0.21,
+      "snr_gap": 0.41
+    }
+  ]
+}
