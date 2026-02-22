@@ -1,0 +1,183 @@
+{
+  "beta_z": {
+    "description": "SN Ia color standardization coefficient vs redshift",
+    "source": "closure_hubble_v2.py on Pantheon+ sample",
+    "bins": [
+      {
+        "z_mid": 0.025,
+        "beta": 2.42,
+        "beta_err": 0.15
+      },
+      {
+        "z_mid": 0.075,
+        "beta": 2.38,
+        "beta_err": 0.12
+      },
+      {
+        "z_mid": 0.15,
+        "beta": 2.35,
+        "beta_err": 0.1
+      },
+      {
+        "z_mid": 0.3,
+        "beta": 2.28,
+        "beta_err": 0.11
+      },
+      {
+        "z_mid": 0.5,
+        "beta": 2.1,
+        "beta_err": 0.14
+      },
+      {
+        "z_mid": 0.7,
+        "beta": 1.92,
+        "beta_err": 0.16
+      },
+      {
+        "z_mid": 0.9,
+        "beta": 1.85,
+        "beta_err": 0.2
+      }
+    ],
+    "breakpoint_z": 0.6,
+    "delta_chi2": -51.76,
+    "note": "\u0394\u03c7\u00b2=-51.76 for 2 extra params vs constant \u03b2"
+  },
+  "bao_residuals": {
+    "description": "DESI DR1 BAO distance residuals vs Planck \u039bCDM",
+    "source": "DESI 2024 VI (arXiv:2404.03002)",
+    "bins": [
+      {
+        "z_eff": 0.3,
+        "tracer": "BGS",
+        "DV_resid": -0.14,
+        "DV_err": 0.15,
+        "DM_resid": null,
+        "DH_resid": null,
+        "type": "1D"
+      },
+      {
+        "z_eff": 0.51,
+        "tracer": "LRG1",
+        "DM_resid": 0.13,
+        "DM_err": 0.25,
+        "DH_resid": -1.78,
+        "DH_err": 0.61,
+        "type": "2D",
+        "note": "LARGEST anomaly: D_H ~2.9\u03c3 below \u039bCDM"
+      },
+      {
+        "z_eff": 0.71,
+        "tracer": "LRG2",
+        "DM_resid": -0.84,
+        "DM_err": 0.32,
+        "DH_resid": -0.09,
+        "DH_err": 0.6,
+        "type": "2D",
+        "note": "D_M ~2.6\u03c3 below \u039bCDM"
+      },
+      {
+        "z_eff": 0.93,
+        "tracer": "LRG3+ELG1",
+        "DM_resid": -0.21,
+        "DM_err": 0.28,
+        "DH_resid": 0.26,
+        "DH_err": 0.35,
+        "type": "2D",
+        "note": "Consistent with \u039bCDM"
+      },
+      {
+        "z_eff": 1.32,
+        "tracer": "ELG2",
+        "DM_resid": -0.22,
+        "DM_err": 0.69,
+        "DH_resid": -0.29,
+        "DH_err": 0.42,
+        "type": "2D",
+        "note": "Consistent with \u039bCDM"
+      },
+      {
+        "z_eff": 1.49,
+        "tracer": "QSO",
+        "DV_resid": 0.04,
+        "DV_err": 0.67,
+        "DM_resid": null,
+        "DH_resid": null,
+        "type": "1D",
+        "note": "Consistent with \u039bCDM"
+      },
+      {
+        "z_eff": 2.33,
+        "tracer": "Ly-\u03b1",
+        "DM_resid": 0,
+        "DH_resid": 0,
+        "type": "approx",
+        "note": "\u03b1_\u2225=0.993, consistent with \u039bCDM"
+      }
+    ]
+  },
+  "env_effect": {
+    "description": "CIV/MgII Spearman \u0394\u03c1 (dense-sparse) after full photometry matching",
+    "source": "closure_photometry_control.py",
+    "bins": [
+      {
+        "z_mid": 1.45,
+        "delta_rho": 0.0123
+      },
+      {
+        "z_mid": 1.75,
+        "delta_rho": 0.016
+      },
+      {
+        "z_mid": 2.05,
+        "delta_rho": 0.0073
+      },
+      {
+        "z_mid": 2.4,
+        "delta_rho": 0.0258
+      }
+    ]
+  },
+  "breakpoints": {
+    "description": "Measured closure breakpoints from different probes",
+    "points": [
+      {
+        "probe": "[SII] doublet",
+        "z0": 0.35,
+        "source": "DESI emfit"
+      },
+      {
+        "probe": "\u03b2(z) SN color",
+        "z0": 0.6,
+        "source": "Pantheon+"
+      },
+      {
+        "probe": "MgII doublet",
+        "z0": 0.82,
+        "source": "SDSS DR16Q"
+      },
+      {
+        "probe": "H\u03b2-MgII cross",
+        "z0": 1.05,
+        "source": "SDSS DR16Q"
+      },
+      {
+        "probe": "CIII-CIV cross",
+        "z0": 1.21,
+        "source": "SDSS DR16Q"
+      }
+    ]
+  },
+  "overlap_window": {
+    "z_min": 0.35,
+    "z_max": 0.8
+  },
+  "claim_level": {
+    "environment_effect": "ROBUST",
+    "bao_coincidence": "SUGGESTIVE",
+    "coupling_ordering": "CONFIRMED_3_PAIRS",
+    "paper1_readiness": "80%",
+    "paper2_readiness": "60%",
+    "paper3_readiness": "20%"
+  }
+}
