@@ -1,193 +1,6 @@
 {
   "calibration_drift": [
     {
-      "pair": "OIII5007_EW vs HBETA_EW",
-      "n_low": 35019,
-      "n_high": 35039,
-      "r_low": -0.0,
-      "r_high": -0.0004,
-      "slope_change_pct": 99.1,
-      "residual_shift": -164.4471,
-      "ks_p": 0.0,
-      "verdict": "DRIFT"
-    },
-    {
-      "pair": "OIII5007_EW vs HBETA_BR_EW",
-      "n_low": 33883,
-      "n_high": 33934,
-      "r_low": 0.0016,
-      "r_high": -0.0002,
-      "slope_change_pct": -417.9,
-      "residual_shift": -153.2727,
-      "ks_p": 0.0,
-      "verdict": "DRIFT"
-    },
-    {
-      "pair": "OIII5007_EW vs HALPHA_EW",
-      "n_low": 6072,
-      "n_high": 6072,
-      "r_low": -0.0002,
-      "r_high": -0.0053,
-      "slope_change_pct": -17354899.5,
-      "residual_shift": -1645.5066,
-      "ks_p": 0.0,
-      "verdict": "DRIFT"
-    },
-    {
-      "pair": "OIII5007_EW vs HALPHA_BR_EW",
-      "n_low": 5993,
-      "n_high": 5993,
-      "r_low": 0.0322,
-      "r_high": 0.0285,
-      "slope_change_pct": 286653368.2,
-      "residual_shift": -1482.1535,
-      "ks_p": 0.0,
-      "verdict": "DRIFT"
-    },
-    {
-      "pair": "OIII5007_EW vs OII3728_EW",
-      "n_low": 34411,
-      "n_high": 34434,
-      "r_low": 0.0087,
-      "r_high": -0.0151,
-      "slope_change_pct": -100.1,
-      "residual_shift": -12.077,
-      "ks_p": 0.0,
-      "verdict": "DRIFT"
-    },
-    {
-      "pair": "OIII5007_EW vs MGII_EW",
-      "n_low": 34178,
-      "n_high": 34153,
-      "r_low": -0.0,
-      "r_high": -0.0097,
-      "slope_change_pct": 100.0,
-      "residual_shift": -82.0077,
-      "ks_p": 0.0,
-      "verdict": "DRIFT"
-    },
-    {
-      "pair": "HBETA_EW vs HBETA_BR_EW",
-      "n_low": 39780,
-      "n_high": 39829,
-      "r_low": 0.703,
-      "r_high": 0.985,
-      "slope_change_pct": 96.4,
-      "residual_shift": -62.3382,
-      "ks_p": 0.0,
-      "verdict": "DRIFT"
-    },
-    {
-      "pair": "HBETA_EW vs HALPHA_EW",
-      "n_low": 6087,
-      "n_high": 6087,
-      "r_low": -0.0002,
-      "r_high": -0.0002,
-      "slope_change_pct": 98.6,
-      "residual_shift": -6971.2504,
-      "ks_p": 0.0,
-      "verdict": "DRIFT"
-    },
-    {
-      "pair": "HBETA_EW vs HALPHA_BR_EW",
-      "n_low": 6007,
-      "n_high": 6007,
-      "r_low": 0.0655,
-      "r_high": -0.0005,
-      "slope_change_pct": -105.2,
-      "residual_shift": -1478.8609,
-      "ks_p": 0.0,
-      "verdict": "DRIFT"
-    },
-    {
-      "pair": "HBETA_EW vs SII6718_EW",
-      "n_low": 4283,
-      "n_high": 4272,
-      "r_low": -0.0002,
-      "r_high": -0.0012,
-      "slope_change_pct": 99.9,
-      "residual_shift": -350941.0514,
-      "ks_p": 0.0,
-      "verdict": "DRIFT"
-    },
-    {
-      "pair": "HBETA_EW vs OII3728_EW",
-      "n_low": 40704,
-      "n_high": 40704,
-      "r_low": 0.0008,
-      "r_high": -0.0005,
-      "slope_change_pct": -68172601.4,
-      "residual_shift": -10.7847,
-      "ks_p": 0.0,
-      "verdict": "DRIFT"
-    },
-    {
-      "pair": "HBETA_EW vs MGII_EW",
-      "n_low": 40912,
-      "n_high": 40912,
-      "r_low": -0.0,
-      "r_high": -0.0013,
-      "slope_change_pct": 100.0,
-      "residual_shift": -69.8724,
-      "ks_p": 0.0,
-      "verdict": "DRIFT"
-    },
-    {
-      "pair": "HBETA_BR_EW vs HALPHA_EW",
-      "n_low": 6054,
-      "n_high": 6029,
-      "r_low": -0.0002,
-      "r_high": -0.0002,
-      "slope_change_pct": 98.6,
-      "residual_shift": -6722.6701,
-      "ks_p": 0.0,
-      "verdict": "DRIFT"
-    },
-    {
-      "pair": "HBETA_BR_EW vs HALPHA_BR_EW",
-      "n_low": 5979,
-      "n_high": 5979,
-      "r_low": 0.0654,
-      "r_high": -0.0005,
-      "slope_change_pct": -105.2,
-      "residual_shift": -1499.6218,
-      "ks_p": 0.0,
-      "verdict": "DRIFT"
-    },
-    {
-      "pair": "HBETA_BR_EW vs SII6718_EW",
-      "n_low": 4262,
-      "n_high": 4247,
-      "r_low": -0.0002,
-      "r_high": -0.0012,
-      "slope_change_pct": 99.9,
-      "residual_shift": -331133.1969,
-      "ks_p": 0.0,
-      "verdict": "DRIFT"
-    },
-    {
-      "pair": "HBETA_BR_EW vs OII3728_EW",
-      "n_low": 38342,
-      "n_high": 38342,
-      "r_low": -0.0021,
-      "r_high": -0.0005,
-      "slope_change_pct": -18655252.6,
-      "residual_shift": -11.0901,
-      "ks_p": 0.0,
-      "verdict": "DRIFT"
-    },
-    {
-      "pair": "HBETA_BR_EW vs MGII_EW",
-      "n_low": 38389,
-      "n_high": 38389,
-      "r_low": -0.0,
-      "r_high": -0.0045,
-      "slope_change_pct": 100.0,
-      "residual_shift": -66.4447,
-      "ks_p": 0.0,
-      "verdict": "DRIFT"
-    },
-    {
       "pair": "HALPHA_EW vs HALPHA_BR_EW",
       "n_low": 6023,
       "n_high": 6023,
@@ -195,6 +8,50 @@
       "r_high": -0.0004,
       "slope_change_pct": -3535.0,
       "residual_shift": -1474.3161,
+      "ks_p": 0.0,
+      "verdict": "DRIFT"
+    },
+    {
+      "pair": "HALPHA_EW vs HBETA_EW",
+      "n_low": 6087,
+      "n_high": 6087,
+      "r_low": -0.0002,
+      "r_high": -0.0002,
+      "slope_change_pct": -5304.7,
+      "residual_shift": -466.4419,
+      "ks_p": 0.0,
+      "verdict": "DRIFT"
+    },
+    {
+      "pair": "HALPHA_EW vs HBETA_BR_EW",
+      "n_low": 6054,
+      "n_high": 6029,
+      "r_low": -0.0002,
+      "r_high": -0.0002,
+      "slope_change_pct": -5359.9,
+      "residual_shift": -440.2932,
+      "ks_p": 0.0,
+      "verdict": "DRIFT"
+    },
+    {
+      "pair": "HALPHA_EW vs OIII5007_EW",
+      "n_low": 6072,
+      "n_high": 6072,
+      "r_low": -0.0002,
+      "r_high": -0.0053,
+      "slope_change_pct": 99.7,
+      "residual_shift": -161.3526,
+      "ks_p": 0.0,
+      "verdict": "DRIFT"
+    },
+    {
+      "pair": "HALPHA_EW vs OIII5007C_EW",
+      "n_low": 5996,
+      "n_high": 5996,
+      "r_low": -0.0002,
+      "r_high": -0.0054,
+      "slope_change_pct": 99.7,
+      "residual_shift": -99.5542,
       "ks_p": 0.0,
       "verdict": "DRIFT"
     },
@@ -210,6 +67,83 @@
       "verdict": "DRIFT"
     },
     {
+      "pair": "HALPHA_EW vs HEII4687_EW",
+      "n_low": 5867,
+      "n_high": 5875,
+      "r_low": -0.004,
+      "r_high": -0.0002,
+      "slope_change_pct": -405926762.7,
+      "residual_shift": -85.5567,
+      "ks_p": 0.0,
+      "verdict": "DRIFT"
+    },
+    {
+      "pair": "HALPHA_EW vs NEV3426_EW",
+      "n_low": 6010,
+      "n_high": 6010,
+      "r_low": -0.0043,
+      "r_high": 0.0012,
+      "slope_change_pct": 415.1,
+      "residual_shift": -50.4631,
+      "ks_p": 0.0,
+      "verdict": "DRIFT"
+    },
+    {
+      "pair": "HALPHA_EW vs CAII3934_EW",
+      "n_low": 5713,
+      "n_high": 5713,
+      "r_low": -0.0039,
+      "r_high": 0.0002,
+      "slope_change_pct": 179.2,
+      "residual_shift": 22.1749,
+      "ks_p": 0.0,
+      "verdict": "DRIFT"
+    },
+    {
+      "pair": "HALPHA_BR_EW vs HBETA_EW",
+      "n_low": 6007,
+      "n_high": 6007,
+      "r_low": 0.0655,
+      "r_high": -0.0005,
+      "slope_change_pct": -100.1,
+      "residual_shift": 3841.8834,
+      "ks_p": 0.0,
+      "verdict": "DRIFT"
+    },
+    {
+      "pair": "HALPHA_BR_EW vs HBETA_BR_EW",
+      "n_low": 5979,
+      "n_high": 5979,
+      "r_low": 0.0654,
+      "r_high": -0.0005,
+      "slope_change_pct": -100.1,
+      "residual_shift": 3912.7463,
+      "ks_p": 0.0,
+      "verdict": "DRIFT"
+    },
+    {
+      "pair": "HALPHA_BR_EW vs OIII5007_EW",
+      "n_low": 5993,
+      "n_high": 5993,
+      "r_low": 0.0322,
+      "r_high": 0.0285,
+      "slope_change_pct": -100.0,
+      "residual_shift": 886478.0352,
+      "ks_p": 0.0,
+      "verdict": "DRIFT"
+    },
+    {
+      "pair": "HALPHA_BR_EW vs OIII5007C_EW",
+      "n_low": 5922,
+      "n_high": 5922,
+      "r_low": -0.0022,
+      "r_high": 0.024,
+      "slope_change_pct": 100.0,
+      "residual_shift": -48354.0817,
+      "ks_p": 0.0,
+      "verdict": "DRIFT"
+    },
+    {
       "pair": "HALPHA_BR_EW vs SII6718_EW",
       "n_low": 4277,
       "n_high": 4277,
@@ -219,11 +153,140 @@
       "residual_shift": 1583058740.1551,
       "ks_p": 0.0,
       "verdict": "DRIFT"
+    },
+    {
+      "pair": "HALPHA_BR_EW vs HEII4687_EW",
+      "n_low": 5793,
+      "n_high": 5800,
+      "r_low": 0.5151,
+      "r_high": 0.0003,
+      "slope_change_pct": -100.0,
+      "residual_shift": -30.3051,
+      "ks_p": 0.0,
+      "verdict": "DRIFT"
+    },
+    {
+      "pair": "HALPHA_BR_EW vs CAII3934_EW",
+      "n_low": 5638,
+      "n_high": 5645,
+      "r_low": -0.6986,
+      "r_high": -0.0239,
+      "slope_change_pct": 99.9,
+      "residual_shift": 13.4217,
+      "ks_p": 0.0,
+      "verdict": "DRIFT"
+    },
+    {
+      "pair": "HBETA_EW vs HBETA_BR_EW",
+      "n_low": 39780,
+      "n_high": 39829,
+      "r_low": 0.703,
+      "r_high": 0.985,
+      "slope_change_pct": 96.4,
+      "residual_shift": -62.3382,
+      "ks_p": 0.0,
+      "verdict": "DRIFT"
+    },
+    {
+      "pair": "HBETA_EW vs OIII5007_EW",
+      "n_low": 35019,
+      "n_high": 35039,
+      "r_low": -0.0,
+      "r_high": -0.0004,
+      "slope_change_pct": -1461617.1,
+      "residual_shift": -48.2364,
+      "ks_p": 0.0,
+      "verdict": "DRIFT"
+    },
+    {
+      "pair": "HBETA_EW vs OIII5007C_EW",
+      "n_low": 32999,
+      "n_high": 32992,
+      "r_low": -0.0,
+      "r_high": -0.0003,
+      "slope_change_pct": -642739.9,
+      "residual_shift": -32.1047,
+      "ks_p": 0.0,
+      "verdict": "DRIFT"
+    },
+    {
+      "pair": "HBETA_EW vs SII6718_EW",
+      "n_low": 4283,
+      "n_high": 4272,
+      "r_low": -0.0002,
+      "r_high": -0.0012,
+      "slope_change_pct": 99.9,
+      "residual_shift": -350941.0514,
+      "ks_p": 0.0,
+      "verdict": "DRIFT"
     }
   ],
   "coupling_drift": [
     {
-      "pair": "OIII5007_EW vs HBETA_EW",
+      "pair": "HBETA_EW vs CIII_BR_EW",
+      "correlations": [
+        -0.002,
+        -0.0,
+        -0.0,
+        0.001,
+        0.021
+      ],
+      "z_mids": [
+        0.47,
+        0.97,
+        1.03,
+        1.09,
+        4.07
+      ],
+      "trend_r": 0.9966,
+      "trend_p": 0.0002420314341676049,
+      "r_range": 0.023,
+      "drifts": "True"
+    },
+    {
+      "pair": "HBETA_EW vs CAII3934_EW",
+      "correlations": [
+        0.002,
+        -0.0,
+        0.0,
+        0.0,
+        -0.011
+      ],
+      "z_mids": [
+        0.29,
+        0.67,
+        0.81,
+        0.94,
+        4.01
+      ],
+      "trend_r": -0.9951,
+      "trend_p": 0.00041741331830782465,
+      "r_range": 0.013,
+      "drifts": "True"
+    },
+    {
+      "pair": "HBETA_BR_EW vs HEII4687_EW",
+      "correlations": [
+        -0.0,
+        -0.0,
+        -0.0,
+        -0.0,
+        -0.001
+      ],
+      "z_mids": [
+        0.29,
+        0.65,
+        0.79,
+        0.91,
+        3.99
+      ],
+      "trend_r": -0.9942,
+      "trend_p": 0.0005296054266845757,
+      "r_range": 0.001,
+      "drifts": "True"
+    },
+    {
+      "pair": "HBETA_EW vs OIII5007_EW",
       "correlations": [
         -0.0,
         -0.0,
@@ -265,6 +328,153 @@
       "drifts": "True"
     },
     {
+      "pair": "OIII5007_EW vs HEII4687_EW",
+      "correlations": [
+        -0.0,
+        -0.0,
+        -0.0,
+        -0.0,
+        -0.001
+      ],
+      "z_mids": [
+        0.28,
+        0.63,
+        0.76,
+        0.87,
+        3.97
+      ],
+      "trend_r": -0.9911,
+      "trend_p": 0.0009982250705594558,
+      "r_range": 0.001,
+      "drifts": "True"
+    },
+    {
+      "pair": "HBETA_EW vs HEII4687_EW",
+      "correlations": [
+        -0.0,
+        -0.0,
+        -0.0,
+        -0.0,
+        -0.001
+      ],
+      "z_mids": [
+        0.29,
+        0.66,
+        0.8,
+        0.92,
+        4.0
+      ],
+      "trend_r": -0.9906,
+      "trend_p": 0.0010916365754972167,
+      "r_range": 0.001,
+      "drifts": "True"
+    },
+    {
+      "pair": "HBETA_EW vs OIII5007C_EW",
+      "correlations": [
+        -0.0,
+        -0.0,
+        -0.0,
+        -0.0,
+        -0.0
+      ],
+      "z_mids": [
+        0.28,
+        0.64,
+        0.77,
+        0.88,
+        3.97
+      ],
+      "trend_r": -0.9903,
+      "trend_p": 0.001148603774164634,
+      "r_range": 0.0,
+      "drifts": "True"
+    },
+    {
+      "pair": "OIII5007_EW vs OIII5007C_EW",
+      "correlations": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.982
+      ],
+      "z_mids": [
+        0.28,
+        0.64,
+        0.77,
+        0.88,
+        3.98
+      ],
+      "trend_r": -0.9889,
+      "trend_p": 0.0014105460861773657,
+      "r_range": 0.018,
+      "drifts": "True"
+    },
+    {
+      "pair": "HBETA_BR_EW vs CIII_BR_EW",
+      "correlations": [
+        -0.002,
+        -0.004,
+        0.0,
+        -0.0,
+        0.027
+      ],
+      "z_mids": [
+        0.47,
+        0.96,
+        1.01,
+        1.09,
+        4.07
+      ],
+      "trend_r": 0.9806,
+      "trend_p": 0.003241011009539043,
+      "r_range": 0.032,
+      "drifts": "True"
+    },
+    {
+      "pair": "HBETA_EW vs HEII1640_EW",
+      "correlations": [
+        -0.005,
+        -0.013,
+        0.015,
+        -0.018,
+        0.126
+      ],
+      "z_mids": [
+        0.71,
+        1.18,
+        1.19,
+        1.19,
+        4.1
+      ],
+      "trend_r": 0.9661,
+      "trend_p": 0.0074390040640748495,
+      "r_range": 0.145,
+      "drifts": "True"
+    },
+    {
+      "pair": "HBETA_BR_EW vs HEII1640_EW",
+      "correlations": [
+        -0.004,
+        -0.013,
+        0.015,
+        -0.018,
+        0.126
+      ],
+      "z_mids": [
+        0.71,
+        1.18,
+        1.19,
+        1.19,
+        4.1
+      ],
+      "trend_r": 0.9645,
+      "trend_p": 0.007997771599924113,
+      "r_range": 0.145,
+      "drifts": "True"
+    },
+    {
       "pair": "OIII5007_EW vs SII6718_EW",
       "correlations": [
         -0.0,
@@ -283,6 +493,48 @@
       "trend_r": -0.9639,
       "trend_p": 0.008179050618445606,
       "r_range": 0.016,
+      "drifts": "True"
+    },
+    {
+      "pair": "OIII5007C_EW vs HEII4687_EW",
+      "correlations": [
+        -0.0,
+        -0.0,
+        -0.0,
+        -0.0,
+        -0.0
+      ],
+      "z_mids": [
+        0.28,
+        0.63,
+        0.76,
+        0.86,
+        3.97
+      ],
+      "trend_r": -0.9598,
+      "trend_p": 0.009627508197223248,
+      "r_range": 0.0,
+      "drifts": "True"
+    },
+    {
+      "pair": "MGII_EW vs HEII4687_EW",
+      "correlations": [
+        -0.0,
+        -0.0,
+        -0.002,
+        -0.001,
+        0.009
+      ],
+      "z_mids": [
+        0.31,
+        0.69,
+        0.82,
+        0.95,
+        4.02
+      ],
+      "trend_r": 0.9594,
+      "trend_p": 0.009753344962293355,
+      "r_range": 0.011,
       "drifts": "True"
     },
     {
@@ -307,347 +559,216 @@
       "drifts": "False"
     },
     {
-      "pair": "MGII_EW vs CIV_EW",
+      "pair": "HBETA_BR_EW vs CAII3934_EW",
       "correlations": [
+        0.004,
         -0.0,
-        -0.0,
-        -0.0,
-        -0.0,
-        -0.0
-      ],
-      "z_mids": [
-        0.76,
-        1.64,
-        1.9,
-        2.18,
-        4.67
-      ],
-      "trend_r": 0.5799,
-      "trend_p": 0.30540317150674373,
-      "r_range": 0.0,
-      "drifts": "False"
-    },
-    {
-      "pair": "HALPHA_EW vs SII6718_EW",
-      "correlations": [
-        -0.0,
-        -0.002,
-        0.015,
-        -0.005,
-        -0.01
-      ],
-      "z_mids": [
-        0.14,
-        0.32,
-        0.4,
-        0.46,
-        3.75
-      ],
-      "trend_r": -0.5334,
-      "trend_p": 0.3545481749299511,
-      "r_range": 0.025,
-      "drifts": "False"
-    },
-    {
-      "pair": "OIII5007_EW vs MGII_EW",
-      "correlations": [
-        -0.0,
-        -0.0,
-        -0.0,
-        0.02,
-        -0.01
-      ],
-      "z_mids": [
-        0.3,
-        0.67,
-        0.79,
-        0.9,
-        3.99
-      ],
-      "trend_r": -0.5247,
-      "trend_p": 0.3639960072557594,
-      "r_range": 0.03,
-      "drifts": "False"
-    },
-    {
-      "pair": "OIII5007_EW vs NII6585_EW",
-      "correlations": [
-        0.003,
-        0.018,
-        0.076,
-        0.022,
-        -0.007
-      ],
-      "z_mids": [
-        0.15,
-        0.35,
-        0.43,
-        0.49,
-        3.74
-      ],
-      "trend_r": -0.4797,
-      "trend_p": 0.41354289243182896,
-      "r_range": 0.083,
-      "drifts": "False"
-    },
-    {
-      "pair": "SII6718_EW vs OII3728_EW",
-      "correlations": [
-        0.007,
-        0.154,
-        0.065,
-        -0.008,
-        -0.023
-      ],
-      "z_mids": [
-        0.14,
-        0.32,
-        0.4,
-        0.46,
-        3.71
-      ],
-      "trend_r": -0.4718,
-      "trend_p": 0.4223983251511586,
-      "r_range": 0.177,
-      "drifts": "False"
-    },
-    {
-      "pair": "NII6585_EW vs OII3728_EW",
-      "correlations": [
-        0.116,
-        0.265,
-        0.005,
-        0.017,
-        -0.009
-      ],
-      "z_mids": [
-        0.16,
-        0.35,
-        0.43,
-        0.49,
-        3.76
-      ],
-      "trend_r": -0.4578,
-      "trend_p": 0.43811523134907676,
-      "r_range": 0.274,
-      "drifts": "False"
-    },
-    {
-      "pair": "HALPHA_EW vs MGII_EW",
-      "correlations": [
+        0.004,
         0.0,
-        0.59,
-        0.865,
-        0.035,
-        -0.006
+        -0.01
       ],
       "z_mids": [
-        0.2,
-        0.42,
-        0.48,
-        0.52,
-        3.77
+        0.29,
+        0.66,
+        0.8,
+        0.92,
+        4.0
       ],
-      "trend_r": -0.3853,
-      "trend_p": 0.5217896373734078,
-      "r_range": 0.871,
+      "trend_r": -0.9505,
+      "trend_p": 0.013117042020027567,
+      "r_range": 0.014,
       "drifts": "False"
     },
     {
-      "pair": "SII6718_EW vs MGII_EW",
+      "pair": "OIII5007_EW vs CIII_BR_EW",
       "correlations": [
         -0.001,
-        0.095,
-        0.24,
-        -0.007,
+        0.004,
+        -0.0,
+        -0.0,
         -0.017
       ],
       "z_mids": [
-        0.19,
-        0.4,
-        0.45,
-        0.49,
-        3.76
-      ],
-      "trend_r": -0.3762,
-      "trend_p": 0.5325214693717136,
-      "r_range": 0.257,
-      "drifts": "False"
-    },
-    {
-      "pair": "HBETA_EW vs NII6585_EW",
-      "correlations": [
-        0.126,
-        0.396,
-        -0.0,
-        -0.001,
-        -0.0
-      ],
-      "z_mids": [
-        0.15,
-        0.35,
-        0.43,
-        0.5,
-        3.76
-      ],
-      "trend_r": -0.3655,
-      "trend_p": 0.5452405752622115,
-      "r_range": 0.397,
-      "drifts": "False"
-    },
-    {
-      "pair": "OII3728_EW vs CIV_EW",
-      "correlations": [
-        -0.001,
-        -0.0,
-        -0.0,
-        -0.002,
-        -0.0
-      ],
-      "z_mids": [
-        0.68,
-        1.4,
-        1.5,
-        1.6,
-        4.33
-      ],
-      "trend_r": 0.3279,
-      "trend_p": 0.590170744170722,
-      "r_range": 0.002,
-      "drifts": "False"
-    },
-    {
-      "pair": "NII6585_EW vs SII6718_EW",
-      "correlations": [
-        0.0,
-        0.09,
-        0.015,
-        0.0,
-        -0.002
-      ],
-      "z_mids": [
-        0.14,
-        0.32,
-        0.39,
         0.46,
-        3.71
+        0.94,
+        0.98,
+        1.02,
+        4.03
       ],
-      "trend_r": -0.3273,
-      "trend_p": 0.5907964234178176,
-      "r_range": 0.093,
+      "trend_r": -0.9431,
+      "trend_p": 0.016148986109105576,
+      "r_range": 0.021,
       "drifts": "False"
     },
     {
-      "pair": "HALPHA_EW vs NII6585_EW",
+      "pair": "CIII_BR_EW vs HEII4687_EW",
       "correlations": [
-        0.011,
-        0.206,
-        0.0,
-        0.04,
-        -0.0
+        -0.001,
+        0.012,
+        0.001,
+        0.01,
+        0.032
       ],
       "z_mids": [
-        0.15,
-        0.35,
-        0.43,
-        0.49,
-        3.76
-      ],
-      "trend_r": -0.3259,
-      "trend_p": 0.5925331529978498,
-      "r_range": 0.207,
-      "drifts": "False"
-    },
-    {
-      "pair": "OIII5007_EW vs HALPHA_EW",
-      "correlations": [
-        -0.0,
-        -0.0,
-        0.235,
-        0.446,
-        -0.006
-      ],
-      "z_mids": [
-        0.16,
-        0.36,
-        0.44,
-        0.5,
-        3.77
-      ],
-      "trend_r": -0.3238,
-      "trend_p": 0.5950344666754007,
-      "r_range": 0.452,
-      "drifts": "False"
-    },
-    {
-      "pair": "NII6585_EW vs MGII_EW",
-      "correlations": [
-        0.04,
-        0.032,
-        0.382,
-        0.035,
-        -0.001
-      ],
-      "z_mids": [
-        0.21,
-        0.41,
         0.47,
-        0.52,
-        3.77
+        0.96,
+        1.02,
+        1.1,
+        4.08
       ],
-      "trend_r": -0.3222,
-      "trend_p": 0.5970009959610548,
-      "r_range": 0.383,
+      "trend_r": 0.9412,
+      "trend_p": 0.016969745027240767,
+      "r_range": 0.033,
       "drifts": "False"
     },
     {
-      "pair": "OII3728_EW vs MGII_EW",
+      "pair": "CIV_EW vs OI1304_EW",
       "correlations": [
         -0.0,
+        -0.001,
         -0.002,
-        -0.0,
-        -0.0,
-        -0.0
+        -0.002,
+        -0.003
       ],
       "z_mids": [
-        0.4,
-        0.92,
-        1.16,
-        1.38,
-        4.26
+        1.07,
+        2.1,
+        2.32,
+        2.59,
+        4.88
       ],
-      "trend_r": 0.2792,
-      "trend_p": 0.6491543639811084,
-      "r_range": 0.002,
-      "drifts": "False"
-    },
-    {
-      "pair": "HALPHA_EW vs OII3728_EW",
-      "correlations": [
-        -0.004,
-        -0.003,
-        0.282,
-        0.017,
-        -0.006
-      ],
-      "z_mids": [
-        0.16,
-        0.35,
-        0.43,
-        0.5,
-        3.77
-      ],
-      "trend_r": -0.2504,
-      "trend_p": 0.684566887137055,
-      "r_range": 0.289,
+      "trend_r": -0.9372,
+      "trend_p": 0.018727720885408174,
+      "r_range": 0.003,
       "drifts": "False"
     }
   ],
   "bell_bound": {
-    "low_rate": 0.0,
-    "high_rate": 0.0,
-    "low_n": 37,
-    "high_n": 37,
-    "details": []
+    "low_rate": 0.017391304347826087,
+    "high_rate": 0.004347826086956522,
+    "low_n": 690,
+    "high_n": 690,
+    "details": [
+      {
+        "triplet": "HALPHA_EW-HBETA_EW-HBETA_BR_EW",
+        "regime": "low",
+        "r_AB": 0.0,
+        "r_AC": 0.0,
+        "r_BC": 1.0,
+        "violation": 0.0
+      },
+      {
+        "triplet": "HALPHA_EW-HBETA_EW-HBETA_BR_EW",
+        "regime": "high",
+        "r_AB": 0.0,
+        "r_AC": 0.0,
+        "r_BC": 1.0,
+        "violation": 0.0
+      },
+      {
+        "triplet": "HALPHA_EW-OIII5007_EW-OIII5007C_EW",
+        "regime": "low",
+        "r_AB": 0.0,
+        "r_AC": 0.0,
+        "r_BC": 1.0,
+        "violation": 0.0
+      },
+      {
+        "triplet": "HALPHA_BR_EW-HBETA_EW-HBETA_BR_EW",
+        "regime": "low",
+        "r_AB": 0.066,
+        "r_AC": 0.065,
+        "r_BC": 1.0,
+        "violation": 0.0002
+      },
+      {
+        "triplet": "HALPHA_BR_EW-HBETA_EW-HBETA_BR_EW",
+        "regime": "high",
+        "r_AB": 0.0,
+        "r_AC": 0.0,
+        "r_BC": 1.0,
+        "violation": 0.0
+      },
+      {
+        "triplet": "HALPHA_BR_EW-OIII5007_EW-OIII5007C_EW",
+        "regime": "low",
+        "r_AB": 0.002,
+        "r_AC": 0.002,
+        "r_BC": 1.0,
+        "violation": 0.0
+      },
+      {
+        "triplet": "HBETA_EW-HBETA_BR_EW-NII6585_EW",
+        "regime": "high",
+        "r_AB": 1.0,
+        "r_AC": 0.0,
+        "r_BC": 0.0,
+        "violation": 0.0
+      },
+      {
+        "triplet": "HBETA_EW-HBETA_BR_EW-SII6718_EW",
+        "regime": "low",
+        "r_AB": 1.0,
+        "r_AC": 0.0,
+        "r_BC": 0.0,
+        "violation": 0.0
+      },
+      {
+        "triplet": "HBETA_EW-HBETA_BR_EW-CIII_BR_EW",
+        "regime": "low",
+        "r_AB": 1.0,
+        "r_AC": 0.002,
+        "r_BC": 0.002,
+        "violation": 0.0
+      },
+      {
+        "triplet": "HBETA_EW-OIII5007_EW-OIII5007C_EW",
+        "regime": "low",
+        "r_AB": 0.0,
+        "r_AC": 0.0,
+        "r_BC": 1.0,
+        "violation": 0.0
+      },
+      {
+        "triplet": "HBETA_BR_EW-OIII5007_EW-OIII5007C_EW",
+        "regime": "low",
+        "r_AB": 0.005,
+        "r_AC": 0.005,
+        "r_BC": 1.0,
+        "violation": 0.0
+      },
+      {
+        "triplet": "OIII5007_EW-OIII5007C_EW-NII6585_EW",
+        "regime": "low",
+        "r_AB": 1.0,
+        "r_AC": 0.003,
+        "r_BC": 0.003,
+        "violation": 0.0
+      },
+      {
+        "triplet": "OIII5007_EW-OIII5007C_EW-CIII_BR_EW",
+        "regime": "low",
+        "r_AB": 1.0,
+        "r_AC": 0.001,
+        "r_BC": 0.001,
+        "violation": 0.0
+      },
+      {
+        "triplet": "OIII5007_EW-OIII5007C_EW-CAII3934_EW",
+        "regime": "low",
+        "r_AB": 1.0,
+        "r_AC": 0.005,
+        "r_BC": 0.005,
+        "violation": 0.0
+      },
+      {
+        "triplet": "MGII_EW-MGII_BR_EW-CIII_ALL_EW",
+        "regime": "low",
+        "r_AB": 1.0,
+        "r_AC": 0.0,
+        "r_BC": 0.0,
+        "violation": 0.0
+      }
+    ]
   }
 }
