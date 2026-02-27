@@ -1,0 +1,30 @@
+{
+  "kappa_map": "Planck PR3 Lensing COM_Lensing_4096_R3.00",
+  "y_map": "NOT AVAILABLE",
+  "NSIDE_kappa": 512,
+  "NSIDE_y": null,
+  "radii_arcmin": [
+    5,
+    10,
+    20,
+    30
+  ],
+  "compensated_pairs": [
+    [
+      5,
+      10
+    ],
+    [
+      10,
+      20
+    ],
+    [
+      20,
+      40
+    ]
+  ],
+  "H0": 73.04,
+  "Omega_m": 0.334,
+  "n_sne_total": 1543,
+  "n_clean": 1454
+}

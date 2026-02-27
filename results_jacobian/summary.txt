@@ -1,0 +1,3 @@
+JACOBIAN MATCHING TEST RESULTS
+Test A (source only): Δ=+0.0452, p=6.62e-20
+Test B (source+geom): Δ=+0.0308, p=2.97e-10

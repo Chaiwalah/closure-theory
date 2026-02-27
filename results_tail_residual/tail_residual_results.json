@@ -1,0 +1,40 @@
+{
+  "test": "Tail-Conditional v2 (Source-Residualized)",
+  "source_model_R2_gbr": 0.3115425876097223,
+  "source_model_R2_lin": 0.18078005807517006,
+  "n_objects": 61645,
+  "tail_classification": {
+    "Top 5%_Source": {
+      "cv_auc": 0.678101656403765,
+      "cv_auc_std": 0.0016764385175695997
+    },
+    "Top 5%_Path": {
+      "cv_auc": 0.5017005861624815,
+      "cv_auc_std": 0.010017079617933694
+    },
+    "Top 5%_All": {
+      "cv_auc": 0.6774721279654767,
+      "cv_auc_std": 0.0018808405248938041
+    },
+    "Top 1%_Source": {
+      "cv_auc": 0.705759042337103,
+      "cv_auc_std": 0.020689682349000683
+    },
+    "Top 1%_Path": {
+      "cv_auc": 0.5121800509130979,
+      "cv_auc_std": 0.02240968889023799
+    },
+    "Top 1%_All": {
+      "cv_auc": 0.7050739154694579,
+      "cv_auc_std": 0.016407575647685593
+    }
+  },
+  "interaction": {
+    "susceptibility_coef": -0.2469901635940435,
+    "exposure_coef": -0.0672399164431593,
+    "interaction_coef": 0.13326783618943452,
+    "R2": 0.053076556964280486,
+    "spearman_rho": 0.03972545172646172,
+    "spearman_p": 5.7931214792873e-23
+  }
+}
