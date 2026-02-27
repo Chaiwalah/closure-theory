@@ -1,0 +1,27 @@
+{
+  "susceptibility_P_i": {
+    "NII6585": 0.067,
+    "OIII5007": 0.067,
+    "HEII4687": 0.433,
+    "HBETA": 0.4,
+    "OII3728": 0.4,
+    "MGII": 0.467,
+    "CIV": 0.667,
+    "LYA": 0.733,
+    "SII6718": 0.467
+  },
+  "fitted_params": {
+    "Xi0": 100.0,
+    "sigma_Xi": 67.1,
+    "beta": 0.281,
+    "A": 100.0
+  },
+  "model_formula": "D_ij = P_i \u00d7 \u03a8(\u039e_j) \u00d7 C_i(\u03bb)",
+  "Psi_formula": "0.5 \u00d7 [1 + erf((\u039e - 100) / 67)]",
+  "chromatic": "(500/\u03bb)^0.281",
+  "in_sample_r": 0.1387,
+  "in_sample_p": 0.51806,
+  "held_out_r": 0.2235,
+  "held_out_p": 0.1836,
+  "mechanism_statement": "The observed anomaly is consistent with a thresholded chromatic transfer process in the ionized cosmic web that differentially reweights unresolved emissivity subcomponents according to their thermodynamic susceptibility, thereby altering equivalent widths and diagnostic line relationships while leaving coarse kinematic widths comparatively intact."
+}
