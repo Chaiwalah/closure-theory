@@ -1,0 +1,24 @@
+{
+  "law": "dI/dx = -Gamma0 * sigma(x - x0) * q^2 * I",
+  "constants": {
+    "Gamma0": 0.533,
+    "z0_SN": 0.82,
+    "z0_quasar": 1.14,
+    "z0_FRB": 1.15,
+    "k": 8.0,
+    "gamma": 1.56
+  },
+  "evidence": {
+    "domains": 5,
+    "objects": 752725,
+    "tests": 100,
+    "contradictions": 0,
+    "predictions_total": 18,
+    "predictions_confirmed": 9,
+    "universal_collapse_R2": 0.658,
+    "universal_collapse_rho": 0.918,
+    "universal_collapse_p": 6.3e-12,
+    "patchwork_p": 2.4e-17
+  },
+  "dark_matter_ratio": 8.62
+}
