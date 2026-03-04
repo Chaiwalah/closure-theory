@@ -1,0 +1,10 @@
+{
+  "Sigma_z0": 3.372742421215824e+21,
+  "Gamma_predicted_from_z0": 308.93273629553465,
+  "Gamma_predicted_cm2": 2.0551441349324148e-22,
+  "G_predicted_for_z0_82": 311.4292334007739,
+  "Sigma_CMB": 1.1383209140155615e+26,
+  "n_H0": 1.9111017056979557e-07,
+  "FRB_DM_predicted": 3387.8391450566432,
+  "FRB_DM_observed": 500
+}
