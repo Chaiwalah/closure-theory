@@ -61,17 +61,53 @@ contradictions between agents, and the UNSPOKEN clues.
 
 ## Gemini Response
 
-**Status:** AWAITING
+**Status:** ✅ RECEIVED
 
 ### Explicit Proposals
 
+1. **Two distinct pathways, additive but separable:**
+   - Tripp pathway → dominates w signal (shape/curvature)
+   - Zero-point pathway → dominates H₀ gap (absolute scale)
+   - The zero-point pathway acts on the CALIBRATION ANCHOR via cumulative resonant scattering
+
+2. **Sound horizon r_d is the precise mechanism.** The acoustic scale is set by thermodynamic quantities: X_e(T, n_b), baryon loading R, ionization history (Saha equation). ALL are high-q processes (q_rd ≈ 0.85–0.95).
+
+3. **Quantitative derivation from first principles:**
+   - Δr_d/r_d ≈ +(Γ_Σ/σ_T) × (Σ*/n_H,0) × q_rd² × f_damp
+   - f_damp ≈ 0.15–0.25 (damping tail contribution to r_d constraint)
+   - Yields Δr_d/r_d ≈ +6–9% → ΔH₀ ≈ −5.5 to −6.6 km/s/Mpc
+   - **This is the right number.** 67.4 + 5.6 = 73.0
+
+4. **Chromatic scattering creates zero-point offset** that grows with Σ. Absent at low Σ (local), fully active at CMB depth (maximum Σ). Geometric probes return true H₀ ≈ 73.
+
+5. **Explicitly identified recombination physics as high-q:** electron fraction, baryon loading, Saha equation — all encode thermodynamic state, all subject to compression.
+
 ### Implicit Assumptions
+
+- **Fully accepts the framework** — "We accept the law and the framework as established"
+- **Assumes ΛCDM is correct underneath** — compression biases the INFERENCE, not the physics
+- **Assumes H₀_true = 73** (same as GPT) — local geometric measurements are correct
+- **Assumes the compression acts POST-recombination** — the physics at last scattering is correct, the information degrades during transit
+- **Treats the two pathways as independent** — Tripp and zero-point don't interact
+- **Accepts Γ_Σ range without questioning** — uses our measured values directly in the derivation
 
 ### What They Circled But Didn't Name
 
+- **The Saha equation as compression target.** Gemini listed it explicitly as high-q but didn't follow through to: if Saha-derived quantities are biased, the ENTIRE recombination history shifts, which affects not just r_d but also CMB polarization, Helium abundance constraints, and BBN cross-checks. This is a cascade.
+- **The f_damp factor (0.15–0.25).** This is doing heavy lifting — it's the fraction of r_d information that comes from the damping tail (diagnostic-heavy). Gemini didn't note that this could be MEASURED from Planck data by comparing high-ℓ vs low-ℓ constraints on r_d.
+- **"Cumulative resonant scattering along the full sightline"** — this means the CMB photons have traversed the MAXIMUM possible Σ. The compression is at its strongest for CMB. Everything closer has less compression. This creates a MONOTONIC relationship between inference depth and H₀ bias — testable across the distance ladder.
+
 ### Kill-Testable Predictions
 
+1. **Δr_d/r_d = +6–9%** — specific quantitative prediction
+2. **H₀ shift of −5.5 to −6.6 km/s/Mpc** from compression alone
+3. **The gap should vanish when geometric-only probes are used** (it does: TDCOSMO = 73.6)
+4. **Damping tail should show excess smoothing** beyond standard recombination models
+5. **q_rd ≈ 0.85–0.95** — testable from atomic physics of H/He recombination
+
 ### Confidence Level
+
+**VERY BOLD.** "We accept the law." First-principles derivation with specific numbers. Quantitative prediction matches the gap exactly. Professional tone but maximum confidence. Gemini thinks this is solved.
 
 ---
 
