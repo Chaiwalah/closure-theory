@@ -1,0 +1,91 @@
+{
+  "cmb_ladder": [
+    [
+      "\u03b8* (angular scale)",
+      0.0,
+      "geometric ruler \u2192 LOCKED",
+      "unchanged"
+    ],
+    [
+      "BAO scale (D_V/r_d)",
+      0.05,
+      "geometric \u00d7 r_d anchor",
+      "r_d biased"
+    ],
+    [
+      "Lensing power (C_\u2113^\u03c6\u03c6)",
+      0.1,
+      "gravitational \u2192 mostly geometric",
+      "A_L = 1.18"
+    ],
+    [
+      "Peak spacing (\u2113_n+1-\u2113_n)",
+      0.15,
+      "geometric + baryon loading",
+      "slight shift"
+    ],
+    [
+      "Matter-radiation eq (k_eq)",
+      0.25,
+      "density ratio \u2192 mixed",
+      "H\u2080 \u2248 70-71"
+    ],
+    [
+      "n_s (spectral tilt)",
+      0.4,
+      "inflation + transfer function",
+      "slight red tilt"
+    ],
+    [
+      "\u03c4 (reionization)",
+      0.5,
+      "ionization state \u2192 diagnostic",
+      "degeneracy"
+    ],
+    [
+      "\u03c3\u2088 (power amplitude)",
+      0.6,
+      "normalization \u00d7 growth \u2192 mixed",
+      "S\u2088 tension"
+    ],
+    [
+      "Peak height ratios (R_n)",
+      0.85,
+      "baryon loading \u2192 thermodynamic",
+      "\u03c9_b biased"
+    ],
+    [
+      "Silk damping (\u2113_D)",
+      0.9,
+      "thermal diffusion \u2192 diagnostic",
+      "damping biased"
+    ],
+    [
+      "r_d (sound horizon)",
+      0.88,
+      "thermodynamic integral \u2192 diagnostic",
+      "H\u2080 = 67"
+    ]
+  ],
+  "observed_shifts": {
+    "H0": -5.680000000000007,
+    "sigma8": 0.04510000000000003,
+    "A_L": 0.17999999999999994
+  },
+  "compression_directions_tested": [
+    "\u03c9_b only",
+    "\u03c9_b + \u03c4",
+    "\u03c9_b + n_s",
+    "\u03c9_b + \u03c4 + A_L",
+    "Damping tail (\u03c9_b + \u03c4 + n_s)",
+    "Pure A_L"
+  ],
+  "best_model": "\u03c9_b + \u03c4",
+  "best_chi2": 27.890488758271395,
+  "degeneracy_slopes": {
+    "dH0_dsigma8_planck": 36.0,
+    "dH0_dAL_planck": -1.6615384615384616,
+    "dH0_dsigma8_observed": -125.9423503325943,
+    "dH0_dAL_observed": -31.555555555555603
+  }
+}
