@@ -1,0 +1,12 @@
+{
+  "h0_compression_rho": -0.6483653300365978,
+  "h0_compression_p": 0.004875669331022631,
+  "h0_gap_local_cmb": 4.8858333333333235,
+  "jwst_gap_before": 7.640000000000001,
+  "jwst_gap_after": 4.58,
+  "jwst_best_fit_A": 0.626453659109597,
+  "gw_prediction_A_max": 0.07,
+  "gw_prediction_z0": 0.82,
+  "n_tests": 4,
+  "n_passed": 4
+}
