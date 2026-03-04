@@ -1,0 +1,14 @@
+{
+  "collapse_R2": 0.6575562081620571,
+  "collapse_rho": 0.9177311722757103,
+  "collapse_p": 6.295069056705093e-12,
+  "collapse_A": 0.5330478839655491,
+  "collapse_gamma": 1.5611845905316966,
+  "same_source_pass": 5,
+  "same_source_total": 5,
+  "same_source_objects": 752725,
+  "blind_predictions_match": 8,
+  "blind_predictions_total": 8,
+  "blind_devastating": 5,
+  "all_kill_tests_survived": true
+}
