@@ -1,0 +1,10 @@
+{
+  "fisher_p": 5.0986765285188514e-05,
+  "foreignness_rho": 0.5,
+  "disconnect_rho": 1.0,
+  "thermophysics_accuracy": 85.71428571428571,
+  "thermophysics_p": 0.009324009324009322,
+  "n_objects": 3,
+  "pattern": "locked_clean_diagnostic_anomalous",
+  "predictions": 7
+}
