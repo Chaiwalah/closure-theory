@@ -1,0 +1,51 @@
+{
+  "parameters": {
+    "Gamma_Sigma_low": 37.0,
+    "Gamma_Sigma_mid": 130.0,
+    "Gamma_Sigma_high": 227.00000000000003,
+    "Sigma_star": 3e+21,
+    "q_rd": 0.88,
+    "q_sigma8": 0.6,
+    "q_AL": 0.88,
+    "f_damp": 0.2
+  },
+  "observable_1_H0": {
+    "predicted": 70.75680582187726,
+    "observed": 67.4,
+    "residual": 3.356805821877259,
+    "best_Gamma": 297.7177177177177
+  },
+  "observable_2_S8": {
+    "predicted": 0.7939408349312637,
+    "observed": 0.766,
+    "residual": 0.027940834931263647,
+    "best_Gamma": 367.20720720720726
+  },
+  "observable_3_AL": {
+    "predicted": 1.4018262476799999,
+    "observed": 1.18,
+    "residual": 0.22182624767999992,
+    "best_Gamma": 58.40840840840841
+  },
+  "observable_4_w": {
+    "predicted": -0.771,
+    "observed": -0.727,
+    "residual": 0.04400000000000004
+  },
+  "observable_5_beta": {
+    "predicted": 0.537,
+    "observed": 0.558,
+    "residual": 0.02100000000000002
+  },
+  "convergence": {
+    "best_Gamma_values": [
+      297.7177177177177,
+      367.20720720720726,
+      58.40840840840841
+    ],
+    "mean": 241.1111111111111,
+    "std": 132.2684277483522,
+    "cv": 0.5485787325968525,
+    "converged": false
+  }
+}
