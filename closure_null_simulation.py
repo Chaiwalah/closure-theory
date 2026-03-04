@@ -86,7 +86,7 @@ def scatter_broadening(DM, tau0=1e-4):
 # SECTION 2: Generate Mock Catalogs
 # ============================================================
 
-N_MOCKS = 10000
+N_MOCKS = 100000
 
 def generate_quasar_mock(n_qso=1000, z_range=(0.1, 3.0)):
     """Generate mock quasar catalog with conventional evolution only."""
