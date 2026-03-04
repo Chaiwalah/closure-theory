@@ -1,0 +1,17 @@
+{
+  "ifi_rho": -0.48784898249688746,
+  "ifi_p": 0.06506509332113908,
+  "ifi_intercept": 69.9554627882904,
+  "ifi_slope": -2.989640358938404,
+  "cross_domain_p": 0.03741759694444968,
+  "doublet_rho": -0.975,
+  "doublet_p": 0.005,
+  "patchwork_p": 2.4269475318305927e-17,
+  "stretch_p": 0.019,
+  "total_observables": 61,
+  "correctly_sorted": 57,
+  "sorting_accuracy": 0.9344262295081968,
+  "n_domains": 5,
+  "n_objects": 752000,
+  "n_contradictions": 0
+}
