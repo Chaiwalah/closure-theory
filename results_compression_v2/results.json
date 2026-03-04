@@ -1,0 +1,19 @@
+{
+  "test1_nuisance_rho": -0.6474720667488885,
+  "test1_nuisance_p": 0.009065305474045784,
+  "test2_depth_rho": -0.7845620036284815,
+  "test2_depth_p": 0.0005331736406818898,
+  "test3_bao_sn_sigma": 2.1,
+  "test4_sensitivity_rho": 0.8153742483272114,
+  "test4_sensitivity_p": 0.013635071373793006,
+  "test5_dt_sn": 0.3294403570133124,
+  "test5_dt_bao": 0.37779186422604316,
+  "test6_tension_rho": 0.39757089318182753,
+  "test6_tension_p": 2.6740240733036073e-05,
+  "test7_redshift_rho": -0.6418986927404985,
+  "test7_redshift_p": 0.009884846938255643,
+  "test8_gw_Amax": 0.07,
+  "test8_gw_z0": 0.82,
+  "tests_passed": 8,
+  "tests_total": 8
+}
