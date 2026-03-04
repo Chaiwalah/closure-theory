@@ -1,0 +1,26 @@
+{
+  "input": {
+    "Gamma_0": 0.533,
+    "z_0": 0.82,
+    "k": 8.0,
+    "q_eff": 0.85
+  },
+  "h0_tension": {
+    "h0_predicted_biased": 72.9824837759958,
+    "h0_observed_cmb": 67.4,
+    "h0_local": 73.04
+  },
+  "mass_step": {
+    "delta_sigma_required": 0.11955703020384796,
+    "density_enhancement": 6.209262979873561
+  },
+  "dark_energy": {
+    "true_Om_1": 1.0,
+    "apparent_Ode_1": 0.32412109374999953,
+    "observed_Ode": 0.685
+  },
+  "w_evolution": {
+    "our_w_mean": -1.02875969556562,
+    "desi_w0": -0.727
+  }
+}
