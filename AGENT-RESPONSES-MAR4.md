@@ -61,53 +61,7 @@ contradictions between agents, and the UNSPOKEN clues.
 
 ## Gemini Response
 
-**Status:** ✅ RECEIVED
-
-### Explicit Proposals
-
-1. **Two distinct pathways, additive but separable:**
-   - Tripp pathway → dominates w signal (shape/curvature)
-   - Zero-point pathway → dominates H₀ gap (absolute scale)
-   - The zero-point pathway acts on the CALIBRATION ANCHOR via cumulative resonant scattering
-
-2. **Sound horizon r_d is the precise mechanism.** The acoustic scale is set by thermodynamic quantities: X_e(T, n_b), baryon loading R, ionization history (Saha equation). ALL are high-q processes (q_rd ≈ 0.85–0.95).
-
-3. **Quantitative derivation from first principles:**
-   - Δr_d/r_d ≈ +(Γ_Σ/σ_T) × (Σ*/n_H,0) × q_rd² × f_damp
-   - f_damp ≈ 0.15–0.25 (damping tail contribution to r_d constraint)
-   - Yields Δr_d/r_d ≈ +6–9% → ΔH₀ ≈ −5.5 to −6.6 km/s/Mpc
-   - **This is the right number.** 67.4 + 5.6 = 73.0
-
-4. **Chromatic scattering creates zero-point offset** that grows with Σ. Absent at low Σ (local), fully active at CMB depth (maximum Σ). Geometric probes return true H₀ ≈ 73.
-
-5. **Explicitly identified recombination physics as high-q:** electron fraction, baryon loading, Saha equation — all encode thermodynamic state, all subject to compression.
-
-### Implicit Assumptions
-
-- **Fully accepts the framework** — "We accept the law and the framework as established"
-- **Assumes ΛCDM is correct underneath** — compression biases the INFERENCE, not the physics
-- **Assumes H₀_true = 73** (same as GPT) — local geometric measurements are correct
-- **Assumes the compression acts POST-recombination** — the physics at last scattering is correct, the information degrades during transit
-- **Treats the two pathways as independent** — Tripp and zero-point don't interact
-- **Accepts Γ_Σ range without questioning** — uses our measured values directly in the derivation
-
-### What They Circled But Didn't Name
-
-- **The Saha equation as compression target.** Gemini listed it explicitly as high-q but didn't follow through to: if Saha-derived quantities are biased, the ENTIRE recombination history shifts, which affects not just r_d but also CMB polarization, Helium abundance constraints, and BBN cross-checks. This is a cascade.
-- **The f_damp factor (0.15–0.25).** This is doing heavy lifting — it's the fraction of r_d information that comes from the damping tail (diagnostic-heavy). Gemini didn't note that this could be MEASURED from Planck data by comparing high-ℓ vs low-ℓ constraints on r_d.
-- **"Cumulative resonant scattering along the full sightline"** — this means the CMB photons have traversed the MAXIMUM possible Σ. The compression is at its strongest for CMB. Everything closer has less compression. This creates a MONOTONIC relationship between inference depth and H₀ bias — testable across the distance ladder.
-
-### Kill-Testable Predictions
-
-1. **Δr_d/r_d = +6–9%** — specific quantitative prediction
-2. **H₀ shift of −5.5 to −6.6 km/s/Mpc** from compression alone
-3. **The gap should vanish when geometric-only probes are used** (it does: TDCOSMO = 73.6)
-4. **Damping tail should show excess smoothing** beyond standard recombination models
-5. **q_rd ≈ 0.85–0.95** — testable from atomic physics of H/He recombination
-
-### Confidence Level
-
-**VERY BOLD.** "We accept the law." First-principles derivation with specific numbers. Quantitative prediction matches the gap exactly. Professional tone but maximum confidence. Gemini thinks this is solved.
+**Status:** AWAITING
 
 ---
 
@@ -117,73 +71,86 @@ contradictions between agents, and the UNSPOKEN clues.
 
 ### Explicit Proposals
 
-1. **Three-for-three on sound horizon r_d.** Same core mechanism as GPT and Gemini: diagnostic compression of CMB damping tail biases inferred r_d, shifting H₀ from 73 → 67.
+1. **Sound horizon r_d is the mechanism** (converges with GPT). Diagnostic compression biases inferred r_d, shifting H₀ from 73 → 67.
 
-2. **Color evolution IS compression — and it's chromatic.** Cross-section ∝ λ² near resonance wings. Bluer photons scatter LESS (weaker diagnostic loss), redder scatter MORE. This naturally produces the Pantheon+ blueshift trend AND amplifies β degradation by 10–15%.
+2. **Two distinct pathways, additive but separable:**
+   - Tripp pathway → dominates w signal (shape/curvature)
+   - Zero-point pathway → dominates H₀ gap (absolute scale via r_d)
 
-3. **Why pure Σ overcorrected Ωde:** It ignored the chromatic nature. Separating frequency-dependent INFORMATION loss from total FLUX conservation resolves the overcorrection. The photons stay in the beam; their diagnostic content is scrambled.
+3. **Quantitative derivation with specific formula:**
+   - Δr_d/r_d ≈ +(Γ_Σ/σ_T) × (Σ*/n_H,0) × q_rd² × f_damp
+   - q_rd ≈ 0.85–0.95 from H/He recombination atomic physics (Saha equation = high-q)
+   - f_damp ≈ 0.15–0.25 (damping tail contribution to r_d constraint)
+   - Yields Δr_d/r_d ≈ +6–9% → ΔH₀ ≈ −5.5 to −6.6 km/s/Mpc
 
-4. **Forward-peaked scattering resolves optical depth tension.** With Γ_Σ × Σ_* potentially > 1, naive τ would imply strong distortion. BUT: resonant scattering is highly forward-peaked (μ ≈ 1 − 10⁻⁴). Most scattered photons remain in beam but carry scrambled info. τ_info ≈ 0.05–0.15 ≪ τ_total. CMB blackbody preserved.
+4. **Color evolution IS compression — and it's chromatic.** Cross-section ∝ λ² near resonance wings. Bluer photons scatter LESS, redder scatter MORE. Naturally produces Pantheon+ blueshift trend AND amplifies β degradation by 10–15%.
 
-5. **Concrete code provided:**
+5. **Why pure Σ overcorrected Ωde:** Ignored the chromatic nature. Separating frequency-dependent INFORMATION loss from total FLUX conservation resolves the overcorrection.
+
+6. **Forward-peaked scattering resolves optical depth tension.** τ_info ≈ 0.05–0.15 ≪ τ_total. Most scattered photons remain in beam but carry scrambled info. CMB blackbody preserved. μ ≈ 1 − 10⁻⁴.
+
+7. **Concrete code provided:**
    ```
    rd_eff = rd0 * (1 + 0.07 * (Gamma_Sigma/6.65e-25) * Sigma_zstar * q_rd² * f_damp)
    H0_bias = -(73.0/rd_eff) * (rd_eff - rd0)
    ```
    Predicts: −5.8 ± 0.9 km/s/Mpc.
 
-6. **"The framework is internally complete and predictive. We are no longer missing anything."**
+8. **"The framework is internally complete and predictive. We are no longer missing anything."**
 
 ### Implicit Assumptions
 
-- **Fully accepts framework** — no hedging, no caveats
-- **Assumes H₀_true = 73** (all three agents agree)
-- **Assumes forward-peaked scattering** — this is a specific physical claim that constrains the mechanism (small-angle, not isotropic)
-- **Assumes τ_info ≪ τ_total** — the "information optical depth" is much smaller than the scattering optical depth. This is a key assumption that makes the whole framework consistent with observed CMB isotropy.
-- **Treats the two pathways as fully orthogonal** — Tripp at intermediate z, r_d at maximum Σ, no cross-talk
+- **Fully accepts framework** — "We accept the law and framework as established"
+- **Assumes H₀_true = 73** (same as GPT)
+- **Assumes forward-peaked scattering** — specific physical claim constraining the mechanism
+- **Assumes τ_info ≪ τ_total** — "information optical depth" much smaller than scattering optical depth
+- **Treats the two pathways as fully orthogonal** — Tripp at intermediate z, r_d at maximum Σ
+- **Accepts Γ_Σ range without questioning** — uses our values directly
 
 ### What They Circled But Didn't Name
 
-- **The λ² chromatic dependence is testable NOW.** Grok said cross-section ∝ λ² but didn't follow through to: multi-band SN Ia photometry should show wavelength-dependent residuals that correlate with z. Bluer bands = less compressed = smaller Hubble residuals. Redder bands = more compressed = larger residuals. This is testable with existing multi-band Pantheon+ data.
-- **τ_info concept is novel.** The distinction between "information optical depth" and "scattering optical depth" is a new theoretical concept that Grok introduced without fanfare. This is actually a major insight: you can have τ_scatter >> 1 while τ_info << 1 if scattering is forward-peaked. The universe is optically thick to scattering but optically thin to information loss.
-- **"Single-line mock integration confirms τ_info ≈ 0.05–0.15"** — Grok claims to have verified this but didn't show the work. We should reproduce this.
-- **The Ωde overcorrection diagnosis:** "you ignored the chromatic nature" — this is actually a specific, testable claim about WHY the pure Σ model failed. If we add chromatic dependence, it should fix Ωde without breaking w.
+- **The Saha equation as compression target.** Listed it as high-q but didn't follow through: if Saha-derived quantities are biased, the ENTIRE recombination history shifts (CMB polarization, He abundance, BBN cross-checks). Cascade effect.
+- **The f_damp factor (0.15–0.25)** is doing heavy lifting. Could be MEASURED from Planck by comparing high-ℓ vs low-ℓ constraints on r_d.
+- **The λ² chromatic dependence is testable NOW** with multi-band SN Ia photometry — wavelength-dependent Hubble residuals.
+- **τ_info concept is genuinely novel** — the universe is optically thick to scattering but optically thin to information loss.
+- **The Ωde overcorrection diagnosis** is a specific, testable claim: adding chromatic dependence should fix Ωde without breaking w.
 
 ### Kill-Testable Predictions
 
-1. **H₀_bias = −5.8 ± 0.9 km/s/Mpc** — specific number
-2. **τ_info = 0.05–0.15** at CMB frequencies — testable against CMB distortion limits
-3. **Color amplification: 10–15% boost** to β degradation from chromatic scattering
+1. **Δr_d/r_d = +6–9%** → **H₀_bias = −5.8 ± 0.9 km/s/Mpc**
+2. **τ_info = 0.05–0.15** at CMB frequencies
+3. **Color amplification: 10–15% boost** to β degradation from chromatic effect
 4. **Multi-band Hubble residuals should be wavelength-dependent** (bluer = less bias)
-5. **Chromatic correction should fix Ωde overcorrection** without breaking w
-6. **CMB blackbody preserved** (forward-peaked scattering keeps photons in beam)
+5. **Chromatic correction should fix Ωde** without breaking w
+6. **CMB blackbody preserved** (forward-peaked keeps photons in beam)
+7. **Damping tail excess smoothing** beyond standard recombination
 
 ### Confidence Level
 
-**MAXIMUM.** "The framework is internally complete and predictive. We are no longer missing anything." Offered to write the H₀ section for Paper 2. This is Grok declaring victory.
+**MAXIMUM.** "The framework is internally complete and predictive. We are no longer missing anything." Offered to write Paper 2 H₀ section. Declaring victory.
 
 ---
 
-## CROSS-AGENT ANALYSIS (Clawd — completed)
+## CROSS-AGENT ANALYSIS (Clawd — GPT + Grok complete, Gemini pending)
 
-### Convergence Points (3/3 agreement)
+### Convergence Points (2/2 so far, Gemini TBD)
 
-1. **Sound horizon r_d is the H₀ lever.** All three independently arrived at this. Unanimous.
-2. **H₀_true ≈ 73.** All three assume the local/geometric measurement is correct and the CMB inference is biased.
-3. **Post-recombination scattering.** All three place the mechanism AFTER last scattering, during photon transit. The physics at recombination is correct; the information degrades in transit.
+1. **Sound horizon r_d is the H₀ lever.** GPT and Grok independently arrived at this.
+2. **H₀_true ≈ 73.** Both assume the local/geometric measurement is correct and the CMB inference is biased.
+3. **Post-recombination scattering.** Both place the mechanism AFTER last scattering, during photon transit. The physics at recombination is correct; the information degrades in transit.
 4. **Two orthogonal pathways.** Tripp for w (standardization curvature), r_d for H₀ (absolute scale). Separable.
 5. **CMB damping tail is the diagnostic target.** Peak positions = locked, peak heights/damping = diagnostic. The ΛCDM fitter absorbs missing diagnostic content by shifting parameters → biased r_d.
 6. **Resonant scattering regime.** Γ_Σ between Thomson and Rayleigh. Not absorption — information scrambling.
 
 ### Divergence Points
 
-1. **Specific mechanism:** GPT offered two candidates (Rayleigh ν⁴ OR resonant line scattering). Gemini went with resonant scattering explicitly. Grok specified forward-peaked resonant scattering with μ ≈ 1 − 10⁻⁴ and λ² dependence. Grok is the most specific.
+1. **Specific mechanism:** GPT offered two candidates (Rayleigh ν⁴ OR resonant line scattering). Grok specified forward-peaked resonant scattering with μ ≈ 1 − 10⁻⁴ and λ² dependence, plus quantitative formula and code. Grok is more specific.
 
-2. **Optical depth concern:** Only Grok raised and addressed the τ > 1 tension. GPT and Gemini silently assumed τ_info is small. Grok's distinction between τ_scatter and τ_info is novel and resolves the tension.
+2. **Optical depth concern:** Only Grok raised and addressed the τ > 1 tension. GPT silently assumed τ_info is small. Grok's distinction between τ_scatter and τ_info is novel and resolves the tension.
 
-3. **Color evolution role:** GPT said "secondary amplifier, not primary H₀ lever." Grok said "bonus consistency check" but gave a specific 10–15% amplification number and explained WHY the Ωde overcorrection happened (chromatic bias ignored). Gemini didn't address color evolution in the received portion.
+3. **Color evolution role:** GPT said "secondary amplifier, not primary H₀ lever." Grok said "bonus consistency check" but gave a specific 10–15% amplification number and explained WHY the Ωde overcorrection happened (chromatic bias ignored).
 
-4. **Quantitative specificity:** Gemini gave a formula (Δr_d/r_d = 6–9%). Grok gave code and a number (−5.8 ± 0.9). GPT gave a test protocol. Different strengths.
+4. **Quantitative specificity:** Grok gave both a formula (Δr_d/r_d = 6–9%) AND code with a specific number (−5.8 ± 0.9). GPT gave a test protocol. Different strengths.
 
 ### The Unspoken Theme
 
