@@ -1,0 +1,32 @@
+{
+  "n_mocks": 10000,
+  "n_valid": 10000,
+  "conventional_models": [
+    "Baldwin Effect (beta=-0.15 to -0.25)",
+    "Metallicity gradient (dZ/dz=-0.05 to -0.15)",
+    "Dust evolution (tau=0.02-0.08)",
+    "Progenitor drift (d_beta/dz=-0.1 to -0.5)",
+    "Scatter broadening (tau \u221d DM^2)"
+  ],
+  "results": {
+    "gamma0_recovery_pct": 0.0,
+    "rho_cross_above_0.9_pct": 0.0,
+    "beta_drop_above_44_pct": 0.0,
+    "ladder_rho_above_0.95_pct": 9.4,
+    "joint_pass_pct": 0.0
+  },
+  "mock_distributions": {
+    "gamma0_mean": 1.0104719988293818,
+    "gamma0_std": 0.058151470907038504,
+    "rho_cross_mean": 0.6221365626785705,
+    "rho_cross_std": 0.06428963181220107,
+    "beta_drop_mean": 9.807179801949975,
+    "beta_drop_std": 3.807917702277045
+  },
+  "z_scores": {
+    "gamma0": -8.210832699187833,
+    "rho_cross": 4.602039691029614,
+    "beta_drop": 8.979401045774578
+  },
+  "verdict": "NULL REJECTED"
+}

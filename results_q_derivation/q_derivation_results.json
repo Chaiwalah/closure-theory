@@ -1,0 +1,39 @@
+{
+  "method": "q = ||\u2202ln(j)/\u2202ln(T, n_e, Z)|| with equal weights, normalized to [0,1]",
+  "sources": "Osterbrock & Ferland 2006, CHIANTI v10, NIST ASD",
+  "derived_q": {
+    "[SII] 6716/6731 ratio": 0.0,
+    "[NII] 6583": 0.47831831012109655,
+    "H\u03b2 4861": 0.5280535765527443,
+    "[OII] 3727": 0.9180824376486245,
+    "[OIII] 5007": 0.6811924753003348,
+    "SN Ia stretch (x\u2081)": 0.03611575592573077,
+    "SN Ia color (c)": 1.0,
+    "FRB DM": 0.2407717061715384,
+    "FRB spectral index": 0.6019292654288461
+  },
+  "hand_assigned_q": {
+    "[SII] 6716/6731 ratio": 0.0,
+    "[NII] 6583": 0.2,
+    "H\u03b2 4861": 0.35,
+    "[OII] 3727": 0.45,
+    "[OIII] 5007": 0.85,
+    "SN Ia stretch (x\u2081)": 0.1,
+    "SN Ia color (c)": 0.7,
+    "FRB DM": 0.1,
+    "FRB spectral index": 0.6
+  },
+  "rank_correlation": {
+    "spearman_rho": 0.9121418755437382,
+    "spearman_p": 0.000606850679471499,
+    "kendall_tau": 0.816982446237566,
+    "kendall_p": 0.0023655770533978757
+  },
+  "doublet_ladder": {
+    "derived_q_rho": 0.8999999999999998,
+    "derived_q_p": 0.03738607346849874,
+    "hand_q_rho": 0.9999999999999999,
+    "hand_q_p": 1.4042654220543602e-24
+  },
+  "verdict": "q ordering from atomic physics matches hand-assigned"
+}

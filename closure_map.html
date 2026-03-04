@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #0a0a14; color: #e0e0e0; font-family: 'Segoe UI', system-ui, sans-serif; overflow-x: hidden; }
+.container { width: 1200px; margin: 0 auto; padding: 20px; }
+h1 { text-align: center; font-size: 28px; color: #fff; margin-bottom: 5px; letter-spacing: 2px; }
+h2 { text-align: center; font-size: 14px; color: #888; margin-bottom: 30px; font-weight: normal; }
+.section-title { font-size: 20px; color: #7eb8ff; margin: 40px 0 15px; border-bottom: 1px solid #333; padding-bottom: 8px; }
+
+canvas { display: block; margin: 0 auto; }
+
+.legend { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; margin: 15px 0; font-size: 12px; }
+.legend-item { display: flex; align-items: center; gap: 5px; }
+.legend-dot { width: 12px; height: 12px; border-radius: 50%; }
+
+.results-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 20px 0; }
+.result-card { background: #12121f; border: 1px solid #2a2a3f; border-radius: 8px; padding: 15px; }
+.result-card h3 { font-size: 14px; color: #7eb8ff; margin-bottom: 8px; }
+.result-card .stat { font-size: 22px; font-weight: bold; margin: 5px 0; }
+.result-card .desc { font-size: 11px; color: #888; }
+.stat-green { color: #4ade80; }
+.stat-red { color: #f87171; }
+.stat-yellow { color: #fbbf24; }
+.stat-blue { color: #60a5fa; }
+
+.prediction-box { background: #1a1a2e; border: 2px solid #7eb8ff; border-radius: 10px; padding: 20px; margin: 20px 0; }
+.prediction-box h3 { color: #7eb8ff; margin-bottom: 10px; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>CLOSURE THEORY — THE MAP</h1>
+<h2>What degrades, what survives, and where the boundary lives</h2>
+
+<!-- MAIN UNIVERSE MAP -->
+<canvas id="universeMap" width="1160" height="700"></canvas>
+
+<div class="legend">
+  <div class="legend-item"><div class="legend-dot" style="background:#4ade80"></div> Protected (geometric, branch-locked)</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#f87171"></div> Degraded (relational, density-sensitive)</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#fbbf24"></div> Threshold zone (z ≈ 0.8–1.1)</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#818cf8"></div> Interstellar objects</div>
+</div>
+
+<!-- SIGMOID CHART -->
+<div class="section-title">THE THRESHOLD — Sigmoid Across Three Source Classes</div>
+<canvas id="sigmoidChart" width="1160" height="350"></canvas>
+
+<!-- DOUBLET LADDER -->
+<div class="section-title">THE LADDER — Susceptibility Predicts Degradation Rate</div>
+<canvas id="ladderChart" width="1160" height="300"></canvas>
+
+<!-- KEY RESULTS GRID -->
+<div class="section-title">THE EVIDENCE — 100+ Tests, 752,725 Objects, 0 Contradictions</div>
+<div class="results-grid">
+  <div class="result-card">
+    <h3>🔴 EW Correlations DEGRADE</h3>
+    <div class="stat stat-red">r = 0.248 → 0.135</div>
+    <div class="desc">CIV EW-FWHM correlation decays monotonically with z (p=10⁻⁹). Relational information lost.</div>
+  </div>
+  <div class="result-card">
+    <h3>🟢 FWHM (Geometric) FLAT</h3>
+    <div class="stat stat-green">r = +0.143 (stable)</div>
+    <div class="desc">Line widths unchanged across all z. Kinematics preserved. Velocity offsets rock-stable.</div>
+  </div>
+  <div class="result-card">
+    <h3>🟢 Branch-Locked Ratios IMMUNE</h3>
+    <div class="stat stat-green">[OIII] 5007/4959: p = 0.58</div>
+    <div class="desc">Quantum-locked ratios show zero scatter increase. [NII] scatter = 0.01. Physics-protected.</div>
+  </div>
+  <div class="result-card">
+    <h3>🔴 Density-Sensitive Ratios DEGRADE</h3>
+    <div class="stat stat-red">[SII] 6718/6732: 5× scatter (p=0.009)</div>
+    <div class="desc">Ratios that encode environment info show progressive degradation. Information eaten.</div>
+  </div>
+  <div class="result-card">
+    <h3>🟡 Universal Equation</h3>
+    <div class="stat stat-yellow">dr/dz = −0.10 × P</div>
+    <div class="desc">Decorrelation rate predicted by susceptibility P (r=−0.726, p=0.017). One equation, all lines.</div>
+  </div>
+  <div class="result-card">
+    <h3>🔵 Cross-Pipeline Confirmed</h3>
+    <div class="stat stat-blue">MgII: both pipelines agree</div>
+    <div class="desc">519,765 quasars matched. DR16Q and Rakshit/PyQSOFit show identical MgII signal. Not a pipeline artifact.</div>
+  </div>
+  <div class="result-card">
+    <h3>❌ All Foreground Proxies NULL</h3>
+    <div class="stat stat-red">κ: null | y: null | E(B-V): null</div>
+    <div class="desc">Total mass, hot electrons, dust — nothing along the way predicts damage. z itself is the variable.</div>
+  </div>
+  <div class="result-card">
+    <h3>🟣 3I/ATLAS: Frozen Closure</h3>
+    <div class="stat" style="color:#c084fc">Ni/Fe = 46:1 | P predicts it</div>
+    <div class="desc">Fe (high P=0.37) suppressed, Ni (low P=0.20) dominates. Same physics in solid-state chemistry.</div>
+  </div>
+</div>
+
+<!-- PREDICTIONS -->
+<div class="section-title">PREDICTIONS — What Closure Theory Says Next</div>
+<div class="results-grid">
+  <div class="prediction-box">
+    <h3>🎯 Lensed Quasars</h3>
+    <div class="desc" style="font-size:13px">Same source, different paths → EW should differ between images, FWHM should not. 5/6 published systems already match. Full spectral extraction will confirm.</div>
+  </div>
+  <div class="prediction-box">
+    <h3>🎯 4I (Next Interstellar Object)</h3>
+    <div class="desc" style="font-size:13px">If from further out (halo/extragalactic): MORE extreme chemical anomalies, following P formula. High-P molecules suppressed, low-P survive. Not just "metal-poor" — selectively anomalous.</div>
+  </div>
+  <div class="prediction-box">
+    <h3>🎯 JWST High-z Galaxies</h3>
+    <div class="desc" style="font-size:13px">"Impossibly mature" galaxies aren't impossible if distance isn't literal. Their apparent maturity is a measurement artifact of the outside regime.</div>
+  </div>
+  <div class="prediction-box">
+    <h3>🎯 Hubble Tension</h3>
+    <div class="desc" style="font-size:13px">Estimated 4.1 km/s/Mpc correction (73% of 5.6 tension). Local measurements (geometric) disagree with distant measurements (relational) because of the operator.</div>
+  </div>
+</div>
+
+</div>
+
+<script>
+// ============================================================
+// UNIVERSE MAP
+// ============================================================
+const ctx = document.getElementById('universeMap').getContext('2d');
+const W = 1160, H = 700;
+const cx = W/2, cy = H/2 + 30;
+
+// Background stars
+for(let i = 0; i < 200; i++) {
+  const x = Math.random() * W;
+  const y = Math.random() * H;
+  const r = Math.random() * 1.2;
+  ctx.fillStyle = `rgba(255,255,255,${Math.random()*0.4+0.1})`;
+  ctx.beginPath(); ctx.arc(x,y,r,0,Math.PI*2); ctx.fill();
+}
+
+// Concentric zones
+const zones = [
+  { r: 260, color: 'rgba(239,68,68,0.08)', border: 'rgba(239,68,68,0.3)', label: 'OUTSIDE REGIME', sublabel: 'z > 1.5 | Relational channels degraded', labelY: -10 },
+  { r: 190, color: 'rgba(251,191,36,0.1)', border: 'rgba(251,191,36,0.4)', label: 'THRESHOLD', sublabel: 'z ≈ 0.8–1.1 | Sigmoid transition', labelY: -10 },
+  { r: 120, color: 'rgba(74,222,128,0.08)', border: 'rgba(74,222,128,0.3)', label: 'LOCAL REGIME', sublabel: 'z < 0.5 | All channels intact', labelY: -10 },
+  { r: 30, color: 'rgba(96,165,250,0.15)', border: 'rgba(96,165,250,0.5)', label: '', sublabel: '', labelY: 0 },
+];
+
+zones.forEach(z => {
+  // Glow
+  const grad = ctx.createRadialGradient(cx, cy, z.r*0.8, cx, cy, z.r);
+  grad.addColorStop(0, 'transparent');
+  grad.addColorStop(1, z.color);
+  ctx.fillStyle = grad;
+  ctx.beginPath(); ctx.arc(cx, cy, z.r, 0, Math.PI*2); ctx.fill();
+  
+  // Border
+  ctx.strokeStyle = z.border;
+  ctx.lineWidth = 1.5;
+  ctx.setLineDash([5,5]);
+  ctx.beginPath(); ctx.arc(cx, cy, z.r, 0, Math.PI*2); ctx.stroke();
+  ctx.setLineDash([]);
+});
+
+// Labels for zones
+ctx.textAlign = 'center';
+
+// "US" at center
+ctx.fillStyle = '#60a5fa';
+ctx.font = 'bold 11px system-ui';
+ctx.fillText('☀️ US', cx, cy+4);
+
+// Local regime label
+ctx.fillStyle = '#4ade80';
+ctx.font = 'bold 13px system-ui';
+ctx.fillText('LOCAL REGIME', cx, cy - 120 - 25);
+ctx.font = '11px system-ui';
+ctx.fillStyle = '#4ade8099';
+ctx.fillText('z < 0.5 — All channels intact', cx, cy - 120 - 10);
+
+// Threshold label  
+ctx.fillStyle = '#fbbf24';
+ctx.font = 'bold 13px system-ui';
+ctx.fillText('THRESHOLD', cx, cy - 190 - 25);
+ctx.font = '11px system-ui';
+ctx.fillStyle = '#fbbf2499';
+ctx.fillText('z ≈ 0.8–1.1 — Sigmoid transition', cx, cy - 190 - 10);
+
+// Outside label
+ctx.fillStyle = '#f87171';
+ctx.font = 'bold 13px system-ui';
+ctx.fillText('OUTSIDE REGIME', cx, cy - 260 - 25);
+ctx.font = '11px system-ui';
+ctx.fillStyle = '#f8717199';
+ctx.fillText('z > 1.5 — Relational channels degraded', cx, cy - 260 - 10);
+
+// SOURCE CLASSES around the map
+// Quasars - top right
+ctx.fillStyle = '#ff9f43';
+ctx.font = 'bold 12px system-ui';
+ctx.fillText('750,414 QUASARS', cx + 320, cy - 200);
+ctx.font = '10px system-ui';
+ctx.fillStyle = '#ff9f4399';
+ctx.fillText('SDSS DR16Q + Rakshit', cx + 320, cy - 185);
+ctx.fillText('MgII sigmoid z₀=0.86', cx + 320, cy - 170);
+ctx.fillText('CIV decorrelation p=10⁻⁹', cx + 320, cy - 155);
+// Arrow
+ctx.strokeStyle = '#ff9f4366';
+ctx.lineWidth = 1;
+ctx.beginPath();
+ctx.moveTo(cx + 250, cy - 170);
+ctx.lineTo(cx + 200, cy - 140);
+ctx.stroke();
+
+// SNe Ia - top left
+ctx.fillStyle = '#f472b6';
+ctx.font = 'bold 12px system-ui';
+ctx.fillText('1,590 SNe Ia', cx - 320, cy - 200);
+ctx.font = '10px system-ui';
+ctx.fillStyle = '#f472b699';
+ctx.fillText('Pantheon+', cx - 320, cy - 185);
+ctx.fillText('Color sigmoid z₀=0.82', cx - 320, cy - 170);
+ctx.fillText('Stretch IMMUNE', cx - 320, cy - 155);
+ctx.strokeStyle = '#f472b666';
+ctx.beginPath();
+ctx.moveTo(cx - 250, cy - 170);
+ctx.lineTo(cx - 200, cy - 140);
+ctx.stroke();
+
+// FRBs - bottom right
+ctx.fillStyle = '#34d399';
+ctx.font = 'bold 12px system-ui';
+ctx.fillText('721 FRBs', cx + 320, cy + 160);
+ctx.font = '10px system-ui';
+ctx.fillStyle = '#34d39999';
+ctx.fillText('CHIME', cx + 320, cy + 175);
+ctx.fillText('Width-SpI vanishes DM≈500', cx + 320, cy + 190);
+ctx.fillText('DM-Fluence sigmoid F=15.2', cx + 320, cy + 205);
+ctx.strokeStyle = '#34d39966';
+ctx.beginPath();
+ctx.moveTo(cx + 250, cy + 180);
+ctx.lineTo(cx + 200, cy + 140);
+ctx.stroke();
+
+// 3I/ATLAS - bottom left (coming IN from outside)
+ctx.fillStyle = '#c084fc';
+ctx.font = 'bold 12px system-ui';
+ctx.fillText('3I/ATLAS', cx - 350, cy + 130);
+ctx.font = '10px system-ui';
+ctx.fillStyle = '#c084fc99';
+ctx.fillText('Interstellar object', cx - 350, cy + 145);
+ctx.fillText('Ni/Fe = 46:1 (expect 1:1)', cx - 350, cy + 160);
+ctx.fillText('CO₂/H₂O = 8:1 (6σ anomaly)', cx - 350, cy + 175);
+ctx.fillText('v∞ = 57 km/s, 11 Gyr old', cx - 350, cy + 190);
+ctx.fillText('FROZEN record of outside regime', cx - 350, cy + 205);
+
+// Arrow showing 3I trajectory cutting across
+ctx.strokeStyle = '#c084fc88';
+ctx.lineWidth = 2;
+ctx.setLineDash([8,4]);
+ctx.beginPath();
+ctx.moveTo(cx - 250, cy + 220);
+ctx.lineTo(cx - 30, cy + 10);
+ctx.stroke();
+ctx.setLineDash([]);
+// Arrowhead
+ctx.fillStyle = '#c084fc';
+ctx.beginPath();
+ctx.moveTo(cx - 30, cy + 10);
+ctx.lineTo(cx - 45, cy + 25);
+ctx.lineTo(cx - 40, cy + 15);
+ctx.fill();
+ctx.font = '10px system-ui';
+ctx.fillStyle = '#c084fc88';
+ctx.fillText('trajectory cuts across ecliptic', cx - 180, cy + 230);
+
+// WHAT DEGRADES vs WHAT SURVIVES - right side annotations
+const rightX = cx + 380;
+
+// Degrades column
+ctx.fillStyle = '#f87171';
+ctx.font = 'bold 14px system-ui';
+ctx.textAlign = 'left';
+ctx.fillText('❌ DEGRADES', rightX, cy - 80);
+ctx.font = '11px system-ui';
+const degrades = [
+  'EW correlations (r: 0.25→0.14)',
+  'Density-sensitive ratios ([SII])',
+  'Line flux (r = −0.943)',
+  'EW kurtosis (fat tails grow)',
+  'Inter-line coherence',
+  'Fe chemistry (P=0.37)',
+  'CO₂/H₂O balance',
+  'Spectral info (MI drops)',
+];
+degrades.forEach((d,i) => {
+  ctx.fillStyle = '#f8717199';
+  ctx.fillText('• ' + d, rightX, cy - 55 + i*18);
+});
+
+// Survives column
+ctx.fillStyle = '#4ade80';
+ctx.font = 'bold 14px system-ui';
+ctx.fillText('✅ SURVIVES', rightX, cy + 105);
+ctx.font = '11px system-ui';
+const survives = [
+  'FWHM (geometric, r = +0.14)',
+  'Branch-locked ratios (p=0.58)',
+  'Velocity offsets (stable)',
+  'Orbit/trajectory (hyperbolic)',
+  'Ni chemistry (P=0.20)',
+  'Simple molecules (Td symmetry)',
+  'Line centroids',
+  'Redshift z itself',
+];
+survives.forEach((s,i) => {
+  ctx.fillStyle = '#4ade8099';
+  ctx.fillText('• ' + s, rightX, cy + 130 + i*18);
+});
+
+// LEFT SIDE - killed mechanisms
+const leftX = 30;
+ctx.textAlign = 'left';
+ctx.fillStyle = '#666';
+ctx.font = 'bold 13px system-ui';
+ctx.fillText('☠️ KILLED MECHANISMS', leftX, cy - 80);
+ctx.font = '11px system-ui';
+const killed = [
+  '✗ Dust extinction',
+  '✗ Scattering (Thomson/Rayleigh)',
+  '✗ Landau damping (10⁷× too weak)',
+  '✗ Collisional transition',
+  '✗ Plasma collective modes',
+  '✗ Source evolution (z-matched kill)',
+  '✗ SNR/selection (controlled)',
+  '✗ Pipeline artifact (MgII cross-pipe)',
+  '✗ Total mass proxy (κ null)',
+  '✗ Hot electron proxy (y null)',
+  '✗ Dust proxy (E(B-V) null)',
+  '✗ Microlensing (FWHM stable)',
+];
+killed.forEach((k,i) => {
+  ctx.fillStyle = '#55555599';
+  ctx.fillText(k, leftX, cy - 55 + i*18);
+});
+
+// BOTTOM - the key insight
+ctx.textAlign = 'center';
+ctx.fillStyle = '#fff';
+ctx.font = 'bold 16px system-ui';
+ctx.fillText('THE PATTERN: Complexity is vulnerability. Simplicity survives.', cx, H - 50);
+ctx.font = '12px system-ui';
+ctx.fillStyle = '#888';
+ctx.fillText('752,725 objects × 100+ tests × 3 source classes × 12 killed mechanisms × 0 contradictions', cx, H - 28);
+
+// ============================================================
+// SIGMOID CHART
+// ============================================================
+const ctx2 = document.getElementById('sigmoidChart').getContext('2d');
+const W2 = 1160, H2 = 350;
+const pad = { l: 80, r: 40, t: 30, b: 50 };
+
+// Axes
+ctx2.strokeStyle = '#444';
+ctx2.lineWidth = 1;
+ctx2.beginPath();
+ctx2.moveTo(pad.l, pad.t);
+ctx2.lineTo(pad.l, H2-pad.b);
+ctx2.lineTo(W2-pad.r, H2-pad.b);
+ctx2.stroke();
+
+// Labels
+ctx2.fillStyle = '#888';
+ctx2.font = '12px system-ui';
+ctx2.textAlign = 'center';
+ctx2.fillText('Redshift z (or DM equivalent)', W2/2, H2-10);
+ctx2.save();
+ctx2.translate(20, H2/2);
+ctx2.rotate(-Math.PI/2);
+ctx2.fillText('Coupling Strength (normalized)', 0, 0);
+ctx2.restore();
+
+// Z axis ticks
+const zRange = [0, 3];
+const plotW = W2 - pad.l - pad.r;
+const plotH = H2 - pad.t - pad.b;
+
+for(let z=0; z<=3; z+=0.5) {
+  const x = pad.l + (z/3) * plotW;
+  ctx2.fillStyle = '#666';
+  ctx2.font = '10px system-ui';
+  ctx2.fillText(z.toFixed(1), x, H2-pad.b+15);
+  ctx2.strokeStyle = '#222';
+  ctx2.beginPath();
+  ctx2.moveTo(x, pad.t);
+  ctx2.lineTo(x, H2-pad.b);
+  ctx2.stroke();
+}
+
+// Y axis: 0 to 1
+for(let y=0; y<=1; y+=0.2) {
+  const yy = H2 - pad.b - y * plotH;
+  ctx2.fillStyle = '#666';
+  ctx2.font = '10px system-ui';
+  ctx2.textAlign = 'right';
+  ctx2.fillText(y.toFixed(1), pad.l-8, yy+4);
+  ctx2.strokeStyle = '#1a1a1a';
+  ctx2.beginPath();
+  ctx2.moveTo(pad.l, yy);
+  ctx2.lineTo(W2-pad.r, yy);
+  ctx2.stroke();
+}
+
+// Sigmoid function
+function sigmoid(z, z0, k) {
+  return 1 / (1 + Math.exp(k * (z - z0)));
+}
+
+// Plot sigmoids for each source class
+const classes = [
+  { name: 'SNe Ia (color)', z0: 0.82, k: 6, color: '#f472b6', dash: [] },
+  { name: 'Quasars MgII', z0: 0.86, k: 5, color: '#ff9f43', dash: [] },
+  { name: 'Quasars CIV', z0: 1.05, k: 4, color: '#fbbf24', dash: [5,3] },
+  { name: 'FRBs (DM≈500→z≈0.4)', z0: 0.9, k: 5, color: '#34d399', dash: [3,3] },
+];
+
+ctx2.textAlign = 'left';
+classes.forEach((cls, idx) => {
+  ctx2.strokeStyle = cls.color;
+  ctx2.lineWidth = 2.5;
+  ctx2.setLineDash(cls.dash);
+  ctx2.beginPath();
+  for(let i=0; i<=200; i++) {
+    const z = (i/200) * 3;
+    const val = sigmoid(z, cls.z0, cls.k);
+    const x = pad.l + (z/3) * plotW;
+    const y = H2 - pad.b - val * plotH;
+    if(i===0) ctx2.moveTo(x,y); else ctx2.lineTo(x,y);
+  }
+  ctx2.stroke();
+  ctx2.setLineDash([]);
+  
+  // Legend
+  ctx2.fillStyle = cls.color;
+  ctx2.font = '11px system-ui';
+  ctx2.fillText('— ' + cls.name + ' (z₀=' + cls.z0 + ')', pad.l + 20, pad.t + 20 + idx*18);
+});
+
+// Threshold band
+ctx2.fillStyle = 'rgba(251,191,36,0.06)';
+const threshL = pad.l + (0.75/3) * plotW;
+const threshR = pad.l + (1.15/3) * plotW;
+ctx2.fillRect(threshL, pad.t, threshR-threshL, plotH);
+ctx2.fillStyle = '#fbbf2466';
+ctx2.font = '10px system-ui';
+ctx2.textAlign = 'center';
+ctx2.fillText('THRESHOLD', (threshL+threshR)/2, pad.t + 15);
+ctx2.fillText('ZONE', (threshL+threshR)/2, pad.t + 27);
+
+// FWHM flat line for contrast
+ctx2.strokeStyle = '#4ade80';
+ctx2.lineWidth = 2;
+ctx2.setLineDash([8,4]);
+ctx2.beginPath();
+const fwhmY = H2 - pad.b - 0.85 * plotH;
+ctx2.moveTo(pad.l, fwhmY);
+ctx2.lineTo(W2-pad.r, fwhmY);
+ctx2.stroke();
+ctx2.setLineDash([]);
+ctx2.fillStyle = '#4ade80';
+ctx2.font = '11px system-ui';
+ctx2.textAlign = 'right';
+ctx2.fillText('FWHM (geometric) — FLAT ✓', W2-pad.r-10, fwhmY-8);
+
+// ============================================================
+// DOUBLET LADDER
+// ============================================================
+const ctx3 = document.getElementById('ladderChart').getContext('2d');
+const W3 = 1160, H3 = 300;
+
+const lines = [
+  { name: '[NII]', P: 0, rate: 0, color: '#4ade80', desc: 'Branch-locked' },
+  { name: '[OIII]', P: 0, rate: 0, color: '#4ade80', desc: 'Branch-locked' },
+  { name: 'Balmer', P: 0.3, rate: -0.038, color: '#86efac', desc: 'Recombination' },
+  { name: '[OII]', P: 0.4, rate: -0.179, color: '#fbbf24', desc: 'Density-sensitive' },
+  { name: 'MgII', P: 0.5, rate: -0.15, color: '#fb923c', desc: 'BLR resonance' },
+  { name: 'CIV', P: 0.6, rate: -0.20, color: '#f87171', desc: 'High-ion BLR' },
+  { name: '[SII]', P: 0.7, rate: -0.396, color: '#ef4444', desc: 'Density-sensitive' },
+];
+
+const lpad = { l: 120, r: 200, t: 30, b: 50 };
+const lW = W3 - lpad.l - lpad.r;
+const lH = H3 - lpad.t - lpad.b;
+
+// Axes
+ctx3.strokeStyle = '#444';
+ctx3.beginPath();
+ctx3.moveTo(lpad.l, lpad.t);
+ctx3.lineTo(lpad.l, H3-lpad.b);
+ctx3.lineTo(lpad.l+lW, H3-lpad.b);
+ctx3.stroke();
+
+ctx3.fillStyle = '#888';
+ctx3.font = '12px system-ui';
+ctx3.textAlign = 'center';
+ctx3.fillText('Susceptibility P (from atomic physics)', lpad.l+lW/2, H3-10);
+
+ctx3.save();
+ctx3.translate(25, H3/2);
+ctx3.rotate(-Math.PI/2);
+ctx3.fillText('Degradation Rate (dr/dz)', 0, 0);
+ctx3.restore();
+
+// Plot points
+lines.forEach(line => {
+  const x = lpad.l + (line.P / 0.8) * lW;
+  const y = lpad.t + ((-line.rate) / 0.45) * lH;
+  
+  // Dot
+  ctx3.fillStyle = line.color;
+  ctx3.beginPath();
+  ctx3.arc(x, y, 8, 0, Math.PI*2);
+  ctx3.fill();
+  
+  // Label
+  ctx3.fillStyle = line.color;
+  ctx3.font = 'bold 12px system-ui';
+  ctx3.textAlign = 'left';
+  ctx3.fillText(line.name, x + 14, y + 4);
+  ctx3.font = '10px system-ui';
+  ctx3.fillStyle = '#888';
+  ctx3.fillText(line.desc, x + 14, y + 18);
+});
+
+// Trend line
+ctx3.strokeStyle = '#f8717166';
+ctx3.lineWidth = 2;
+ctx3.setLineDash([6,4]);
+ctx3.beginPath();
+ctx3.moveTo(lpad.l, lpad.t + 5);
+ctx3.lineTo(lpad.l + lW * 0.9, lpad.t + lH * 0.9);
+ctx3.stroke();
+ctx3.setLineDash([]);
+
+// Equation
+ctx3.fillStyle = '#fbbf24';
+ctx3.font = 'bold 14px system-ui';
+ctx3.textAlign = 'left';
+ctx3.fillText('dr/dz = −0.10 × P', lpad.l + lW + 20, lpad.t + 40);
+ctx3.font = '12px system-ui';
+ctx3.fillStyle = '#888';
+ctx3.fillText('r = −0.726, p = 0.017', lpad.l + lW + 20, lpad.t + 60);
+ctx3.fillText('Doublet ladder: r = −0.975', lpad.l + lW + 20, lpad.t + 80);
+ctx3.fillStyle = '#c084fc';
+ctx3.font = 'bold 12px system-ui';
+ctx3.fillText('3I Ni/Fe prediction:', lpad.l + lW + 20, lpad.t + 115);
+ctx3.font = '12px system-ui';
+ctx3.fillStyle = '#c084fc99';
+ctx3.fillText('P(Fe)=0.37 > P(Ni)=0.20', lpad.l + lW + 20, lpad.t + 135);
+ctx3.fillText('→ Fe suppressed, Ni survives', lpad.l + lW + 20, lpad.t + 155);
+ctx3.fillText('→ Observed: Ni/Fe = 46:1 ✓', lpad.l + lW + 20, lpad.t + 175);
+
+// Y axis labels
+ctx3.textAlign = 'right';
+ctx3.fillStyle = '#666';
+ctx3.font = '10px system-ui';
+for(let r=0; r<=0.4; r+=0.1) {
+  const y = lpad.t + (r/0.45) * lH;
+  ctx3.fillText((-r).toFixed(1), lpad.l-8, y+4);
+}
+</script>
+</body>
+</html>

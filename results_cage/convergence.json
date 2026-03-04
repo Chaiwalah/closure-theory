@@ -1,0 +1,31 @@
+{
+  "P_correlation": {
+    "spearman_r": 0.7212121212121211,
+    "p_value": 0.01857315508946023
+  },
+  "P_mean_rank_displacement": 1.6,
+  "DESI_shape_correlation": {
+    "spearman_r": -0.9999999999999999,
+    "p_value": 0.0
+  },
+  "OIII_4363_5007": {
+    "observed": 0.074,
+    "intrinsic_10k": 0.014,
+    "amplification": 5.285714285714286,
+    "P_4363": 6.5877902937267026,
+    "P_5007": 0.1823709074835855
+  },
+  "hubble_tension": {
+    "H0_local": 73.04,
+    "H0_CMB": 67.4,
+    "tension": 5.640000000000001,
+    "correction": 4.111243628279786,
+    "fraction_explained": 0.7289439057233663
+  },
+  "threshold": {
+    "z0_observed_sne": 0.82,
+    "z0_observed_qso": 1.05,
+    "z0_predicted_web": 0.73,
+    "z_deceleration": 0.632
+  }
+}
