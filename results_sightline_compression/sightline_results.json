@@ -1,0 +1,18 @@
+{
+  "test1_hubble_fg": {
+    "rho_raw": -0.9899403670636839,
+    "p_raw": 0.0,
+    "rho_partial": -0.8924192027745372,
+    "p_partial": 0.0
+  },
+  "test2_color_vs_stretch": {
+    "mean_abs_rho_color": null,
+    "mean_abs_rho_stretch": null
+  },
+  "test4_F_test": {
+    "F_stat": 23721.76840193452,
+    "p_F": 0.0,
+    "fg_coefficient": -0.008257210830228706,
+    "rss_reduction_pct": 93.3201594398839
+  }
+}
