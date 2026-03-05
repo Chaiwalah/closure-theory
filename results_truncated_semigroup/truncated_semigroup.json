@@ -1,0 +1,11 @@
+{
+  "centroid_convergence": {
+    "delta_x1_rho": -0.642857142857143,
+    "delta_x1_p": 0.11939237342741109,
+    "delta_c_rho": 0.5357142857142858,
+    "delta_c_p": 0.21521745567801298
+  },
+  "dtd_functional": {
+    "best_tau_min": 0.04
+  }
+}
