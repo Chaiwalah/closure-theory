@@ -1,0 +1,28 @@
+{
+  "best_splits": {
+    "[0.01,0.10)": {
+      "split": "Stretch sign (x1<0)",
+      "pct_between": 68.69705574393164
+    },
+    "[0.10,0.20)": {
+      "split": "Stretch sign (x1<0)",
+      "pct_between": 67.59221422159399
+    },
+    "[0.20,0.30)": {
+      "split": "Stretch sign (x1<0)",
+      "pct_between": 67.25069795590186
+    },
+    "[0.30,0.50)": {
+      "split": "Stretch sign (x1<0)",
+      "pct_between": 63.917929587327635
+    },
+    "[0.50,0.82)": {
+      "split": "Stretch sign (x1<0)",
+      "pct_between": 63.499919441651045
+    },
+    "[0.82,2.50)": {
+      "split": "Stretch sign (x1<0)",
+      "pct_between": 63.3366712730495
+    }
+  }
+}
