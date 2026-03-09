@@ -1,0 +1,51 @@
+\documentclass[12pt]{letter}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+
+\signature{Humza Hafeez\\Independent Researcher\\ORCID: 0009-0000-0853-8807}
+\address{humza@closure-theory.org}
+
+\begin{document}
+
+\begin{letter}{The Editors\\Physical Review Letters}
+
+\opening{Dear Editors,}
+
+We submit for your consideration the manuscript ``Geometric Non-Stationarity of the Type~Ia Supernova Standardization Manifold and Its Impact on Dark Energy Inference.''
+
+This work demonstrates that the covariance structure of the SN~Ia standardization space $(x_1, c, \Delta\mu)$ is strongly redshift-dependent, using three independent statistical tests on the Pantheon+ compilation of 1,590 supernovae:
+
+\begin{enumerate}
+\item \textbf{Box's M test} ($p = 2.3 \times 10^{-7}$): the covariance matrices of the standardization space differ across redshift groups at high significance.
+\item \textbf{Rolling channel--residual correlations} ($p = 3 \times 10^{-30}$): the coupling between color and Hubble residuals reverses sign from $+0.09$ at low $z$ to $-0.44$ at high $z$.
+\item \textbf{Interaction terms} ($\Delta\chi^2 = 269$ for 2 parameters): adding $z \times x_1$ and $z \times c$ to the Tripp equation overwhelmingly rejects fixed-basis standardization.
+\end{enumerate}
+
+These results establish that the standard Tripp equation---the foundation of all current SN-based dark energy constraints---applies a fixed projection to a nonstationary manifold, producing structured residuals that mimic cosmological signals.
+
+The immediate consequence is significant: when the $w_0 w_a$ dark energy parameterization is refit under corrected standardization, the best-fit $w_a$ shifts from $-1.88$ to $-0.02$. $\Lambda$CDM with nonstationary Tripp outperforms $w_0 w_a$ with standard Tripp by $\Delta\chi^2 = 37$. This directly impacts the interpretation of recent DESI BAO results reporting evidence for time-varying dark energy ($w_a = -0.75 \pm 0.29$; arXiv:2404.03002).
+
+We believe this result is appropriate for Physical Review Letters because:
+
+\begin{itemize}
+\item It identifies a previously unrecognized geometric systematic in SN~Ia standardization that affects every major cosmological analysis using Pantheon+, DES-SN5YR, or DESI SN anchors.
+\item The proof is mathematical (linear algebra and standard multivariate statistics), not model-dependent.
+\item Analogous channel-selective degradation in SDSS quasars and CHIME fast radio bursts suggests the effect is not unique to supernovae.
+\item The result has immediate practical implications for ongoing dark energy programs (DESI, Euclid, Rubin/LSST).
+\end{itemize}
+
+All analysis scripts and data products are publicly available at \url{https://github.com/Chaiwalah/closure-theory}. The manuscript has not been submitted elsewhere.
+
+We suggest the following referees with relevant expertise in SN~Ia standardization and cosmological inference:
+
+\begin{itemize}
+\item Dan Scolnic (Duke University) --- Pantheon+ lead
+\item Dillon Brout (Boston University) --- Pantheon+ cosmology lead
+\item Tamara Davis (University of Queensland) --- SN~Ia standardization systematics
+\item Ryan Keeley (KASI) --- Pantheon+ covariance analysis
+\end{itemize}
+
+\closing{Sincerely,}
+
+\end{letter}
+\end{document}
