@@ -82,7 +82,7 @@ The covariance matrix of the standardization space changes with redshift at $p <
 \subsection{Rolling Channel--Residual Correlations}
 \label{sec:rolling}
 
-We track the Spearman correlation between each light-curve parameter and the Hubble residual using a sliding window of 200 SNe (Fig.~\ref{fig:rolling}). The color--residual coupling evolves from $\mathrm{corr}(c, \Delta\mu) = +0.09$ at low $z$ to $-0.44$ at high $z$, with trend significance $\rho = -0.785$ ($p = 3.1 \times 10^{-30}$). The stretch--residual coupling evolves in the opposite direction ($\rho = +0.438$, $p = 7 \times 10^{-8}$). These trends are stable across window sizes of 150, 200, and 300.
+We track the Spearman correlation between each light-curve parameter and the Hubble residual using a sliding window of 200 SNe (Fig.~1). The color--residual coupling evolves from $\mathrm{corr}(c, \Delta\mu) = +0.09$ at low $z$ to $-0.44$ at high $z$, with trend significance $\rho = -0.785$ ($p = 3.1 \times 10^{-30}$). The stretch--residual coupling evolves in the opposite direction ($\rho = +0.438$, $p = 7 \times 10^{-8}$). These trends are stable across window sizes of 150, 200, and 300.
 
 The sign reversal of the color--residual coupling is a direct, continuous manifestation of the manifold's nonstationarity: the Tripp color correction, calibrated predominantly at low $z$, systematically over- or under-corrects at high $z$ as the underlying relationship between color and luminosity warps.
 
@@ -187,6 +187,17 @@ Removing the color correction shifts $H_0$ from $73.0$ to $70.5\;\mathrm{km\,s^{
 Independent analyses of 750{,}414 SDSS DR16Q quasars \citep{Lyke2020} and 535 CHIME FRBs \citep{CHIME2021} show qualitatively similar channel-selective coupling degradation with path length: diagnostic correlations collapse at sigmoid thresholds while kinematic observables remain immune. These three source classes share no pipeline, instrumentation, or selection function, suggesting that the SN anomaly may not be unique to Pantheon+. A detailed unified analysis is reserved for a companion paper.
 
 %% ====================================================================
+\section{Discussion}
+\label{sec:discussion}
+%% ====================================================================
+
+The central result of this work is geometric, not cosmological. We have shown---through Box's M, rolling correlations, and interaction terms---that the mapping from $(x_1, c)$ to SN~Ia residuals is redshift-dependent: the standardization manifold is nonstationary. This is a measurement, not a model. No physical mechanism is required to establish it; the failure follows from the mathematical properties of a fixed projection applied to a signal whose covariance structure evolves.
+
+The physical origin of the nonstationarity remains open. One candidate is a propagation effect in which expanding spacetime preferentially degrades correlations between observables in proportion to the number of independent coupling channels through which information can be lost. Color (sensitive to dust, metallicity, SED shape, and reddening law) degrades faster than stretch (primarily sensitive to $^{56}$Ni mass), producing the observed hierarchy. The cross-domain recurrence in quasars and FRBs supports a propagation-level origin, but a definitive derivation is beyond the scope of this empirical report.
+
+The practical implication is immediate: dark energy constraints from SN~Ia carry a geometric systematic that constant-coefficient analyses do not model. SN-driven dark energy inferences in combined analyses, including the DESI collaboration's report of $w_a = -0.75 \pm 0.29$ \citep{DESI2024}, should be revisited under basis-aware standardization before being interpreted as evidence for dynamical dark energy.
+
+%% ====================================================================
 \section{Limitations}
 \label{sec:limitations}
 %% ====================================================================
@@ -227,17 +238,6 @@ Independent analyses of 750{,}414 SDSS DR16Q quasars \citep{Lyke2020} and 535 CH
 \end{enumerate}
 
 %% ====================================================================
-\section{Discussion}
-\label{sec:discussion}
-%% ====================================================================
-
-The central result of this work is geometric, not cosmological. We have shown---through Box's M, rolling correlations, and interaction terms---that the mapping from $(x_1, c)$ to SN~Ia residuals is redshift-dependent: the standardization manifold is nonstationary. This is a measurement, not a model. No physical mechanism is required to establish it; the failure follows from the mathematical properties of a fixed projection applied to a signal whose covariance structure evolves.
-
-The physical origin of the nonstationarity remains open. One candidate is a propagation effect in which expanding spacetime preferentially degrades correlations between observables in proportion to the number of independent coupling channels through which information can be lost. Color (sensitive to dust, metallicity, SED shape, and reddening law) degrades faster than stretch (primarily sensitive to $^{56}$Ni mass), producing the observed hierarchy. The cross-domain recurrence in quasars and FRBs supports a propagation-level origin, but a definitive derivation is beyond the scope of this empirical report.
-
-The practical implication is immediate: dark energy constraints from SN~Ia carry a geometric systematic that constant-coefficient analyses do not model. SN-driven dark energy inferences in combined analyses, including the DESI collaboration's report of $w_a = -0.75 \pm 0.29$ \citep{DESI2024}, should be revisited under basis-aware standardization before being interpreted as evidence for dynamical dark energy.
-
-%% ====================================================================
 \section{Conclusions}
 \label{sec:conclusions}
 %% ====================================================================
@@ -246,7 +246,7 @@ The practical implication is immediate: dark energy constraints from SN~Ia carry
 
 \item The covariance structure of the SN~Ia $(x_1, c, \Delta\mu)$ space is redshift-dependent (Box's M, $p = 2.3 \times 10^{-7}$). The color--residual coupling reverses sign ($p = 3 \times 10^{-30}$). Two interaction terms yield $\Delta\chi^2 = 269$. Constant Tripp standardization is geometrically inconsistent with the data.
 
-\item The $8.2\sigma$ residual--redshift correlation is consistent with projection error from fixed-basis standardization.
+\item The $8.2\sigma$ residual--redshift correlation is consistent with projection error from applying a fixed-basis standardization to a nonstationary manifold.
 
 \item Under nonstationary standardization, the best-fit $w_a$ shifts from $-1.88$ to $-0.02$, and $\Lambda$CDM + corrected Tripp outperforms $w_0 w_a$ + standard Tripp by $\Delta\chi^2 = 37$.
 
@@ -258,7 +258,7 @@ The practical implication is immediate: dark energy constraints from SN~Ia carry
 
 \end{enumerate}
 
-The simplest interpretation: the crisis is in the coordinate system, not the cosmology.
+The simplest interpretation is that a substantial part of the apparent cosmological signal originates in a nonstationary standardization map rather than in the background expansion history itself.
 
 \begin{acknowledgments}
 This work uses the Pantheon+ compilation \citep{Scolnic2022,Brout2022}, SDSS DR16Q catalog \citep{Lyke2020}, and CHIME/FRB Catalog~1 \citep{CHIME2021}. Computational analysis used NumPy, SciPy, and custom Python scripts at \url{https://github.com/Chaiwalah/closure-theory}.
