@@ -1,0 +1,13 @@
+{
+  "test_date": "2026-03-09",
+  "rms_standard": 0.16623743127352417,
+  "rms_modified": 0.16174035337566722,
+  "rho_z_standard": -0.1990827405464757,
+  "rho_z_modified": -0.16437461140437976,
+  "autocorr_standard": 0.08750510825358082,
+  "autocorr_modified": 0.08978161028794487,
+  "Om_standard": 0.36464384270143824,
+  "Om_modified": 0.4620013280176895,
+  "w_standard": -0.5098346821408012,
+  "w_modified": -0.4273337924734545
+}
