@@ -10,7 +10,7 @@
 
 \begin{document}
 
-\title{Geometric Non-Stationarity of the Type~Ia Supernova Standardization Manifold\\and the Absorption of Apparent Dark Energy Evolution}
+\title{Geometric Non-Stationarity of the Type~Ia Supernova Standardization Manifold\\and Its Impact on Dark Energy Inference}
 
 \author{Humza~Hafeez}
 \email{humza@closure-theory.org}
@@ -19,7 +19,7 @@
 \date{\today}
 
 \begin{abstract}
-We find that the covariance structure of the $(x_1, c, \Delta\mu)$ standardization space of Type~Ia supernovae is strongly redshift-dependent (Box's M test, $p = 2.3 \times 10^{-7}$), that the residual coupling to color reverses sign across the Pantheon+ redshift range ($\rho = -0.785$, $p = 3 \times 10^{-30}$), and that adding just two interaction terms ($z \times x_1$, $z \times c$) to the standard Tripp equation yields $\Delta\chi^2 = 269$ for 1{,}590 SNe. Constant-basis SN~Ia standardization is therefore geometrically inconsistent with the data: the residual--redshift correlation $\rho = -0.199$ ($8.2\sigma$ above the null from 1{,}000 $\Lambda$CDM mocks) is a projection artifact of applying a fixed coordinate system to a nonstationary manifold. A principal component analysis confirms that at $z > 0.5$, only 50\% of the leading variance component projects onto the Tripp $(x_1, c)$ plane, compared to 76\% at $z < 0.06$. When the $w_0 w_a$ dark energy parameterization is refit under the corrected standardization, $w_a$ collapses from $-1.88$ to $-0.02$, and $\Lambda$CDM plus nonstationary Tripp outperforms $w_0 w_a$ plus standard Tripp by $\Delta\chi^2 = 37$. We further show that 71\% of the host-galaxy mass step originates in the color channel. Analogous coupling degradation in 750{,}414 SDSS~DR16Q quasars and 535 CHIME fast radio bursts rules out a pipeline-specific origin. These results imply that the primary SN-driven evidence for time-varying dark energy is an artifact of redshift-stationary standardization applied to intrinsically evolving observables.
+We find that the covariance structure of the $(x_1, c, \Delta\mu)$ standardization space of Type~Ia supernovae is strongly redshift-dependent (Box's M test, $p = 2.3 \times 10^{-7}$), that the residual coupling to color reverses sign across the Pantheon+ redshift range ($\rho = -0.785$, $p = 3 \times 10^{-30}$), and that adding two interaction terms ($z \times x_1$, $z \times c$) to the standard Tripp equation yields $\Delta\chi^2 = 269$ for 1{,}590 SNe. Constant-basis SN~Ia standardization is therefore geometrically inconsistent with the data. The $8.2\sigma$ residual--redshift anomaly is consistent with projection error from applying a fixed coordinate system to a nonstationary manifold. When the $w_0 w_a$ dark energy parameterization is refit under corrected standardization, the best-fit $w_a$ shifts from $-1.88$ to $-0.02$, and $\Lambda$CDM plus nonstationary Tripp outperforms $w_0 w_a$ plus standard Tripp by $\Delta\chi^2 = 37$. We further show that 71\% of the host-galaxy mass step is mediated through the color channel. Independent quasar and FRB analyses show qualitatively similar channel-selective degradation, arguing against a purely Pantheon+-specific pipeline origin. These results imply that SN-driven evidence for time-varying dark energy should be revisited under basis-aware standardization.
 \end{abstract}
 
 \maketitle
@@ -36,7 +36,7 @@ The Tripp standardization \citep{Tripp1998}
 \end{equation}
 has been the foundation of SN~Ia cosmology since the discovery of cosmic acceleration \citep{Riess1998,Perlmutter1999}. It assumes that the light-curve parameters $x_1$ (stretch) and $c$ (color) span a \emph{fixed} coordinate system whose mapping to the distance modulus is redshift-independent. Current constraints on the dark energy equation of state from Pantheon+ \citep{Scolnic2022,Brout2022}, DES-SN5YR \citep{DES2024}, and DESI BAO \citep{DESI2024} all rely on this assumption.
 
-We demonstrate that constant-basis Tripp standardization is geometrically inconsistent with the Pantheon+ data. The covariance structure of the standardization space evolves with redshift, the channel--residual couplings reverse sign, and the standardization manifold warps progressively away from the fixed Tripp basis. The $8.2\sigma$ residual--redshift anomaly is not a hint of new physics---it is the inevitable consequence of a fixed projection applied to a nonstationary signal.
+We demonstrate that constant-basis Tripp standardization is geometrically inconsistent with the Pantheon+ data. The covariance structure of the standardization space evolves with redshift (Box's M test, $p < 10^{-6}$), the channel--residual couplings reverse sign, and the standardization manifold warps progressively away from the fixed Tripp basis. This paper is empirical: we test whether the SN standardization map itself evolves with redshift and how that affects cosmological inference, without committing to a unique physical mechanism.
 
 Throughout this work we adopt flat $\Lambda$CDM with $H_0 = 70\;\mathrm{km\,s^{-1}\,Mpc^{-1}}$ and $\Omega_m = 0.3$.
 
@@ -45,13 +45,13 @@ Throughout this work we adopt flat $\Lambda$CDM with $H_0 = 70\;\mathrm{km\,s^{-
 \label{sec:data}
 %% ====================================================================
 
-We use the Pantheon+ compilation \citep{Scolnic2022} with quality cuts ($0.01 < z_{\rm HD} < 2.5$, $|x_1| < 5$, $|c| < 0.5$, $\sigma_{m_B} < 1.0$, $0 < \log M_* < 15$), retaining $N = 1{,}590$ SNe. Under standard Tripp (Eq.~\ref{eq:tripp}), the best-fit parameters are $\alpha = 0.145$, $\beta = 2.71$, $\gamma = -0.046$, $M_B = -19.315$, with $\chi^2/\nu = 13.6$.
+We use the Pantheon+ compilation \citep{Scolnic2022} with quality cuts ($0.01 < z_{\rm HD} < 2.5$, $|x_1| < 5$, $|c| < 0.5$, $\sigma_{m_B} < 1.0$, $0 < \log M_* < 15$), retaining $N = 1{,}590$ SNe. Under standard Tripp (Eq.~\ref{eq:tripp}), the best-fit parameters are $\alpha = 0.145$, $\beta = 2.71$, $\gamma = -0.046$, $M_B = -19.315$, with $\chi^2/\nu = 13.6$. Because these exploratory fits use diagonal uncertainties rather than the full Pantheon+ covariance defined in post-standardization $\mu$-space, absolute goodness-of-fit values should not be compared directly to official Pantheon+ cosmology fits.
 
 The Spearman residual--redshift correlation is
 \begin{equation}
 \rho(z, \Delta\mu) = -0.199, \quad p = 1.1 \times 10^{-15}\,.
 \end{equation}
-From 1{,}000 $\Lambda$CDM mock catalogs (Gaussian noise on $m_B$, fixed $x_1$, $c$, $M_*$), the null distribution is $\rho_{\rm null} = 0.000 \pm 0.024$. The observed $\rho$ lies at $8.2\sigma$. The anomaly is real.
+From 1{,}000 $\Lambda$CDM mock catalogs (Gaussian noise on $m_B$, fixed $x_1$, $c$, $M_*$), the null distribution is $\rho_{\rm null} = 0.000 \pm 0.024$. The observed $\rho$ lies at $8.2\sigma$. The anomaly is statistically significant under this diagonal-noise mock construction.
 
 %% ====================================================================
 \section{Geometric Proof of Non-Stationarity}
@@ -113,7 +113,7 @@ The best-fit slopes are $\alpha_1 = -0.059$ and $\beta_1 = -0.509$: both stretch
 \label{sec:pca}
 %% ====================================================================
 
-To visualize \emph{what} the nonstationarity looks like geometrically, we perform PCA on the normalized $(x_1, c, \Delta\mu)$ space in five redshift bins (Table~\ref{tab:pca}). At $z < 0.06$, 76\% of the leading variance component resides in the Tripp $(x_1, c)$ plane. By $z > 0.5$, this drops to 50\%: half the dominant signal has migrated into a dimension that the Tripp equation does not model. The Grassmannian angle between the low-$z$ and high-$z$ PC1 subspaces is $73.4^\circ$ ($3.1\sigma$ above the null expectation of $24.9^\circ$).
+To visualize \emph{what} the nonstationarity looks like geometrically, we perform PCA on the normalized $(x_1, c, \Delta\mu)$ space in five redshift bins (Table~\ref{tab:pca}). At $z < 0.06$, 76\% of the leading variance component resides in the Tripp $(x_1, c)$ plane. By $z > 0.5$, this drops to 50\%: half of the leading variance component lies outside the Tripp $(x_1, c)$ plane. The Grassmannian angle between the low-$z$ and high-$z$ PC1 subspaces is $73.4^\circ$ ($3.1\sigma$ above the null expectation of $24.9^\circ$).
 
 \begin{table}[h]
 \caption{Fraction of PC1 variance in the Tripp plane and the residual dimension.}
@@ -140,7 +140,7 @@ This drainage illustrates the mechanism behind the formal tests: as the manifold
 
 \subsection{Evolving Coefficients and Quadratic Color}
 
-As a more complete repair, we allow all Tripp coefficients to evolve linearly and add a quadratic color term:
+As a higher-order empirical repair, we allow all Tripp coefficients to evolve linearly and add a quadratic color term:
 \begin{equation}
 \mu = m_B + \alpha(z)\,x_1 - \beta(z)\,c - \delta\,c^2 - \gamma(z)\,\delta_M - M_B\,,
 \end{equation}
@@ -150,7 +150,7 @@ The quadratic color term ($\Delta\chi^2 = 339$) indicates that the color--lumino
 
 \subsection{Mass Step Decomposition}
 
-The standard Tripp mass step is $\gamma = -0.046$~mag. A stretch-only fit yields $\gamma = -0.014$~mag: \textbf{71\% of the mass step is color-channel driven}. This resolves a longstanding puzzle \citep{Kelly2010,Sullivan2010,Childress2014}: the mass step is predominantly an artifact of applying a constant color coefficient to a population where color--luminosity coupling varies with host properties.
+The standard Tripp mass step is $\gamma = -0.046$~mag. A stretch-only fit yields $\gamma = -0.014$~mag: \textbf{71\% of the mass step is color-channel driven}. This suggests that most of the observed mass step in this sample is mediated through the color channel \citep{Kelly2010,Sullivan2010,Childress2014}, consistent with a population where color--luminosity coupling varies with host properties.
 
 %% ====================================================================
 \section{Cosmological Implications}
@@ -173,22 +173,20 @@ Modified Tripp + $\Lambda$CDM & \multicolumn{2}{c}{$w = -1$} & 9{,}775 \\
 \end{tabular}
 \end{center}
 
-99\% of $w_a$ is absorbed. $\Lambda$CDM with nonstationary standardization outperforms $w_0 w_a$ with constant Tripp by $\Delta\chi^2 = 37$. This is a direct consequence of the geometric failure: the $w_0 w_a$ parameterization is mathematically degenerate with redshift-dependent standardization corrections. When the manifold warping is accounted for, the cosmological free parameters have no residual structure left to absorb.
+The best-fit $w_a$ shifts from $-1.883$ to $-0.020$. $\Lambda$CDM with nonstationary standardization outperforms $w_0 w_a$ with constant Tripp by $\Delta\chi^2 = 37$. This is a direct consequence of the geometric failure: the $w_0 w_a$ parameterization is mathematically degenerate with redshift-dependent standardization corrections. When the manifold warping is accounted for, the cosmological free parameters have no residual structure left to absorb.
 
 \subsection{Stretch-Only $H_0$}
 
-Removing the color correction shifts $H_0$ from $73.0$ to $70.5\;\mathrm{km\,s^{-1}\,Mpc^{-1}}$. Incorporating $\alpha(z)$ evolution reduces it to $H_0 \approx 68.8$, within $1.4\;\mathrm{km\,s^{-1}\,Mpc^{-1}}$ of the Planck CMB value. The color contribution to $H_0$ grows monotonically with redshift ($\rho = -0.800$), consistent with the progressive warping of the color channel away from the Tripp basis.
+Removing the color correction shifts $H_0$ from $73.0$ to $70.5\;\mathrm{km\,s^{-1}\,Mpc^{-1}}$. Incorporating $\alpha(z)$ evolution reduces it to $H_0 \approx 68.8$. The direction and scale of this shift move the SN inference closer to the Planck CMB value. The color contribution to $H_0$ grows monotonically with redshift ($\rho = -0.800$), consistent with the progressive warping of the color channel away from the Tripp basis.
 
 %% ====================================================================
 \section{Cross-Domain Evidence}
 \label{sec:crossdomain}
 %% ====================================================================
 
-A pipeline-specific or progenitor-evolution origin is ruled out by analogous coupling degradation in two independent source classes.
+Independent quasar and FRB analyses show qualitatively similar channel-selective degradation patterns, arguing against a purely Pantheon+-specific pipeline origin and suggesting that the SN anomaly may belong to a broader class of nonstationary inference effects.
 
-Using 750{,}414 quasars from SDSS DR16Q \citep{Lyke2020}, the equivalent-width correlation between diagnostic emission-line pairs collapses from $r = 0.82$ at $z \sim 0.5$ to $r = 0.03$ at $z \sim 2$ (sigmoid threshold $z_0 \approx 1.1$; $F = 258$). Kinematic observables (FWHM) are immune.
-
-Using 535 FRBs from CHIME \citep{CHIME2021} plus 186 localized events, the temporal width--spectral index correlation vanishes beyond DM $\approx 500\;\mathrm{pc\,cm^{-3}}$. The three source classes span five orders of magnitude in frequency and share no pipeline, instrumentation, or selection function, yet exhibit the same pattern: frequency-dependent coupling degradation with path length, sigmoid thresholds, and kinematic immunity.
+Using 750{,}414 quasars from SDSS DR16Q \citep{Lyke2020}, the equivalent-width correlation between diagnostic emission-line pairs collapses from $r = 0.82$ at $z \sim 0.5$ to $r = 0.03$ at $z \sim 2$ (sigmoid threshold $z_0 \approx 1.1$; $F = 258$). Kinematic observables (FWHM) are immune. Using 535 FRBs from CHIME \citep{CHIME2021} plus 186 localized events, the temporal width--spectral index correlation vanishes beyond DM $\approx 500\;\mathrm{pc\,cm^{-3}}$. The three source classes span five orders of magnitude in observing frequency and share no pipeline, instrumentation, or selection function, yet exhibit the same qualitative pattern: channel-selective coupling degradation with path length, sigmoid thresholds, and kinematic immunity. A detailed unified analysis is reserved for a companion paper.
 
 %% ====================================================================
 \section{Limitations}
@@ -199,13 +197,17 @@ Using 535 FRBs from CHIME \citep{CHIME2021} plus 186 localized events, the tempo
 
 \item \textbf{Residual floor.} The corrected residual correlation ($\rho = -0.135$, $7.0\sigma$ above the diagonal null) implies the linear repair is incomplete. The remaining structure likely reflects manifold curvature and saturation at $z > 1$, where the $[1.0, 1.5)$ bin shows over-correction.
 
-\item \textbf{Covariance mismatch.} The public Pantheon+ covariance is defined in post-standardization $\mu$-space. Our corrections operate in the upstream $(m_B, x_1, c)$ space. Full-covariance analysis requires the SALT2 parameter-level covariance or SNANA pipeline integration.
+\item \textbf{Covariance mismatch.} The public Pantheon+ covariance is defined in post-standardization $\mu$-space \citep{Brout2022,Keeley2023}. Our corrections operate in the upstream $(m_B, x_1, c)$ space. Full-covariance analysis requires the SALT2 parameter-level covariance or SNANA pipeline integration.
 
-\item \textbf{DES comparison.} DES-SN5YR BBC-corrected residuals show $\rho = -0.018$, consistent with sophisticated bias-correction pipelines implicitly compensating for basis nonstationarity. Raw $(x_1, c)$ values are not publicly available for direct comparison.
+\item \textbf{DES comparison.} DES-SN5YR BBC-corrected residuals show $\rho = -0.018$, consistent with sophisticated bias-correction pipelines implicitly compensating for basis nonstationarity \citep{DES2024}. The geometric framework presented here provides a principled explanation for \emph{why} such empirical corrections are necessary. Raw $(x_1, c)$ values are not publicly available for direct comparison.
+
+\item \textbf{Jacobian propagation.} A formal Jacobian propagation from the upstream $(m_B, x_1, c)$ correction space into the post-standardization $\mu$-space covariance is planned for a follow-up analysis using the SALT2 parameter-level covariance.
 
 \item \textbf{Box's M sensitivity.} Box's M can be sensitive to departures from multivariate normality. We mitigate this by presenting it alongside the rolling correlations and interaction terms, which make no distributional assumptions.
 
 \item \textbf{Cross-domain quantification.} The quasar and FRB analyses are qualitative. A unified fit with a common coupling function is reserved for future work.
+
+\item \textbf{Nature of nonstationarity.} Because the rolling-window and covariance-based tests are descriptive of nonstationarity, they do not by themselves uniquely determine whether the underlying geometry is best described as pure rotation, curvature, scale change, or a combination thereof.
 
 \end{enumerate}
 
@@ -222,7 +224,7 @@ Using 535 FRBs from CHIME \citep{CHIME2021} plus 186 localized events, the tempo
 
 \item \textbf{Euclid eigenvector evolution.} The Euclid SN sample should show directly measurable covariance nonstationarity (Box's M $p < 10^{-3}$) and rolling-correlation sign reversal between $z = 0.5$ and $z = 1.5$.
 
-\item \textbf{TDCOSMO lenses.} Re-calibrating TDCOSMO with stretch-only SN anchors should shift $H_0$ by $\sim 2\;\mathrm{km\,s^{-1}\,Mpc^{-1}}$ toward Planck.
+\item \textbf{Future SN analyses with raw $(x_1, c)$.} Any survey releasing raw light-curve parameters should show the same interaction-term significance and rolling-correlation sign reversal reported here.
 
 \end{enumerate}
 
@@ -235,7 +237,7 @@ The central result of this work is geometric, not cosmological. We have shown---
 
 The physical origin of the nonstationarity remains open. One candidate is a propagation effect in which expanding spacetime preferentially degrades correlations between observables in proportion to the number of independent coupling channels through which information can be lost. Color (sensitive to dust, metallicity, SED shape, and reddening law) degrades faster than stretch (primarily sensitive to $^{56}$Ni mass), producing the observed hierarchy. The cross-domain recurrence in quasars and FRBs supports a propagation-level origin, but a definitive derivation is beyond the scope of this empirical report.
 
-The practical implication is immediate: dark energy constraints from SN~Ia carry a geometric systematic that constant-coefficient analyses do not model. The DESI collaboration's report of $w_a = -0.75 \pm 0.29$ \citep{DESI2024} should be revisited under basis-aware standardization before being interpreted as evidence for dynamical dark energy.
+The practical implication is immediate: dark energy constraints from SN~Ia carry a geometric systematic that constant-coefficient analyses do not model. SN-driven dark energy inferences in combined analyses, including the DESI collaboration's report of $w_a = -0.75 \pm 0.29$ \citep{DESI2024}, should be revisited under basis-aware standardization before being interpreted as evidence for dynamical dark energy.
 
 %% ====================================================================
 \section{Conclusions}
@@ -246,13 +248,13 @@ The practical implication is immediate: dark energy constraints from SN~Ia carry
 
 \item The covariance structure of the SN~Ia $(x_1, c, \Delta\mu)$ space is redshift-dependent (Box's M, $p = 2.3 \times 10^{-7}$). The color--residual coupling reverses sign ($p = 3 \times 10^{-30}$). Two interaction terms yield $\Delta\chi^2 = 269$. Constant Tripp standardization is geometrically inconsistent with the data.
 
-\item The $8.2\sigma$ residual--redshift correlation is a projection artifact.
+\item The $8.2\sigma$ residual--redshift correlation is consistent with projection error from fixed-basis standardization.
 
-\item Under nonstationary standardization, 99\% of $w_a$ is absorbed ($-1.88 \to -0.02$), and $\Lambda$CDM + corrected Tripp outperforms $w_0 w_a$ + standard Tripp by $\Delta\chi^2 = 37$.
+\item Under nonstationary standardization, the best-fit $w_a$ shifts from $-1.88$ to $-0.02$, and $\Lambda$CDM + corrected Tripp outperforms $w_0 w_a$ + standard Tripp by $\Delta\chi^2 = 37$.
 
 \item 71\% of the host-galaxy mass step is color-channel driven.
 
-\item Cross-domain recurrence in quasars and FRBs rules out pipeline-specific or progenitor-evolution origins.
+\item Cross-domain recurrence in quasars and FRBs argues against a purely Pantheon+-specific pipeline origin and motivates broader investigation.
 
 \item The residual is not yet white noise ($\rho = -0.135$), pointing to higher-order manifold curvature.
 
