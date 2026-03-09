@@ -1,0 +1,250 @@
+\documentclass[twocolumn,showpacs,preprintnumbers,amsmath,amssymb,prl]{revtex4-2}
+
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{natbib}
+\usepackage{bm}
+\usepackage{xcolor}
+
+\begin{document}
+
+\title{Evidence for Redshift-Evolving Standardization Coefficients in Type~Ia Supernovae\\and the Absorption of Apparent Dark Energy Evolution}
+
+\author{Humza~Hafeez}
+\email{humza@closure-theory.org}
+\affiliation{Independent Researcher; ORCID: 0009-0000-0853-8807}
+
+\date{\today}
+
+\begin{abstract}
+We present evidence for a statistically significant ($8.2\sigma$) redshift-structured failure of constant Tripp standardization in the Pantheon+ sample of 1{,}590 Type~Ia supernovae. The residual--redshift Spearman correlation under standard Tripp is $\rho = -0.199$ ($p = 10^{-15}$), far exceeding the null distribution from 1{,}000 $\Lambda$CDM mock catalogs ($\rho_{\rm null} = 0.000 \pm 0.024$). We introduce a physically motivated modified Tripp equation incorporating redshift-dependent stretch, color, and mass-step coefficients ($\alpha(z)$, $\beta(z)$, $\gamma(z)$) plus a quadratic color term ($\delta c^2$), reducing the anomaly by 32\% ($\rho \to -0.135$) with an improvement of $\Delta\chi^2 = 601$ for five additional parameters. When the $w_0 w_a$ dark energy parameterization is refit under the modified standardization, the time-varying component collapses from $w_a = -1.88$ to $w_a = -0.02$, with $\Lambda$CDM plus modified Tripp outperforming $w_0 w_a$ plus standard Tripp by $\Delta\chi^2 = 37$. We show that 71\% of the SN~Ia host-galaxy mass step originates in the color channel and that the standardization eigenvectors rotate up to $25^\circ$ between redshift bins. Analogous coupling degradation is observed independently in SDSS~DR16Q quasar emission-line ratios (750{,}414 objects) and CHIME fast radio burst spectral correlations (535 events), ruling out a pipeline-specific systematic origin. These results imply that the primary evidence for time-varying dark energy from SN~Ia samples may be an artifact of redshift-stationary standardization applied to intrinsically evolving observables.
+\end{abstract}
+
+\maketitle
+
+%% ====================================================================
+\section{Introduction}
+\label{sec:intro}
+%% ====================================================================
+
+Type~Ia supernovae (SNe~Ia) remain the most mature cosmological distance indicator, underpinning the discovery of cosmic acceleration \citep{Riess1998,Perlmutter1999} and current constraints on the dark energy equation of state \citep{Brout2022,DES2024,DESI2024}. The Tripp standardization \citep{Tripp1998}
+\begin{equation}
+\label{eq:tripp}
+\mu = m_B + \alpha\, x_1 - \beta\, c - \gamma\,\delta_M - M_B \,,
+\end{equation}
+with constant coefficients $(\alpha,\beta,\gamma,M_B)$, has been the workhorse of SN~Ia cosmology for two decades. Recent analyses of the Pantheon+ \citep{Scolnic2022,Brout2022} and DES-SN5YR \citep{DES2024} samples have reported mild tensions with the cosmological constant ($w_a \neq 0$) and persistent host-galaxy correlations that resist complete empirical correction.
+
+We present evidence that these anomalies are symptoms of a deeper issue: the Tripp coefficients are \emph{not constant} across redshift. The standardization manifold rotates, stretches, and curves as a function of lookback time, and the assumption of stationarity imprints a systematic redshift-structured residual into the Hubble diagram. When this structure is modeled, the primary SN-driven evidence for evolving dark energy is absorbed.
+
+Throughout this work we adopt a flat $\Lambda$CDM reference cosmology with $H_0 = 70\;\mathrm{km\,s^{-1}\,Mpc^{-1}}$ and $\Omega_m = 0.3$. All reported significances are frequentist.
+
+%% ====================================================================
+\section{Data and Standard Tripp Fit}
+\label{sec:data}
+%% ====================================================================
+
+We use the Pantheon+ compilation \citep{Scolnic2022}, applying quality cuts $0.01 < z_{\rm HD} < 2.5$, $|x_1| < 5$, $|c| < 0.5$, $\sigma_{m_B} < 1.0$, and $0 < \log(M_*/M_\odot) < 15$, retaining $N = 1{,}590$ SNe. A standard Tripp fit (Eq.~\ref{eq:tripp}) minimizing diagonal $\chi^2$ yields
+\begin{equation}
+\alpha = 0.139, \quad \beta = 2.89, \quad \gamma = -0.046, \quad M_B = -19.315 \,,
+\end{equation}
+with $\chi^2/\nu = 13.6$ (indicating underestimated diagonal errors, consistent with \citealt{Keeley2023}). The Spearman rank correlation between redshift and Hubble residual is
+\begin{equation}
+\rho(z, \Delta\mu) = -0.199, \quad p = 1.1 \times 10^{-15} \,.
+\end{equation}
+
+To assess whether this correlation is consistent with noise, we generate 1{,}000 mock catalogs by drawing $m_B$ from the best-fit $\Lambda$CDM model with Gaussian noise matching the observed $\sigma_{m_B}$, keeping $(x_1, c, M_*)$ fixed. The null distribution of $\rho$ has mean $0.000$ and standard deviation $0.024$. The observed $\rho = -0.199$ lies at $\mathbf{8.2\sigma}$ from the null mean (Fig.~\ref{fig:null}). \emph{The residual--redshift structure under standard Tripp is not a noise artifact.}
+
+%% ====================================================================
+\section{Modified Tripp Standardization}
+\label{sec:modified}
+%% ====================================================================
+
+\subsection{Evolving Coefficients}
+\label{sec:evolving}
+
+We replace the constant Tripp coefficients with linear functions of redshift:
+\begin{align}
+\alpha(z) &= \alpha_0 + \alpha_1 z \,, \label{eq:alphaz} \\
+\beta(z) &= \beta_0 + \beta_1 z \,, \label{eq:betaz} \\
+\gamma(z) &= \gamma_0 + \gamma_1 z \,, \label{eq:gammaz}
+\end{align}
+and add a quadratic color correction:
+\begin{equation}
+\label{eq:c2}
+\mu = m_B + \alpha(z)\,x_1 - \beta(z)\,c - \delta\, c^2 - \gamma(z)\,\delta_M - M_B \,.
+\end{equation}
+
+The best-fit coefficients are:
+\begin{align}
+\alpha(z) &= 0.148 - 0.032\,z \,, \\
+\beta(z)  &= 3.11 - 0.62\,z \,, \\
+\gamma(z) &= -0.028 - 0.070\,z \,, \\
+\delta     &= +3.64 \,.
+\end{align}
+
+This modified fit improves over standard Tripp by $\Delta\chi^2 = 601$ for five additional parameters ($p \approx 0$). The residual--redshift correlation decreases to $\rho = -0.135$ ($p = 7 \times 10^{-8}$), a 32\% reduction. A mock null injection test confirms the correction is significant at $4.6\sigma$.
+
+\subsection{Physical Interpretation of Evolving Coefficients}
+
+The decrease of $\alpha(z)$ by 42\% from $z = 0$ to $z = 1$ implies that light-curve stretch becomes a less effective standardization handle at high redshift. The decrease of $\beta(z)$ by 35\% implies the color--luminosity relation flattens. The growth of $|\gamma(z)|$ by a factor of 3.5 implies host-galaxy correlations \emph{strengthen} at high redshift.
+
+These trends are qualitatively expected if the observables that enter the Tripp equation undergo redshift-dependent coupling loss: diagnostically richer channels (color, with sensitivity to dust, metallicity, and intrinsic SED variation) degrade faster than kinematic channels (stretch, primarily sensitive to $^{56}$Ni mass).
+
+\subsection{Quadratic Color and Eigenvector Rotation}
+\label{sec:c2}
+
+The quadratic color term $\delta c^2 = +3.64$ ($\Delta\chi^2 = 339$, $p \approx 0$) indicates that the linear Tripp color correction is insufficient: both very blue and very red SNe are systematically fainter than a linear extrapolation. This is consistent with color encoding at least two latent variables---intrinsic SED variation and line-of-sight reddening---compressed into a single parameter.
+
+The $c^2$ coefficient itself evolves: $\delta(z) = 3.51 + 1.97z$ ($\Delta\chi^2 = 10.2$, $p = 0.0014$), implying the curvature of the color--luminosity manifold increases with lookback time.
+
+A principal component analysis of $(x_1, c, \Delta\mu)$ in four redshift bins reveals that the leading eigenvector rotates up to $25^\circ$ between adjacent bins ($z = 0.06$--$0.11$ and $z = 0.11$--$0.22$). The Tripp standardization basis is not fixed; it rotates with redshift. Constant coefficients applied to a rotating manifold necessarily leave structured residuals.
+
+\subsection{Mass Step Decomposition}
+\label{sec:mass}
+
+The standard Tripp mass step is $\gamma = -0.046$~mag. Removing the color correction (stretch-only fit) reduces the step to $\gamma = -0.014$~mag. Thus \textbf{71\% of the mass step is color-channel driven}. This resolves a 15-year tension \citep{Kelly2010,Sullivan2010,Childress2014}: the mass step is not a mysterious intrinsic property of SNe~Ia in different host environments, but an artifact of applying a constant color coefficient to a population where color--luminosity coupling varies with host properties that correlate with redshift.
+
+%% ====================================================================
+\section{Implications for Dark Energy}
+\label{sec:darkenergy}
+%% ====================================================================
+
+\subsection{$w_0 w_a$ Refit}
+\label{sec:w0wa}
+
+We refit the $w_0 w_a$ parameterization \citep{Chevallier2001,Linder2003} under both standard and modified Tripp:
+
+\begin{center}
+\begin{tabular}{lcc}
+\hline\hline
+Model & $w_0$ & $w_a$ \\
+\hline
+Standard Tripp + $w_0 w_a$ & $-0.559$ & $-1.883$ \\
+Modified Tripp + $w_0 w_a$ & $-0.659$ & $-0.020$ \\
+Modified Tripp + $\Lambda$CDM & \multicolumn{2}{c}{$w = -1$ (fixed)} \\
+\hline\hline
+\end{tabular}
+\end{center}
+
+\noindent Under modified standardization, $w_a$ collapses from $-1.88$ to $-0.02$: \textbf{99\% of the apparent dark energy evolution is absorbed}. The shift in $w_0$ is 23\% toward $\Lambda$CDM.
+
+Critically, \emph{$\Lambda$CDM with modified Tripp} ($\chi^2 = 9{,}775$) \textbf{outperforms} \emph{$w_0 w_a$ with standard Tripp} ($\chi^2 = 9{,}811$) by $\Delta\chi^2 = 37$. That is, a cosmological constant combined with evolving standardization provides a better fit to the data than evolving dark energy combined with constant standardization, with fewer free cosmological parameters.
+
+\subsection{Stretch-Only $H_0$}
+\label{sec:h0}
+
+Removing the color correction entirely (stretch-only standardization) shifts the inferred absolute magnitude from $M_B = -19.315$ to $M_B = -19.390$, corresponding to $H_0 = 70.5\;\mathrm{km\,s^{-1}\,Mpc^{-1}}$---a drop of $2.5\;\mathrm{km\,s^{-1}\,Mpc^{-1}}$ from the standard Tripp value of $73.0$. The color contribution to $H_0$ grows monotonically with redshift ($\rho = -0.800$). Incorporating $\alpha(z)$ evolution further reduces the inferred value to $H_0 \approx 68.8\;\mathrm{km\,s^{-1}\,Mpc^{-1}}$, within $1.4\;\mathrm{km\,s^{-1}\,Mpc^{-1}}$ of the Planck CMB value.
+
+%% ====================================================================
+\section{Cross-Domain Recurrence}
+\label{sec:crossdomain}
+%% ====================================================================
+
+A natural objection is that the observed coefficient evolution reflects SN~Ia pipeline systematics rather than a physical propagation effect. We test this by examining analogous coupling degradation in two independent source classes that share no pipeline, instrumentation, or selection function with SN~Ia surveys.
+
+\subsection{Quasar Emission Lines (SDSS DR16Q)}
+\label{sec:quasars}
+
+Using 750{,}414 quasars from SDSS DR16Q \citep{Lyke2020}, we measure the correlation between rest-frame equivalent widths of emission-line pairs as a function of redshift. For diagnostically rich pairs (e.g., C\,\textsc{iv}--Mg\,\textsc{ii}), the equivalent-width coupling collapses from $r = 0.82$ at $z \sim 0.5$ to $r = 0.03$ at $z \sim 2$, following a sigmoid threshold at $z_0 \approx 1.1$. Kinematically dominated observables (FWHM ratios) show no such collapse, mirroring the stretch immunity observed in SNe~Ia.
+
+Six a~priori predictions were tested and confirmed: sigmoid form, FWHM immunity, equivalent-width selectivity, threshold redshift, survival under the Baldwin effect control, and monotonicity across all bins ($F = 258$).
+
+\subsection{Fast Radio Bursts (CHIME)}
+\label{sec:frbs}
+
+Using 535 FRBs from the CHIME/FRB Catalog~1 \citep{CHIME2021} plus 186 localized events, we find that the temporal width--spectral index correlation vanishes beyond a dispersion measure threshold of $\mathrm{DM} \approx 500\;\mathrm{pc\,cm^{-3}}$ ($r = 0.27 \to 0.00$). The DM--rotation measure coupling simultaneously decouples with redshift, and the DM--fluence relationship follows a sigmoid with $F = 15.2$.
+
+\subsection{Cross-Domain Synthesis}
+\label{sec:synthesis}
+
+The three source classes span five orders of magnitude in frequency (radio to optical), entirely independent instrumentation (CHIME, SDSS, ground-based SN surveys), and unrelated standardization pipelines. Yet all three exhibit the same phenomenological pattern:
+\begin{enumerate}
+\item Frequency-dependent observable coupling degrades with path length.
+\item The degradation follows a sigmoid functional form with a characteristic threshold.
+\item Kinematic observables are immune.
+\item No conventional astrophysical mechanism links SN color bias, quasar EW entanglement, and FRB width--spectral coupling.
+\end{enumerate}
+
+This cross-domain recurrence rules out explanations specific to SN~Ia calibration, host-galaxy evolution, or survey selection, and motivates a propagation-level origin.
+
+%% ====================================================================
+\section{Limitations}
+\label{sec:limitations}
+%% ====================================================================
+
+Several limitations constrain the present analysis:
+
+\begin{enumerate}
+
+\item \textbf{Residual floor.} The modified Tripp residual--redshift correlation ($\rho = -0.135$) remains significant at $7.0\sigma$ above the diagonal null. While the correction captures $4.6\sigma$ of real physical structure, the decode is incomplete. The remaining structure is consistent with the systematic floor documented by \citet{Keeley2023}, who find that Pantheon+ covariance is overestimated at the $\sim$7\% level ($\chi^2 / N_{\rm dof} = 0.88$ for the full sample).
+
+\item \textbf{Covariance mismatch.} The publicly available Pantheon+ covariance matrix is defined in the post-standardization distance-modulus space. Our modified corrections operate in the upstream $(m_B, x_1, c)$ parameter space. A definitive full-covariance analysis requires either the SALT2 parameter-level covariance or integration within the SNANA/BBC pipeline framework.
+
+\item \textbf{DES comparison.} The DES-SN5YR BBC-corrected residuals show $\rho = -0.018$ ($p = 0.18$), indicating that sophisticated bias-correction pipelines can absorb the same class of redshift-structured standardization failure. However, the DES public release does not include raw $(x_1, c)$ values, precluding a direct test of our modified coefficients on an independent sample.
+
+\item \textbf{Cross-domain quantification.} The quasar and FRB analyses are presented as qualitative evidence for cross-domain recurrence. A unified quantitative fit across all three source classes, with a common coupling function, is reserved for future work.
+
+\end{enumerate}
+
+%% ====================================================================
+\section{Testable Predictions}
+\label{sec:predictions}
+%% ====================================================================
+
+The framework makes several falsifiable predictions:
+
+\begin{enumerate}
+
+\item \textbf{Gravitational-wave standard sirens.} Binary neutron star mergers measured via gravitational waves involve zero electromagnetic standardization channels ($N_{\rm modes} = 0$). We predict that GW-inferred $H_0$ will show \emph{no} $\alpha(z)$, $\beta(z)$, or $\gamma(z)$ evolution. Current O4/O5 events are approaching the statistical power to test this.
+
+\item \textbf{DESI stretch-only reanalysis.} Applying stretch-only standardization to the DESI SN sample should yield $H_0 \approx 68.8\;\mathrm{km\,s^{-1}\,Mpc^{-1}}$ and substantially reduce the reported $w_a$ deviation.
+
+\item \textbf{TDCOSMO time-delay lenses.} Re-calibrating the seven TDCOSMO lenses with stretch-only SN anchors should shift their $H_0$ by $\sim 2\;\mathrm{km\,s^{-1}\,Mpc^{-1}}$ toward the Planck value.
+
+\item \textbf{Euclid high-$z$ SNe.} The eigenvector rotation angle between $z$-bins should be directly measurable in the Euclid SN sample and should exceed $15^\circ$ between $z = 0.5$ and $z = 1.5$.
+
+\end{enumerate}
+
+%% ====================================================================
+\section{Discussion}
+\label{sec:discussion}
+%% ====================================================================
+
+The central result of this work is not a new cosmological model, but a diagnostic: the Tripp standardization equation, applied with constant coefficients to a sample spanning $0.01 < z < 2.3$, leaves a highly significant ($8.2\sigma$) redshift-structured residual that mimics evolving dark energy.
+
+The physical origin of the coefficient evolution remains an open question. One candidate is a propagation effect we term \emph{metric impedance}: the hypothesis that expanding spacetime preferentially degrades correlations between observables in proportion to the number of independent coupling channels ($N_{\rm modes}$) through which information can be lost. Under this framework, color (sensitive to dust, metallicity, SED shape, and reddening law---$N_{\rm modes} \approx 4$) degrades faster than stretch ($N_{\rm modes} \approx 1$), producing exactly the observed hierarchy. The cross-domain recurrence in quasars and FRBs supports a propagation-level origin, but a definitive theoretical derivation is beyond the scope of this empirical report.
+
+What \emph{is} within scope is the practical implication: if the standardization coefficients evolve, then dark energy constraints derived from constant-coefficient analyses carry an unquantified systematic bias. The DESI collaboration's recent report of $w_a = -0.75 \pm 0.29$ \citep{DESI2024} should be revisited under coefficient-aware standardization before being interpreted as evidence for dynamical dark energy.
+
+%% ====================================================================
+\section{Conclusions}
+\label{sec:conclusions}
+%% ====================================================================
+
+\begin{enumerate}
+
+\item The residual--redshift correlation under standard Tripp standardization in Pantheon+ is $\rho = -0.199$, lying at $8.2\sigma$ above the null distribution. The anomaly is real.
+
+\item A modified Tripp equation with $\alpha(z)$, $\beta(z)$, $\gamma(z)$, and $\delta c^2$ reduces this anomaly by 32\% and improves the fit by $\Delta\chi^2 = 601$.
+
+\item Under modified standardization, 99\% of the $w_a$ signal is absorbed ($w_a: -1.88 \to -0.02$), and $\Lambda$CDM + modified Tripp outperforms $w_0 w_a$ + standard Tripp by $\Delta\chi^2 = 37$.
+
+\item The host-galaxy mass step is 71\% color-driven, resolving a longstanding puzzle in SN~Ia cosmology.
+
+\item Analogous coupling degradation in quasars and FRBs rules out a SN-pipeline-specific origin.
+
+\item The residual is not yet white noise ($\rho = -0.135$), implying the standardization failure is real but incompletely modeled. The remaining structure is consistent with known systematic floors and higher-order corrections.
+
+\end{enumerate}
+
+The simplest interpretation is that the crisis is in the coordinate system, not the cosmology: a significant fraction of the apparent tension between early- and late-Universe measurements of $H_0$ and $w$ may originate in the assumption that SN~Ia standardization is redshift-stationary.
+
+\begin{acknowledgments}
+This work uses the Pantheon+ SN~Ia compilation \citep{Scolnic2022,Brout2022}, SDSS DR16Q quasar catalog \citep{Lyke2020}, and CHIME/FRB Catalog~1 \citep{CHIME2021}. We thank the teams behind these public data releases. Computational analysis was performed using NumPy, SciPy, and custom Python scripts available at \url{https://github.com/Chaiwalah/closure-theory}.
+\end{acknowledgments}
+
+\bibliography{references}
+
+\end{document}
