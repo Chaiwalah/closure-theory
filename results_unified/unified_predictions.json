@@ -1,0 +1,32 @@
+{
+  "test_date": "2026-03-09",
+  "equation": "D_i(z) = a \u00d7 N_modes_i^\u03b1 \u00d7 Z_g(z)",
+  "parameters": {
+    "alpha": 1.845,
+    "a": 0.0204
+  },
+  "C_impedance": 0.0025375823181584462,
+  "predictions": {
+    "H0_TRGB": {
+      "predicted": 71.44798826225554,
+      "observed": 69.8,
+      "sigma": 1.7
+    },
+    "H0_stretch_only": {
+      "predicted": 71.00484319093589,
+      "observed": 70.5,
+      "sigma": 1.5
+    },
+    "H0_GW": {
+      "predicted": 70.83391164598474,
+      "observed": 67.9,
+      "sigma": 4.2
+    }
+  },
+  "scorecard": {
+    "explained": 25,
+    "total": 25
+  },
+  "confirmed_predictions": 3,
+  "remaining_predictions": 7
+}

@@ -1,0 +1,12 @@
+{
+  "test_date": "2026-03-09",
+  "mass_step_tripp": -0.0461227048148498,
+  "mass_step_stretch": -0.013473813837892794,
+  "mass_step_reduction_pct": 70.78702584338738,
+  "impedance_mass_step": 0.026999999999999996,
+  "predicted_mass_step": 0.02451612903225807,
+  "beta_evolution_rho": -0.6,
+  "alpha_evolution_rho": -0.8999999999999998,
+  "color_scatter_high_mass": 0.08931719967841831,
+  "color_scatter_low_mass": 0.0790501169165877
+}
