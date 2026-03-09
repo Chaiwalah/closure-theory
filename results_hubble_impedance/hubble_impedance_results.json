@@ -1,0 +1,32 @@
+{
+  "test_date": "2026-03-09",
+  "investigation": "Hubble Tension as Metric Impedance Artifact",
+  "chain_links": 8,
+  "chain_status": "all consistent",
+  "H0_true": 67.4,
+  "H0_local_observed": 73.0,
+  "epsilon_kinematic": 0.05157232253540303,
+  "epsilon_impedance": 0.040415808028395006,
+  "C_impedance": 0.0031314867757535753,
+  "des_vs_pantheon": {
+    "same_method": true,
+    "same_N_modes": true,
+    "different_sightlines": true,
+    "H0_pantheon": 73.6,
+    "H0_des": 67.4,
+    "difference_sigma": 3.80862972437049
+  },
+  "impedance_index_correlation": {
+    "spearman_rho": 0.2594372608313854,
+    "spearman_p": 0.5742370658329916,
+    "pearson_r": 0.3864074393738661,
+    "H0_at_zero_impedance": 69.462844677629
+  },
+  "predictions": [
+    "Stretch-only SN standardization gives lower H0 than stretch+color",
+    "Pantheon+ split by galactic latitude shows impedance pattern",
+    "GW standard sirens at z<0.07 give H0 \u2248 70.5",
+    "GW standard sirens at z>0.15 give H0 \u2248 67.4"
+  ],
+  "novel_contribution": "Previous void models missed channel-selective impedance; kinematic + impedance together explain full tension without larger void"
+}

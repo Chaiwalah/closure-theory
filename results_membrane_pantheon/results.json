@@ -1,0 +1,37 @@
+{
+  "n_total": 1590,
+  "baseline_z0": 0.675457376082483,
+  "baseline_R2": 0.05420123856268455,
+  "splits": {
+    "host_mass": {
+      "z0_dense": 0.24346523899497619,
+      "z0_clean": 0.6340109048099305,
+      "delta_z0": -0.3905456658149543,
+      "R2_dense": 0.1515520986756126,
+      "R2_clean": 0.04890923048632856,
+      "consistent": false
+    },
+    "gal_lat": {
+      "z0_dense": 0.16977174852450366,
+      "z0_clean": 0.1702401038640323,
+      "delta_z0": -0.00046835533952863106,
+      "R2_dense": 0.06766075594589027,
+      "R2_clean": 0.6635444468222131,
+      "consistent": false
+    },
+    "mw_ebv": {
+      "z0_dense": 0.20199269661281777,
+      "z0_clean": 0.7180091578430777,
+      "delta_z0": -0.51601646123026,
+      "R2_dense": 0.5949531550874585,
+      "R2_clean": 0.011038360457832574,
+      "consistent": false
+    }
+  },
+  "anomalies": [
+    "SPLIT1: \u0394z\u2080=-0.391 OPPOSITE to prediction",
+    "SPLIT2: \u0394z\u2080_lat=-0.000 OPPOSITE",
+    "SPLIT3: \u0394z\u2080_ebv=-0.516 OPPOSITE",
+    "CONTROL-LOW-MASS: Stretch shows environment coupling |\u03c1|=0.133"
+  ]
+}

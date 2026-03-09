@@ -1,0 +1,50 @@
+{
+  "test_date": "2026-03-09",
+  "gemini_ideas_tested": [
+    "Metric Impedance Z_g decomposition",
+    "[SII]/[NII] as dark matter mass probe",
+    "Alpha stability across environments"
+  ],
+  "test1_product_decomposition": {
+    "alpha_mean": 1.9131417968537252,
+    "alpha_std": 0.38630597170514863,
+    "alpha_cv_pct": 20.19222894719313,
+    "zg_vs_contrast_rho": 0.9999999999999999,
+    "zg_power_law_beta": 1.4307792773451464,
+    "result": "PASS"
+  },
+  "test2_mass_probe": {
+    "sii_n_modes": 5,
+    "nii_n_modes": 0,
+    "sii_sensitivity": 19.48048019233113,
+    "detection_threshold_n_galaxies": 100,
+    "desi_expected_per_bin": ">10000",
+    "result": "VIABLE"
+  },
+  "test3_alpha_stability": {
+    "alpha_cv_pct": 20.19222894719313,
+    "gap_correlation": -1.0,
+    "void_quintile_r": 1.0,
+    "result": "PASS"
+  },
+  "metric_impedance_law": {
+    "equation": "D_ij = (Gamma_0/4) \u00d7 N_i^alpha \u00d7 Z_g(chi_j)",
+    "alpha": 1.9131417968537252,
+    "beta": 1.4307792773451464,
+    "Gamma_0": 2.17,
+    "correction": "Z_g tracks expansion rate (H_local), not matter density"
+  },
+  "gemini_corrections": {
+    "right": [
+      "product decomposition",
+      "alpha constant",
+      "SII/NII mass probe",
+      "void preservation"
+    ],
+    "wrong": [
+      "specific numbers",
+      "impedance shadows",
+      "dense = more degradation"
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "g_factor_table": {
+    "CIV_1548": {
+      "g_upper": 1.3333333333333333,
+      "g_lower": 2.0
+    },
+    "CIV_1550": {
+      "g_upper": 0.6666666666666667,
+      "g_lower": 2.0
+    },
+    "SII_6716": {
+      "g_upper": 0.8,
+      "g_lower": 2.0
+    },
+    "SII_6731": {
+      "g_upper": 1.2,
+      "g_lower": 2.0
+    },
+    "OII_3726": {
+      "g_upper": 0.8,
+      "g_lower": 2.0
+    },
+    "OII_3729": {
+      "g_upper": 1.2,
+      "g_lower": 2.0
+    },
+    "NII_6584": {
+      "g_upper": 1.0,
+      "g_lower": 1.5
+    },
+    "OIII_5007": {
+      "g_upper": 1.0,
+      "g_lower": 1.5
+    },
+    "Hbeta": {
+      "g_upper": 1.0,
+      "g_lower": 1.0
+    }
+  },
+  "cast_central": {
+    "g_required": 9.665957915128763e-10,
+    "cast_limit": 5.8e-11,
+    "ratio": 16.66544468125649,
+    "passes": false
+  },
+  "cast_min_BL": 16.66544468125649
+}

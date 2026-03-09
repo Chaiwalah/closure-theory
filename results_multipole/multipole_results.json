@@ -1,0 +1,66 @@
+{
+  "test_date": "2026-03-08",
+  "purpose": "Test multipole coupling mechanism for spectral degradation",
+  "observables": {
+    "[NII] 6548/6583": {
+      "N_modes": 0,
+      "degradation": 0.0,
+      "sensitivity_q": 0.0,
+      "rest_wavelength": 6565
+    },
+    "[OIII] 4959/5007": {
+      "N_modes": 0,
+      "degradation": 0.0,
+      "sensitivity_q": 0.0,
+      "rest_wavelength": 4983
+    },
+    "Balmer (Ha/Hb)": {
+      "N_modes": 2,
+      "degradation": 0.038,
+      "sensitivity_q": 0.3,
+      "rest_wavelength": 5450
+    },
+    "[OII] 3726/3729": {
+      "N_modes": 3,
+      "degradation": 0.179,
+      "sensitivity_q": 0.4,
+      "rest_wavelength": 3727
+    },
+    "[SII] 6716/6731": {
+      "N_modes": 5,
+      "degradation": 0.396,
+      "sensitivity_q": 0.7,
+      "rest_wavelength": 6724
+    },
+    "CIV/MgII": {
+      "N_modes": 8,
+      "degradation": 0.943,
+      "sensitivity_q": 1.0,
+      "rest_wavelength": 2000
+    }
+  },
+  "correlations": {
+    "N_modes_vs_deg_rho": 1.0,
+    "N_modes_vs_deg_p": 0.0,
+    "q_vs_deg_rho": 1.0,
+    "wavelength_vs_deg_rho": -0.3188740696088466
+  },
+  "cooperative_exponent": 1.8445527544205371,
+  "model_comparison": {
+    "Fisher (q^2)": {
+      "r2": 0.990319647686467
+    },
+    "Multipole (N^alpha)": {
+      "r2": 0.9972756129533129
+    },
+    "RG flow (q^2)": {
+      "r2": 0.9230881127045212
+    },
+    "RG flow (N_norm^2)": {
+      "r2": 0.9574150567187074
+    },
+    "Stimulated (exp(bN)-1)": {
+      "r2": 0.9936949319470214
+    }
+  }
+}

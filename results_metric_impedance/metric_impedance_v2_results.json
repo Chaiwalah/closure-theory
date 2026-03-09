@@ -1,0 +1,42 @@
+{
+  "test_date": "2026-03-09",
+  "version": "v2_deep_dive",
+  "test_A_expansion_vs_density": {
+    "result": "H_local model favored",
+    "fvir_vs_preservation_rho": 0.8999999999999998,
+    "cluster_sign": "preservation (opposite to density model)"
+  },
+  "test_B_symmetry": {
+    "result": "PASS \u2014 rank-1 matrix confirmed",
+    "gap_correlation": -1.0,
+    "sightline_rho": 1.0,
+    "ladder_preserved_everywhere": true
+  },
+  "test_C_balmer_anomaly": {
+    "result": "tau is protective channel",
+    "balmer_measured": 0.038,
+    "balmer_predicted_N2": 0.073,
+    "protection_fraction": 0.52,
+    "r2_original": 0.9961322429637156,
+    "r2_n_eff": 0.9912903179279324,
+    "alpha_n_eff": 2.2716049841023866
+  },
+  "test_D_predictions": {
+    "bootes_void": "+50% degradation enhancement",
+    "shapley_supercluster": "-70% degradation suppression",
+    "kbc_void_hubble": "H0_local \u2248 73.7 from impedance correction"
+  },
+  "test_E_achromatic": {
+    "result": "ACHROMATIC confirmed",
+    "wavelength_vs_degradation_rho": -0.3188740696088466,
+    "residual_vs_wavelength_rho": 0.0,
+    "sii_vs_oii": "[SII](red) degrades 2.2x MORE than [OII](blue)"
+  },
+  "test_F_cooperative_exponent": {
+    "alpha": 1.845,
+    "nearest_integer": 2,
+    "interpretation": "pairwise cooperative coupling",
+    "active_pair_fraction": 0.845,
+    "pair_model_r2": 0.9970254716038603
+  }
+}
