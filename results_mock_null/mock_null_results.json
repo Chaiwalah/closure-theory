@@ -1,0 +1,33 @@
+{
+  "test_date": "2026-03-09",
+  "n_mocks": 1000,
+  "real_data": {
+    "rho_standard": -0.19907774163691416,
+    "rho_modified": -0.13461399216698733,
+    "delta_rho": -0.06446374946992683
+  },
+  "null_standard": {
+    "mean": -0.0006320858716475946,
+    "std": 0.024323598541122107,
+    "sigma_from_null": -8.15856483693271,
+    "percentile": 0.0
+  },
+  "null_modified": {
+    "mean": -0.0007612509523844569,
+    "std": 0.019066598396765486,
+    "sigma_from_null": -7.020273801818265,
+    "percentile": 0.0
+  },
+  "correction_effect": {
+    "delta_real": -0.06446374946992683,
+    "delta_null_mean": 0.00012916508073686236,
+    "delta_null_std": 0.014092453320044565,
+    "sigma": -4.583510981639315,
+    "percentile": 0.0
+  },
+  "verdict": {
+    "pre_anomalous": true,
+    "post_inside_null": false,
+    "correction_real": false
+  }
+}
