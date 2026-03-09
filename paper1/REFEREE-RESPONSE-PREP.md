@@ -43,7 +43,7 @@
 
 2. **Cross-domain kills it:** It is astrophysically impossible for SN progenitors, quasar accretion disks, and FRB engines to all evolve with the same geometric signature across five orders of magnitude in frequency. Three independent source classes, three independent instruments, one pattern.
 
-3. **Kinematic invariance:** If progenitor evolution drove the effect, stretch should be affected too (different ⁵⁶Ni yields at different metallicities). Instead, stretch is relatively immune — consistent with a channel-selective propagation effect, not a source population drift.
+3. **Stretch is less affected:** If progenitor evolution drove the effect, stretch should be affected comparably. Instead, stretch is less affected than color in the SN channel hierarchy — consistent with a channel-selective mechanism, not a uniform source population drift.
 
 ---
 

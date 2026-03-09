@@ -19,7 +19,7 @@
 \date{\today}
 
 \begin{abstract}
-We find that the covariance structure of the $(x_1, c, \Delta\mu)$ standardization space of Type~Ia supernovae is strongly redshift-dependent (Box's M test, $p = 2.3 \times 10^{-7}$), that the residual coupling to color reverses sign across the Pantheon+ redshift range ($\rho = -0.785$, $p = 3 \times 10^{-30}$), and that adding two interaction terms ($z \times x_1$, $z \times c$) to the standard Tripp equation yields $\Delta\chi^2 = 269$ for 1{,}590 SNe. Constant-basis SN~Ia standardization is therefore geometrically inconsistent with the data. The $8.2\sigma$ residual--redshift anomaly is consistent with projection error from applying a fixed coordinate system to a nonstationary manifold. When the $w_0 w_a$ dark energy parameterization is refit under corrected standardization, the best-fit $w_a$ shifts from $-1.88$ to $-0.02$, and $\Lambda$CDM plus nonstationary Tripp outperforms $w_0 w_a$ plus standard Tripp by $\Delta\chi^2 = 37$. We further show that 71\% of the host-galaxy mass step is mediated through the color channel. Independent quasar and FRB analyses show qualitatively similar channel-selective degradation, arguing against a purely Pantheon+-specific pipeline origin. These results imply that SN-driven evidence for time-varying dark energy should be revisited under basis-aware standardization.
+We find that the covariance structure of the $(x_1, c, \Delta\mu)$ standardization space of Type~Ia supernovae is strongly redshift-dependent (Box's M test, $p = 2.3 \times 10^{-7}$), that the residual coupling to color reverses sign across the Pantheon+ redshift range ($\rho = -0.785$, $p = 3 \times 10^{-30}$), and that adding two interaction terms ($z \times x_1$, $z \times c$) to the standard Tripp equation yields $\Delta\chi^2 = 269$ for 1{,}590 SNe. Constant-basis SN~Ia standardization is therefore geometrically inconsistent with the data. The $8.2\sigma$ residual--redshift anomaly is consistent with projection error from applying a fixed coordinate system to a nonstationary manifold. When the $w_0 w_a$ dark energy parameterization is refit under corrected standardization, the best-fit $w_a$ shifts from $-1.88$ to $-0.02$, and $\Lambda$CDM plus nonstationary Tripp outperforms $w_0 w_a$ plus standard Tripp by $\Delta\chi^2 = 37$. We further show that 71\% of the host-galaxy mass step is mediated through the color channel. Independent quasar and FRB analyses show qualitatively similar channel-selective degradation, suggesting that the SN anomaly may not be unique to Pantheon+. These results imply that SN-driven evidence for time-varying dark energy should be revisited under basis-aware standardization.
 \end{abstract}
 
 \maketitle
@@ -106,7 +106,7 @@ Both & 268.7 & 2 & $\approx 0$ \\
 \end{tabular}
 \end{center}
 
-The best-fit slopes are $\alpha_1 = -0.059$ and $\beta_1 = -0.509$: both stretch and color lose standardization power with increasing redshift, with color degrading nearly an order of magnitude faster. Each single interaction term individually rejects constant coefficients at a level exceeding any conventional threshold.
+Because the Tripp formalism is a linear projection from $(x_1, c)$ into standardized distance, significant $z \times x_1$ and $z \times c$ terms directly reject the assumption of a redshift-stationary projection basis. The best-fit slopes are $\alpha_1 = -0.059$ and $\beta_1 = -0.509$: both stretch and color lose standardization power with increasing redshift, with color degrading nearly an order of magnitude faster. Each single interaction term individually rejects constant coefficients at a level exceeding any conventional threshold.
 
 %% ====================================================================
 \section{Illustrative Geometry: PCA Drainage}
@@ -184,9 +184,7 @@ Removing the color correction shifts $H_0$ from $73.0$ to $70.5\;\mathrm{km\,s^{
 \label{sec:crossdomain}
 %% ====================================================================
 
-Independent quasar and FRB analyses show qualitatively similar channel-selective degradation patterns, arguing against a purely Pantheon+-specific pipeline origin and suggesting that the SN anomaly may belong to a broader class of nonstationary inference effects.
-
-Using 750{,}414 quasars from SDSS DR16Q \citep{Lyke2020}, the equivalent-width correlation between diagnostic emission-line pairs collapses from $r = 0.82$ at $z \sim 0.5$ to $r = 0.03$ at $z \sim 2$ (sigmoid threshold $z_0 \approx 1.1$; $F = 258$). Kinematic observables (FWHM) are immune. Using 535 FRBs from CHIME \citep{CHIME2021} plus 186 localized events, the temporal width--spectral index correlation vanishes beyond DM $\approx 500\;\mathrm{pc\,cm^{-3}}$. The three source classes span five orders of magnitude in observing frequency and share no pipeline, instrumentation, or selection function, yet exhibit the same qualitative pattern: channel-selective coupling degradation with path length, sigmoid thresholds, and kinematic immunity. A detailed unified analysis is reserved for a companion paper.
+Independent analyses of 750{,}414 SDSS DR16Q quasars \citep{Lyke2020} and 535 CHIME FRBs \citep{CHIME2021} show qualitatively similar channel-selective coupling degradation with path length: diagnostic correlations collapse at sigmoid thresholds while kinematic observables remain immune. These three source classes share no pipeline, instrumentation, or selection function, suggesting that the SN anomaly may not be unique to Pantheon+. A detailed unified analysis is reserved for a companion paper.
 
 %% ====================================================================
 \section{Limitations}
@@ -197,7 +195,7 @@ Using 750{,}414 quasars from SDSS DR16Q \citep{Lyke2020}, the equivalent-width c
 
 \item \textbf{Residual floor.} The corrected residual correlation ($\rho = -0.135$, $7.0\sigma$ above the diagonal null) implies the linear repair is incomplete. The remaining structure likely reflects manifold curvature and saturation at $z > 1$, where the $[1.0, 1.5)$ bin shows over-correction.
 
-\item \textbf{Covariance mismatch.} The public Pantheon+ covariance is defined in post-standardization $\mu$-space \citep{Brout2022,Keeley2023}. Our corrections operate in the upstream $(m_B, x_1, c)$ space. Full-covariance analysis requires the SALT2 parameter-level covariance or SNANA pipeline integration.
+\item \textbf{Covariance mismatch.} The public Pantheon+ covariance is defined in post-standardization $\mu$-space \citep{Brout2022,Keeley2023}, whereas the present analysis probes nonstationarity in the upstream $(m_B, x_1, c, \delta_M)$ coordinate space. A full covariance-consistent refit therefore requires parameter-level propagation not available in the public release.
 
 \item \textbf{DES comparison.} DES-SN5YR BBC-corrected residuals show $\rho = -0.018$, consistent with sophisticated bias-correction pipelines implicitly compensating for basis nonstationarity \citep{DES2024}. The geometric framework presented here provides a principled explanation for \emph{why} such empirical corrections are necessary. Raw $(x_1, c)$ values are not publicly available for direct comparison.
 
@@ -254,7 +252,7 @@ The practical implication is immediate: dark energy constraints from SN~Ia carry
 
 \item 71\% of the host-galaxy mass step is color-channel driven.
 
-\item Cross-domain recurrence in quasars and FRBs argues against a purely Pantheon+-specific pipeline origin and motivates broader investigation.
+\item Qualitatively similar coupling degradation in quasars and FRBs suggests the SN anomaly may not be unique to Pantheon+ and motivates broader investigation.
 
 \item The residual is not yet white noise ($\rho = -0.135$), pointing to higher-order manifold curvature.
 
