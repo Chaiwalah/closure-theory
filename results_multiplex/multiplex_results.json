@@ -1,0 +1,110 @@
+{
+  "z=[0.3,0.5)": {
+    "N": 15031,
+    "optical_giant": 0.7142857142857143,
+    "uv_giant": 0.08333333333333333,
+    "bridge_giant": 0.75,
+    "state_giant": 1.0,
+    "coupling_opt_uv": 0.0,
+    "coupling_opt_bridge": 0.5258305921557375,
+    "coupling_uv_bridge": 0.0,
+    "interlayer_edges": 0,
+    "interlayer_total": 0
+  },
+  "z=[0.5,0.7)": {
+    "N": 32362,
+    "optical_giant": 0.7142857142857143,
+    "uv_giant": 0.08333333333333333,
+    "bridge_giant": 0.75,
+    "state_giant": 1.0,
+    "coupling_opt_uv": 0.0,
+    "coupling_opt_bridge": 0.47278815479195047,
+    "coupling_uv_bridge": 0.0,
+    "interlayer_edges": 0,
+    "interlayer_total": 0
+  },
+  "z=[0.7,0.85)": {
+    "N": 38671,
+    "optical_giant": 0.42857142857142855,
+    "uv_giant": 0.08333333333333333,
+    "bridge_giant": 0.75,
+    "state_giant": 1.0,
+    "coupling_opt_uv": 0.0,
+    "coupling_opt_bridge": 0.5001725198573294,
+    "coupling_uv_bridge": 0.0,
+    "interlayer_edges": 0,
+    "interlayer_total": 0
+  },
+  "z=[0.85,0.95)": {
+    "N": 28151,
+    "optical_giant": 0.42857142857142855,
+    "uv_giant": 0.25,
+    "bridge_giant": 0.75,
+    "state_giant": 1.0,
+    "coupling_opt_uv": 0.3752858074507797,
+    "coupling_opt_bridge": 0.4578087292812191,
+    "coupling_uv_bridge": 0.4623268557888312,
+    "interlayer_edges": 7,
+    "interlayer_total": 12
+  },
+  "z=[0.95,1.05)": {
+    "N": 28573,
+    "optical_giant": 0.5714285714285714,
+    "uv_giant": 0.25,
+    "bridge_giant": 0.75,
+    "state_giant": 1.0,
+    "coupling_opt_uv": 0.33349545652214796,
+    "coupling_opt_bridge": 0.38713470710221676,
+    "coupling_uv_bridge": 0.49475472958977207,
+    "interlayer_edges": 6,
+    "interlayer_total": 12
+  },
+  "z=[1.05,1.15)": {
+    "N": 30982,
+    "optical_giant": 0.42857142857142855,
+    "uv_giant": 0.25,
+    "bridge_giant": 0.75,
+    "state_giant": 1.0,
+    "coupling_opt_uv": 0.08947679367530333,
+    "coupling_opt_bridge": 0.12083575489920916,
+    "coupling_uv_bridge": 0.33936618148643827,
+    "interlayer_edges": 0,
+    "interlayer_total": 15
+  },
+  "z=[1.15,1.3)": {
+    "N": 52116,
+    "optical_giant": 0.2857142857142857,
+    "uv_giant": 0.4166666666666667,
+    "bridge_giant": 0.75,
+    "state_giant": 1.0,
+    "coupling_opt_uv": 0.04129990725632783,
+    "coupling_opt_bridge": 0.02244962249156164,
+    "coupling_uv_bridge": 0.2720533762909416,
+    "interlayer_edges": 0,
+    "interlayer_total": 15
+  },
+  "z=[1.3,1.6)": {
+    "N": 110005,
+    "optical_giant": 0.2857142857142857,
+    "uv_giant": 0.5833333333333334,
+    "bridge_giant": 0.75,
+    "state_giant": 1.0,
+    "coupling_opt_uv": 0.0,
+    "coupling_opt_bridge": 0.155622727991149,
+    "coupling_uv_bridge": 0.41294021587438523,
+    "interlayer_edges": 0,
+    "interlayer_total": 0
+  },
+  "z=[1.6,2.0)": {
+    "N": 140264,
+    "optical_giant": 0.2857142857142857,
+    "uv_giant": 0.9166666666666666,
+    "bridge_giant": 0.75,
+    "state_giant": 1.0,
+    "coupling_opt_uv": 0.1327459005141871,
+    "coupling_opt_bridge": 0.19813350933131726,
+    "coupling_uv_bridge": 0.40054389446127514,
+    "interlayer_edges": 0,
+    "interlayer_total": 9
+  }
+}
