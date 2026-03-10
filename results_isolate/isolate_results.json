@@ -1,0 +1,24 @@
+{
+  "n_early_breakers": 7863,
+  "n_early_normal": 7862,
+  "n_late_holders": 4664,
+  "n_late_normal": 4663,
+  "early_significant": [
+    "|gal_lat|",
+    "gal_lon",
+    "log M_BH",
+    "log L/L_Edd",
+    "MgII EW",
+    "H\u03b2 EW",
+    "CIII EW",
+    "E(B-V)"
+  ],
+  "late_significant": [
+    "log M_BH",
+    "log L_bol",
+    "log L/L_Edd",
+    "MgII EW",
+    "H\u03b2 EW",
+    "CIII EW"
+  ]
+}
