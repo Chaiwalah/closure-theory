@@ -1,0 +1,31 @@
+{
+  "phase_diagram": {
+    "early_breakers": {
+      "hi_path_hi_source": 0.1916571283225232,
+      "lo_path_hi_source": 0.19941498155920132,
+      "lo_path_lo_source": 0.3034465216838357,
+      "hi_path_lo_source": 0.3054813684344398
+    },
+    "early_normal": {
+      "hi_path_hi_source": 0.2073263800559654,
+      "lo_path_hi_source": 0.21851946069702366,
+      "lo_path_lo_source": 0.28834902060544393,
+      "hi_path_lo_source": 0.28580513864156704
+    },
+    "late_holders": {
+      "hi_path_hi_source": 0.34691252144082335,
+      "lo_path_hi_source": 0.30810463121783876,
+      "lo_path_lo_source": 0.17238421955403088,
+      "hi_path_lo_source": 0.17259862778730703
+    },
+    "late_normal": {
+      "hi_path_hi_source": 0.31589105725927513,
+      "lo_path_hi_source": 0.3098863392665666,
+      "lo_path_lo_source": 0.18507398670383873,
+      "hi_path_lo_source": 0.18914861677031955
+    }
+  },
+  "auc_all": 0.8217656331639676,
+  "auc_sky": 0.8259536323033896,
+  "auc_source": 0.4897025019856386
+}
