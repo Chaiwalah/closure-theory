@@ -1,0 +1,71 @@
+{
+  "thresholds": {
+    "SNe Ia (color-distance)": {
+      "z0": 0.82,
+      "comoving_Mpc": 2842.1,
+      "luminosity_Mpc": 5172.6,
+      "lookback_Gyr": 6.93,
+      "proper_Mpc": 1561.6,
+      "N_modes": 3
+    },
+    "Quasars H\u03b2-MgII EW": {
+      "z0": 1.05,
+      "comoving_Mpc": 3423.7,
+      "luminosity_Mpc": 7018.6,
+      "lookback_Gyr": 7.91,
+      "proper_Mpc": 1670.1,
+      "N_modes": 4
+    },
+    "Quasars CIII-CIV EW": {
+      "z0": 1.21,
+      "comoving_Mpc": 3785.1,
+      "luminosity_Mpc": 8365.0,
+      "lookback_Gyr": 8.46,
+      "proper_Mpc": 1712.7,
+      "N_modes": 5
+    },
+    "Quasars MgII-CIV EW": {
+      "z0": 1.23,
+      "comoving_Mpc": 3828.0,
+      "luminosity_Mpc": 8536.4,
+      "lookback_Gyr": 8.53,
+      "proper_Mpc": 1716.6,
+      "N_modes": 5
+    },
+    "FRBs width-spectral_index": {
+      "z0": 0.47,
+      "comoving_Mpc": 1789.6,
+      "luminosity_Mpc": 2630.7,
+      "lookback_Gyr": 4.82,
+      "proper_Mpc": 1217.4,
+      "N_modes": 2
+    },
+    "FRBs DM-Fluence": {
+      "z0": 0.17,
+      "comoving_Mpc": 699.4,
+      "luminosity_Mpc": 818.3,
+      "lookback_Gyr": 2.11,
+      "proper_Mpc": 597.8,
+      "N_modes": 2
+    }
+  },
+  "convergence": {
+    "cv_z": 0.4741108992431462,
+    "cv_comoving": 0.4185010748393785,
+    "cv_lookback": 0.3586682035918746,
+    "cv_proper": 0.2850610728203335
+  },
+  "nmodes_correlation": {
+    "rho_z": 0.9710083124552246,
+    "p_z": 0.0012485929031976685,
+    "rho_dc": 0.9710083124552246,
+    "p_dc": 0.0012485929031976685,
+    "rho_tl": 0.9710083124552246,
+    "p_tl": 0.0012485929031976685
+  },
+  "physical_scales": {
+    "mean_z": 0.8250000000000001,
+    "mean_comoving_Mpc": 2727.9691546276545,
+    "mean_lookback_Gyr": 6.459165915133653
+  }
+}
