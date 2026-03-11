@@ -1,0 +1,9 @@
+{
+  "n_voids_total": 1228,
+  "n_voids_foreground": 1228,
+  "dist_breakers_median": 1.4044357525202806,
+  "dist_normals_median": 1.396727561648578,
+  "p_distance": 0.4208579124278292,
+  "monotonicity_rho": 0.6,
+  "monotonicity_p": 0.28475697986529386
+}
