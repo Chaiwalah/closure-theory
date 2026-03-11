@@ -1,0 +1,31 @@
+{
+  "kappa_breakers_median": 0.007955877194718153,
+  "kappa_normals_median": 0.007476664050838881,
+  "kappa_holders_median": 0.0074313988702319166,
+  "kappa_holders_normal_median": 0.008107216308645148,
+  "delta_kappa_breakers": 0.00047921314387927225,
+  "delta_kappa_holders": -0.0006758174384132315,
+  "p_breakers_vs_normal": 0.7101830834410865,
+  "p_breakers_less": 0.6449110997193451,
+  "p_holders_vs_normal": 0.8849997300079943,
+  "p_holders_greater": 0.5575059956386931,
+  "ks_breakers": 0.011207651272264064,
+  "p_ks_breakers": 0.9116661459050776,
+  "ks_holders": 0.013253253054124366,
+  "p_ks_holders": 0.94980032067336,
+  "monotonicity_rho": -0.10259783520851541,
+  "monotonicity_p": 0.8695979205185651,
+  "quintile_breaker_fracs": [
+    0.1955340977670489,
+    0.19879275653923542,
+    0.1955340977670489,
+    0.1953722334004024,
+    0.1979480989740495
+  ],
+  "n_valid": {
+    "breakers": 4887,
+    "normals": 4956,
+    "holders": 2957,
+    "holders_normal": 3060
+  }
+}
