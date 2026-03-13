@@ -1,0 +1,21 @@
+{
+  "n_sne": 1590,
+  "n_breakers": 472,
+  "nside": 8,
+  "n_good_pixels": 110,
+  "n_bootstraps": 1000,
+  "hotspot_overlap_fraction": 0.3,
+  "centroid_ra_std_deg": 24.25,
+  "centroid_dec_std_deg": 8.04,
+  "centroid_mean_ra": 173.44,
+  "centroid_mean_dec": 5.53,
+  "chi2_full": 100.19,
+  "jackknife_chi2_range": [
+    94.12,
+    100.49
+  ],
+  "jackknife_max_drop_pct": 6.07,
+  "worst_pixel": 116,
+  "ever_in_top10": 121,
+  "verdict": "MIXED"
+}

@@ -1,0 +1,60 @@
+{
+  "p2_morans_I": 0.0236,
+  "p2_morans_expected": -0.0092,
+  "p2_pair_excess": {
+    "2deg": {
+      "pairs": 21416,
+      "bb": 1701,
+      "bn": 8588,
+      "nn": 11127,
+      "expected_bb": 1887.2,
+      "excess": -0.0987
+    },
+    "5deg": {
+      "pairs": 34252,
+      "bb": 2904,
+      "bn": 14134,
+      "nn": 17214,
+      "expected_bb": 3018.4,
+      "excess": -0.0379
+    },
+    "10deg": {
+      "pairs": 59651,
+      "bb": 5230,
+      "bn": 24834,
+      "nn": 29587,
+      "expected_bb": 5256.6,
+      "excess": -0.0051
+    },
+    "15deg": {
+      "pairs": 84327,
+      "bb": 7308,
+      "bn": 34987,
+      "nn": 42032,
+      "expected_bb": 7431.2,
+      "excess": -0.0166
+    },
+    "20deg": {
+      "pairs": 119756,
+      "bb": 10294,
+      "bn": 49620,
+      "nn": 59842,
+      "expected_bb": 10553.3,
+      "excess": -0.0246
+    },
+    "30deg": {
+      "pairs": 205167,
+      "bb": 17132,
+      "bn": 84471,
+      "nn": 103564,
+      "expected_bb": 18080.0,
+      "excess": -0.0524
+    }
+  },
+  "p3_supergalactic_delta": -0.0099,
+  "p3_supergalactic_p": 0.782046,
+  "p4_density_rho": -0.0102,
+  "p4_gradient_rho": 0.0163,
+  "verdict_p2": "RANDOM",
+  "verdict_p4": "GRADIENT>DENSITY"
+}

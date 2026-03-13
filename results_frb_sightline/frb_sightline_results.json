@@ -1,0 +1,8 @@
+{
+  "n_frbs_valid": 505,
+  "n_matched_to_sn_map": 90,
+  "dm_scat_slope": 0.1623,
+  "dm_scat_r": 0.06,
+  "bf_vs_scat_rho": -0.0226,
+  "bf_vs_scat_p": 0.832359
+}
