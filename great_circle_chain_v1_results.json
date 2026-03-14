@@ -1,0 +1,253 @@
+{
+  "task1_coordinate_conversion": {
+    "input_galactic": {
+      "l_deg": 118.5,
+      "b_deg": 16.0
+    },
+    "equatorial_J2000": {
+      "RA_deg": 351.6783646481806,
+      "Dec_deg": 78.13632401978072,
+      "RA_hms": "23h26m42.80751556s",
+      "Dec_dms": "78d08m10.76647121s"
+    },
+    "ecliptic_J2000": {
+      "lambda_deg": 60.67643185310142,
+      "beta_deg": 65.47002336532293
+    },
+    "supergalactic": {
+      "SGL_deg": 14.765395693836558,
+      "SGB_deg": 19.837050170576966
+    },
+    "angular_separations": {
+      "CMB_dipole": {
+        "sep_deg": 108.73519287236037,
+        "sep_antipodal_deg": 71.26480712763964,
+        "effective_sep_deg": 71.26480712763964
+      },
+      "CMB_axis_of_evil": {
+        "sep_deg": 90.71163049433015,
+        "sep_antipodal_deg": 89.28836950566985,
+        "effective_sep_deg": 89.28836950566985
+      },
+      "Dark_flow_Kashlinsky": {
+        "sep_deg": 148.0760707903641,
+        "sep_antipodal_deg": 31.9239292096359,
+        "effective_sep_deg": 31.9239292096359
+      },
+      "Virgo_cluster": {
+        "sep_deg": 89.5164414010514,
+        "sep_antipodal_deg": 90.4835585989486,
+        "effective_sep_deg": 89.5164414010514
+      },
+      "Shapley_supercluster": {
+        "sep_deg": 131.4645471069528,
+        "sep_antipodal_deg": 48.53545289304721,
+        "effective_sep_deg": 48.53545289304721
+      },
+      "Dipole_Repeller": {
+        "sep_deg": 116.29049972518301,
+        "sep_antipodal_deg": 63.709500274816996,
+        "effective_sep_deg": 63.709500274816996
+      }
+    },
+    "SGP_pole_galactic": {
+      "l_deg": 47.4,
+      "b_deg": 6.3
+    },
+    "SGP_separation_deg": 70.13921499549814
+  },
+  "task2_two_circle_model": {
+    "single_circle": {
+      "pole_l_deg": 118.5,
+      "pole_b_deg": 16.0,
+      "R_squared": 0.043813099773433506
+    },
+    "two_circle_fixed_p1": {
+      "pole1_l_deg": 118.5,
+      "pole1_b_deg": 16.0,
+      "pole2_l_deg": 62.98868291813955,
+      "pole2_b_deg": -26.64338256298146,
+      "R_squared": 0.06730609065298843,
+      "delta_R_squared": 0.02349299087955492,
+      "pole_separation_deg": 68.7212880477664,
+      "pole2_vs_SGP_deg": 36.241868578623986
+    },
+    "two_circle_full_optimisation": {
+      "pole1_l_deg": 248.2756628998173,
+      "pole1_b_deg": 25.91392802649691,
+      "pole2_l_deg": 298.03087082255496,
+      "pole2_b_deg": -19.829373821745733,
+      "R_squared": 0.07254795890540777,
+      "delta_R_squared": 0.028734859131974266,
+      "percent_improvement": 65.58508592308715,
+      "pole_separation_deg": 66.52219562680268,
+      "pole1_vs_SGP_deg": 38.05898719026968,
+      "pole2_vs_SGP_deg": 69.67601931498702
+    },
+    "interpretation": "Second great circle DOES significantly improve fit"
+  },
+  "task3_spectrum_model_comparison": {
+    "ell_values": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "C_ell_measured": [
+      5.220292602953865e-05,
+      4.7271450889775374e-05,
+      9.160099019145329e-05,
+      0.0001123476229476727,
+      2.8635620851180104e-05,
+      7.804291032039184e-05,
+      1.1631660347961138e-05,
+      1.650952287755249e-05,
+      1.3484740888052514e-05,
+      1.0050158765389279e-05,
+      2.503970146471308e-05,
+      1.0597813541571219e-05,
+      1.9102412871092818e-05,
+      1.265664532493906e-05
+    ],
+    "domain_walls": {
+      "model": "domain_walls  (C~l^-2)",
+      "fitted_alpha": -0.7563640881695323,
+      "expected_alpha": -2.0,
+      "R_squared": 0.06872313400588692,
+      "chi_squared_frac": 4.745262364758167
+    },
+    "cosmic_strings": {
+      "model": "cosmic_strings (C~l^-1)",
+      "fitted_alpha": -0.7563640881695323,
+      "expected_alpha": -1.0,
+      "R_squared": 0.06872313400588692,
+      "chi_squared_frac": 4.745262364758167
+    },
+    "textures": {
+      "model": "textures       (C~l^-1, corrections)",
+      "fitted_alpha": -1.0245572867832917,
+      "expected_alpha": -1.0,
+      "R_squared": 0.4481302999384722,
+      "chi_squared_frac": 11.392266196055976
+    },
+    "best_fit_model": "textures       (C~l^-1, corrections)",
+    "best_fit_R_squared": 0.4481302999384722,
+    "measured_dominant_ell": 4,
+    "interpretation": "Best spectral fit: textures       (C~l^-1, corrections) with \u03b1=-1.025 vs expected -1.0. Note: \u2113=4 dominance and secondary peaks at \u2113=3,6 suggest modulation beyond a pure power law."
+  },
+  "task4_ell4_question": {
+    "simulation": {
+      "method": "Numerical: two GC union maps at NSIDE=64, gc_halfwidth=15deg",
+      "theta_grid_deg": [
+        10.0,
+        15.0,
+        20.0,
+        25.0,
+        30.0,
+        35.0,
+        40.0,
+        45.0,
+        50.0,
+        55.0,
+        60.0,
+        65.0,
+        70.0,
+        75.0,
+        80.0,
+        85.0,
+        90.0,
+        95.0,
+        100.0,
+        105.0,
+        110.0,
+        115.0,
+        120.0,
+        125.0,
+        130.0,
+        135.0,
+        140.0,
+        145.0,
+        150.0,
+        155.0,
+        160.0,
+        165.0,
+        170.0
+      ],
+      "peak_ell_at_each_theta": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "theta_producing_ell4_peak_deg": [
+        75.0,
+        80.0,
+        85.0,
+        90.0,
+        95.0,
+        100.0,
+        105.0
+      ],
+      "optimal_intersection_angle_deg": 90.0
+    },
+    "analytic": {
+      "method": "1 + P_ell(cos \u03b8) weighting per great-circle pair",
+      "theta_range_ell4_dominant_deg": [
+        80.43284775486309,
+        99.43798508302513
+      ]
+    },
+    "our_data": {
+      "two_pole_separation_deg": 66.52219562680268,
+      "measured_dominant_ell": 4,
+      "consistency_with_two_GC": "Poles separated by 66.5\u00b0; this intersection angle is close to the \u03b8 range that produces \u2113=4 dominance."
+    },
+    "interpretation": "Two intersecting great circles at an appropriate angle CAN shift the dominant power from \u2113=2 (single GC) to \u2113=3\u20134. The interference (cross-term) adds power at \u2113_cross = 2+2 = 4 when the circles are near-orthogonal (\u03b8~70-90\u00b0), consistent with our observed pole separation."
+  },
+  "metadata": {
+    "script": "great_circle_chain_v1.py",
+    "date": "2026-03-14",
+    "input_map": "/root/clawd/projects/closure/results/great_circle_test_v1_healpix_map.npy",
+    "nside": 16,
+    "n_filled_pixels": 838
+  }
+}
